@@ -75,10 +75,10 @@ function stt2exat_highlight_excerpt($keys, $text) {
 
                     if (!$success) {
 
-                        $q = _jamul_find_1stbyte($text, max(0, $p - 60));
-                        $q = _jamul_find_delimiter($text, $q);
-                        $s = _jamul_find_1stbyte_reverse($text, $p + 80, $p);
-                        $s = _jamul_find_delimiter($text, $s);
+                        $q = stt2exat_jamul_find_1stbyte($text, max(0, $p - 60));
+                        $q = stt2exat_jamul_find_delimiter($text, $q);
+                        $s = stt2exat_jamul_find_1stbyte_reverse($text, $p + 80, $p);
+                        $s = stt2exat_jamul_find_delimiter($text, $s);
                         if (($s >= $p) && ($q <= $p)) {
                             $ranges[$q] = $s;
                             $length += $s - $q;
@@ -94,7 +94,7 @@ function stt2exat_highlight_excerpt($keys, $text) {
         }
 
         if (sizeof($ranges) == 0)
-            return '<p>' . _jamul_truncate($text, 256) . '&nbsp;...</p>';
+            return '<p>' . stt2exat_jamul_truncate($text, 256) . '&nbsp;...</p>';
 
         ksort($ranges);
 
@@ -145,7 +145,7 @@ function stt2exat_the_excerpt($text,$id) {
 }
 define('_JAMUL_LEN_SEARCH', 15);
 
-function _jamul_find_1stbyte($string, $pos=0, $stop=-1) {
+function stt2exat_jamul_find_1stbyte($string, $pos=0, $stop=-1) {
     $len = strlen($string);
     if ($stop < 0 || $stop > $len) {
         $stop = $len;
@@ -158,7 +158,7 @@ function _jamul_find_1stbyte($string, $pos=0, $stop=-1) {
     return $pos;
 }
 
-function _jamul_find_1stbyte_reverse($string, $pos=-1, $stop=0) {
+function stt2exat_jamul_find_1stbyte_reverse($string, $pos=-1, $stop=0) {
     $len = strlen($string);
     if ($pos < 0 || $pos >= $len) {
         $pos = $len - 1;
@@ -171,7 +171,7 @@ function _jamul_find_1stbyte_reverse($string, $pos=-1, $stop=0) {
     return $pos;
 }
 
-function _jamul_find_delimiter($string, $pos=0, $min = -1, $max=-1) {
+function stt2exat_jamul_find_delimiter($string, $pos=0, $min = -1, $max=-1) {
     $len = strlen($string);
     if ($pos == 0 || $pos < 0 || $pos >= $len) {
         return $pos;
@@ -212,16 +212,16 @@ function _jamul_find_delimiter($string, $pos=0, $min = -1, $max=-1) {
             $pos = $pos2;
         }
     } else if ((ord($string[$pos]) >= 0x80) || (ord($string[$pos]) < 0xC0)) {
-        $pos = _jamul_find_1stbyte($string, $pos, $max);
+        $pos = stt2exat_jamul_find_1stbyte($string, $pos, $max);
     }
     return $pos;
 }
 
-function _jamul_truncate($string, $byte) {
+function stt2exat_jamul_truncate($string, $byte) {
     $len = strlen($string);
     if ($len <= $byte)
         return $string;
-    $byte = _jamul_find_1stbyte_reverse($string, $byte);
+    $byte = stt2exat_jamul_find_1stbyte_reverse($string, $byte);
     return substr($string, 0, $byte);
 }
 ?>

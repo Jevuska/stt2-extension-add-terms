@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: STT2 Extension Add Terms
-Plugin URI: http://www.jevuska.com/2015/05/25/injeksi-manual-keyword-add-onsextension-plugin-stt2/
+Plugin URI: http://www.jevuska.com/2015/06/28/injeksi-manual-keyword-add-onsextension-plugin-seo-searchterms-tagging-2/
 Description:  Manage your search terms better, extended version of <strong>SEO SearchTerms Tagging 2</strong> plugin. Add search terms into single post manually. Search the terms that relevant of post content as well as WordPress search default algorithm. JavaScript browser enabled required and the latest version <a href="https://wordpress.org/plugins/searchterms-tagging-2/">SEO SearchTerms Tagging 2</a> plugin installed.
 Author: Jevuska
 Author URI: http://www.jevuska.com

@@ -1,0 +1,2 @@
+# STT2 Extension Add Terms WordPress Plugin
+Add search terms into single post manually. Search the terms that match post content as well as WordPress search default algorithm. Required the latest version of WordPress and SEO SearchTerms Tagging 2 plugin installed. https://wordpress.org/plugins/searchterms-tagging-2/

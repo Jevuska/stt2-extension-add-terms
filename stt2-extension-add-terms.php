@@ -5,13 +5,13 @@ Plugin URI: http://www.jevuska.com/2015/06/28/injeksi-manual-keyword-add-onsexte
 Description:  Manage your search terms better, extended version of <strong>SEO SearchTerms Tagging 2</strong> plugin. Add search terms into single post manually. Search the terms that relevant of post content as well as WordPress search default algorithm. JavaScript browser enabled required and the latest version <a href="https://wordpress.org/plugins/searchterms-tagging-2/">SEO SearchTerms Tagging 2</a> plugin installed.
 Author: Jevuska
 Author URI: http://www.jevuska.com
-Version: 1.0.0
+Version: 1.0.1
 Text Domain: stt2extat
 License: GPL version 3 - http://www.gnu.org/licenses/gpl-3.0.html
  * :: required latest version of WordPress, min.version 4.2.2
  * :: required SEO SearchTerms Tagging 2 plugin installed
  * :: required browser JavaScript enabled
- * :: update: June 28, 2015
+ * :: update: October 13, 2015
  * :: Add search terms into single post manually
  * :: Search the terms that match post content as well as WordPress search default algorithm
  * STT2 Extension Add Terms is free software: you can copy and distribute verbatim copies 
@@ -54,7 +54,7 @@ if ( ! class_exists( 'Initial_STT2EXTAT' ) ) :
 		public function setup_constants() {
 
 			if ( ! defined( 'STT2EXTAT_VER' ) )
-				define( 'STT2EXTAT_VER', '1.0.0' );
+				define( 'STT2EXTAT_VER', '1.0.1' );
 			
 			if ( ! defined( 'STT2EXTAT_DB_VER' ) )
 				define( 'STT2EXTAT_DB_VER', '1.0' );
@@ -98,17 +98,25 @@ if ( ! class_exists( 'Initial_STT2EXTAT' ) ) :
 			require_once STT2EXTAT_PATH_LIB . 'assets/assets.php';
 
             if(current_user_can( 'manage_options' )):
-						require_once STT2EXTAT_PATH_LIB . 'hooks/hook-recent-post.php';
-						require_once STT2EXTAT_PATH_LIB . 'hooks/hook-search-post.php';
-						require_once STT2EXTAT_PATH_LIB . 'hooks/hook-get-list-search-term.php';
-						require_once STT2EXTAT_PATH_LIB . 'hooks/hook-relevant-post-search-field.php';
-						require_once STT2EXTAT_PATH_LIB . 'hooks/hook-search-relevant-post.php';
-						require_once STT2EXTAT_PATH_LIB . 'hooks/hook-insert-search-term.php';
-						require_once STT2EXTAT_PATH_LIB . 'hooks/hook-delete-search-term.php';
-						require_once STT2EXTAT_PATH_LIB . 'hooks/hook-update-hits-search-term.php';
-						require_once STT2EXTAT_PATH_LIB . 'hooks/hook-settings.php';
-						require_once STT2EXTAT_PATH_LIB . 'hooks/hook-install.php';
-						require_once STT2EXTAT_PATH_LIB . 'hooks/hook.php';
+				require ( STT2EXTAT_PATH_LIB . 'updates/plugin-update-checker/plugin-update-checker.php' );
+						$className = PucFactory::getLatestClassVersion('PucGitHubChecker');
+						$updateChecker = new $className(
+							'https://github.com/Jevuska/stt2-extension-add-terms/',
+							STT2EXTAT_PLUGIN_FILE,
+							'master'
+						);
+					
+				require_once STT2EXTAT_PATH_LIB . 'hooks/hook-recent-post.php';
+				require_once STT2EXTAT_PATH_LIB . 'hooks/hook-search-post.php';
+				require_once STT2EXTAT_PATH_LIB . 'hooks/hook-get-list-search-term.php';
+				require_once STT2EXTAT_PATH_LIB . 'hooks/hook-relevant-post-search-field.php';
+				require_once STT2EXTAT_PATH_LIB . 'hooks/hook-search-relevant-post.php';
+				require_once STT2EXTAT_PATH_LIB . 'hooks/hook-insert-search-term.php';
+				require_once STT2EXTAT_PATH_LIB . 'hooks/hook-delete-search-term.php';
+				require_once STT2EXTAT_PATH_LIB . 'hooks/hook-update-hits-search-term.php';
+				require_once STT2EXTAT_PATH_LIB . 'hooks/hook-settings.php';
+				require_once STT2EXTAT_PATH_LIB . 'hooks/hook-install.php';
+				require_once STT2EXTAT_PATH_LIB . 'hooks/hook.php';
             endif;
 	    endif;
 			require_once STT2EXTAT_PATH_LIB . 'includes/install.php';

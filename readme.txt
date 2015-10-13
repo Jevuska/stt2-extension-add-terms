@@ -38,3 +38,7 @@ You will find `STT2 Extension Add Terms` tool inside `SEO SearchTerms Tagging 2`
 
 = 1.0.0 = June 28, 2015
 * First official release!
+
+= 1.0.1 = October, 2015
+* Add update plugin check
+* Add Screenshoot

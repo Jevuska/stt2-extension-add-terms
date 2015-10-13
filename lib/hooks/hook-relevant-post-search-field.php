@@ -1,5 +1,14 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit;
+/*
+ * @package STT2EXTAT
+ * @category Core
+ * @author Jevuska
+ * @version 1.0
+ */
+ 
+if ( ! defined( 'ABSPATH' ) || ! defined( 'STT2EXTAT_PLUGIN_FILE' ) )
+	exit;
+
 function stt2extat_relevant_post_search_field_callback() {
   $nonce = $_REQUEST['wpnonce'];
   if (! wp_verify_nonce( $nonce, 'stt2extat_action' ) )

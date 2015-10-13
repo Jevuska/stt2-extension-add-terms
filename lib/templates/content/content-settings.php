@@ -1,5 +1,14 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit;
+/*
+ * @package STT2EXTAT
+ * @category Core
+ * @author Jevuska
+ * @version 1.0
+ */
+ 
+if ( ! defined( 'ABSPATH' ) || ! defined( 'STT2EXTAT_PLUGIN_FILE' ) )
+	exit;
+
 global $stt2extat_settings;
 ?>
 <h3><?php _e("Settings","stt2extat") ?></h3>

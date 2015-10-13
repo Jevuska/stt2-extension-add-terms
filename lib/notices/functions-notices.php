@@ -1,5 +1,13 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit;
+/*
+ * @package STT2EXTAT
+ * @category Core
+ * @author Jevuska
+ * @version 1.0
+ */
+ 
+if ( ! defined( 'ABSPATH' ) || ! defined( 'STT2EXTAT_PLUGIN_FILE' ) )
+	exit;
 
 function admin_notice_nojs_stt2extat() {
     printf( '<noscript><div id="%1$s" class="%2$s"> <p>%3$s <b>%4$s</b> %5$s</p></div></noscript>', esc_attr__( 'message', 'stt2extat' ), esc_attr__( 'error', 'stt2extat' ), esc_html__( 'Enable your browser javascript to load', 'stt2extat' ),esc_html__( 'STT2 Extension Add Terms', 'stt2extat' ),esc_html__( 'plugin.', 'stt2extat' ) );

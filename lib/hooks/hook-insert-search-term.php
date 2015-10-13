@@ -1,5 +1,14 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit;
+/*
+ * @package STT2EXTAT
+ * @category Core
+ * @author Jevuska
+ * @version 1.0
+ */
+ 
+if ( ! defined( 'ABSPATH' ) || ! defined( 'STT2EXTAT_PLUGIN_FILE' ) )
+	exit;
+
 function stt2extat_insert_searchterm_callback() {
     global $post;
     $terms = $_POST["terms"];

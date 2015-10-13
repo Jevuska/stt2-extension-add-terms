@@ -1,6 +1,16 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit;
-function stt2extat_install() {
+/*
+ * @package STT2EXTAT
+ * @category Core
+ * @author Jevuska
+ * @version 1.0
+ */
+ 
+if ( ! defined( 'ABSPATH' ) || ! defined( 'STT2EXTAT_PLUGIN_FILE' ) )
+	exit;
+
+function stt2extat_install() 
+{
 	global $wpdb, $stt2extat_settings, $wp_version;
 
 	$stt2extat_settings = stt2extat_settings();
@@ -33,16 +43,18 @@ function stt2extat_install() {
 	set_transient( '_stt2extat_activation_redirect', true, 30 );
 }
 
-function stt2extat_uninstall() {
- global $stt2extat_settings;
- delete_option( 'stt2extat_settings', $stt2extat_settings );
- delete_option( 'stt2extat_version_upgraded_from' );
- delete_option( 'stt2extat_version' );
- delete_option( 'stt2exat_admin_notice_goto' );
- delete_option( 'stt2extat_max_char' );
+function stt2extat_uninstall()
+{
+	global $stt2extat_settings;
+	delete_option( 'stt2extat_settings', $stt2extat_settings );
+	delete_option( 'stt2extat_version_upgraded_from' );
+	delete_option( 'stt2extat_version' );
+	delete_option( 'stt2exat_admin_notice_goto' );
+	delete_option( 'stt2extat_max_char' );
 }
 
-function stt2extat_after_install() {
+function stt2extat_after_install()
+{
 	if ( ! is_admin() )
 		return;
 

@@ -2,7 +2,16 @@
 //Search Excerpt Plugin by Scott Yang http://fucoder.com/code/search-excerpt/ 
 //:: Modify
 
-if ( ! defined( 'ABSPATH' ) ) exit;
+/*
+ * @package STT2EXTAT
+ * @category Core
+ * @author Jevuska
+ * @version 1.0
+ */
+ 
+if ( ! defined( 'ABSPATH' ) || ! defined( 'STT2EXTAT_PLUGIN_FILE' ) )
+	exit;
+
 function stt2exat_get_content($id) {
         $post = get_post($id); 
         if (!empty($post->post_password) ) {

@@ -1,5 +1,14 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit;
+/*
+ * @package STT2EXTAT
+ * @category Core
+ * @author Jevuska
+ * @version 1.0
+ */
+ 
+if ( ! defined( 'ABSPATH' ) || ! defined( 'STT2EXTAT_PLUGIN_FILE' ) )
+	exit;
+
 ?>
 <p><?php _e('Don&#39;t buy me a coffee.','stt2extat')?></p><p><strong><?php _e('Bro','stt2extat')?></strong> - <?php _e('It&#39;s my female cat name, and please don&#39;t bothering me about why "Bro"?, why not "Sist"?!. It was my fault and it was happened. She get pregnant right now and need more Whis','stt2extat')?><s><?php _e('cash.','stt2extat')?></s> <?php _e('Would you mind...?','stt2extat')?><br><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">

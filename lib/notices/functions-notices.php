@@ -14,7 +14,7 @@ function admin_notice_nojs_stt2extat() {
 }
 
 function admin_notice_noexists_stt2extat() {
-    printf( '<div class="%1$s"> <b>%2$s</b> %3$s <a href="%4$s" class="%5$s">%6$s</a> %7$s</div>',esc_attr__( 'update-nag', 'stt2extat' ),esc_html__( 'STT2 Extension Add Terms', 'stt2extat' ),esc_html__( 'plugin active. Please install and activate', 'stt2extat' ),esc_url( ''.get_bloginfo("wpurl").'/wp-admin/plugin-install.php?tab=plugin-information&plugin=searchterms-tagging-2&TB_iframe=true&width=600&height=550', 'stt2extat' ),esc_html__( 'thickbox', 'stt2extat' ),esc_html__( 'SEO SearchTerms Tagging 2', 'stt2extat' ),esc_html__( 'plugin.', 'stt2extat' )  );
+    printf( '<div class="%1$s"> <b>%2$s</b> %3$s <a href="%4$s">%5$s</a> %6$s</div>', 'update-nag', __( 'STT2 Extension Add Terms', 'stt2extat' ), __( 'plugin active. Please install and activate', 'stt2extat' ), 'https://github.com/Jevuska/stt2-extension-add-terms/releases/tag/STT2-v1.535', 'SEO SearchTerms Tagging 2', __( 'plugin.', 'stt2extat' )  );
 }
 
 function admin_notice_off_stt2extat() {

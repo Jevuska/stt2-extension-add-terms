@@ -63,7 +63,10 @@ if ( ! class_exists( 'Initial_STT2EXTAT' ) ) :
 				define( 'SEARCHTERMS_TAGGING2_SCREEN_ID', 'settings_page_searchterms-tagging2' );
 
 			if ( ! defined( 'STT2EXTAT_PLUGIN_FILE' ) )
-				define("STT2EXTAT_PLUGIN_FILE", plugin_basename( __FILE__ ));
+				define("STT2EXTAT_PLUGIN_FILE", __FILE__ );
+			
+			if ( ! defined( 'STT2EXTAT_PLUGIN_BASENAME' ) )
+				define("STT2EXTAT_PLUGIN_BASENAME", plugin_basename( __FILE__ ));
 
 			if ( ! defined( 'STT2EXTAT_PLUGIN_URL' ) )
 				define( 'STT2EXTAT_PLUGIN_URL', plugin_dir_url( __FILE__ ) );

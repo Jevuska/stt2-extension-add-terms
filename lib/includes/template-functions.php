@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) || ! defined( 'STT2EXTAT_PLUGIN_FILE' ) )
 	exit;
 
 function stt2extat_plugin_file() {
-  $pluginfile = STT2EXTAT_PLUGIN_FILE;
+  $pluginfile = STT2EXTAT_PLUGIN_BASENAME;
   return apply_filters( 'stt2extat_plugin_file',$pluginfile  );
 }
 

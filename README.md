@@ -7,6 +7,9 @@ Manage your search terms better, extended version of SEO SearchTerms Tagging 2 p
 
 You will find `STT2 Extension Add Terms` tool inside `SEO SearchTerms Tagging 2` menu in your WordPress admin panel.
 
+## Screenshot
+http://www.jevuska.com/2015/06/28/injeksi-manual-keyword-add-onsextension-plugin-seo-searchterms-tagging-2/
+
 ## Script Feature
 * jQuery
 * jQuery UI

@@ -32,9 +32,6 @@ License: GPL version 3 - http://www.gnu.org/licenses/gpl-3.0.html
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-if( !session_id() && ! headers_sent() )
-	session_start();
-
 if ( ! class_exists( 'Initial_STT2EXTAT' ) ) :
 
 	final class Initial_STT2EXTAT {

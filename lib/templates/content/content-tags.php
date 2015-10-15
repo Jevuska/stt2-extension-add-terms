@@ -9,5 +9,6 @@
 if ( ! defined( 'ABSPATH' ) || ! defined( 'STT2EXTAT_PLUGIN_FILE' ) )
 	exit;
 
-?>
-<label for="astag"><input type="checkbox" id="astag"> <?php _e('as post tag') ?></label>
+printf( '<label for="astag"><input type="checkbox" id="astag"> %s</label>',
+	__( 'as post tag', 'stt2extat' )
+);

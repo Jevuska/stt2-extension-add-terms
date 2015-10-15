@@ -8,6 +8,6 @@
  
 if ( ! defined( 'ABSPATH' ) || ! defined( 'STT2EXTAT_PLUGIN_FILE' ) )
 	exit;
-
-		do_action('stt2extat_metabox_content');
+	
+	do_action( 'stt2extat_metabox_content' );
 ?>

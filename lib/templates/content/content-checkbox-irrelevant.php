@@ -9,5 +9,7 @@
 if ( ! defined( 'ABSPATH' ) || ! defined( 'STT2EXTAT_PLUGIN_FILE' ) )
 	exit;
 
-?>
-<h2><?php _e('Ignore Irrelevant Post')?></h2><strong><?php _e('By checking this, you can add irrelevant search terms into selected post. So, be a wise if you need to use it, provide users with the most relevant search terms and a great user experience.')?></strong>
+printf( '<h2>%s</h2><strong>%s</strong>',
+	__( 'Ignore Irrelevant Post', 'stt2extat' ),
+	__( 'By checking this, you can add irrelevant search terms into selected post. So, be a wise if you need to use it, provide users with the most relevant search terms and a great user experience.', 'stt2extat' )
+);

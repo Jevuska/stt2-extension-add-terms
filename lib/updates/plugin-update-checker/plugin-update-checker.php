@@ -720,7 +720,7 @@ class PluginUpdateChecker_2_2 {
 				'puc_check_for_updates'
 			);
 
-			$linkText = apply_filters('puc_manual_check_link-' . $this->slug, 'Check for updates');
+			$linkText = apply_filters('puc_manual_check_link-' . $this->slug, 'Check for updates' );
 			if ( !empty($linkText) ) {
 				$pluginMeta[] = sprintf('<a href="%s">%s</a>', esc_attr($linkUrl), $linkText);
 			}

@@ -1,12 +1,14 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-function stt2extat_admin_enqueu_scripts() {
+function stt2extat_admin_enqueu_scripts()
+{
 	global $stt2extat_settings, $wp_version, $tinymce_version, $concatenate_scripts, $compress_scripts;
 	
-	if ( ! isset( $concatenate_scripts ) ) {
-			script_concat_settings();
-		}
+	if ( ! isset( $concatenate_scripts ) )
+	{
+		script_concat_settings();
+	}
 	
 	$compressed =
 			$compress_scripts &&
@@ -23,61 +25,63 @@ function stt2extat_admin_enqueu_scripts() {
 			isset( $_SERVER['HTTP_ACCEPT_ENCODING'] ) &&
 			false !== stripos( $_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip' );
 
-		$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) || file_exists( dirname( __FILE__ ) . '/.gitignore' ) ? '' : '.min';
-			$mce_suffix = false !== strpos( $wp_version, '-src' ) ? '' : '.min';
-
-			if ( $compressed ) {
-				wp_enqueue_script( 'stt2extat-tinymce', includes_url( 'js/tinymce' ) . '/wp-tinymce.php?c=1', array(), $tinymce_version, true );
-			} else {
-				wp_enqueue_script( 'stt2extat-tinymce', includes_url( 'js/tinymce' ) . '/tinymce' . $mce_suffix . '.js', array(), $tinymce_version, true );
-				wp_enqueue_script( 'stt2extat-tinymce-compat3x', includes_url( 'js/tinymce' ) . '/plugins/compat3x/plugin' . $suffix . '.js', array( 'stt2extat-tinymce' ), $tinymce_version, true );
-			}
-
-    $currentscreen = get_current_screen();
-    $stt2screen = searchterms_tagging2_screen_id();
-    $plugin_url = plugin_dir_url( __FILE__ );
-    $includes_url = includes_url('/css/editor.min.css');
-	$nonce = wp_create_nonce('stt2extat_action');
-	$maxchar = $stt2extat_settings['stt2extat_max_char'];
-    if($currentscreen->id == $stt2screen ) :
-		wp_enqueue_script( 'jquery-stt2extat', $plugin_url . 'js/jquery-stt2extat.js' , array('jquery'),STT2EXTAT_VER,true );
-		wp_enqueue_script( 'googlesuggest-stt2extat', $plugin_url . 'js/jquery-google-suggest-autocomplete.js', array('jquery'),STT2EXTAT_VER,true );
-		wp_enqueue_script( 'jquery-ui', $plugin_url . 'js/jquery-ui.min.js', array('jquery'),STT2EXTAT_VER,true );
-		wp_enqueue_style( 'jqui',$plugin_url . 'css/jquery-ui.min.css',array('editor-styles'),STT2EXTAT_VER,false );
-		wp_enqueue_style( 'editor-styles',$includes_url);
-		wp_enqueue_script('postbox');
-		wp_localize_script('jquery-stt2extat', 'stt2extatL10n',
-        array(
-            1 => $nonce,
-			2 => __( 'Remove Irrelevant Search Terms' ),
-			3 => __( 'Incoming search terms: Empty!' ),
-			4 => __( 'Oops! Fail to update' ),
-			5 => __( 'Contain Badwords!' ),
-			6 => __( 'Preview:' ),
-			7 => __( 'Irrelevant!' ),
-			8 => __( 'Oops! No Post Selected!' ),
-			9 => __( 'Oops! No Terms Input!' ),
-			10 => __( 'Olala.. you don&#39;t have permission' ),
-			11 => __( 'Oops! Error!.' ),
-			12 => __( 'No results found' ),
-			13 => __( '...' ),
-			14 => __( 'Remove' ),
-			15 => __( 'Add' ),
-			16 => __( 'Too Short. Min 4 character (A-Z,a-z,0-9)' ),
-			17 => __( 'Too Long. Max {$maxchar} character (A-Z,a-z,0-9)' ),
-			18 => __( 'Success add to field' ),		
-			19 => __( 'Your browser does not support for this plugin! Compatible for latest version Firefox, Safari, or Chrome.' ),
-			20 => __( 'Collapse Tab' ),
-			21 => $maxchar,
-			22 => __( 'Success Updated!' ),
-			23 => __( 'Loading...' ),
-            )
-	    );
+	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) || file_exists( dirname( __FILE__ ) . '/.gitignore' ) ? '' : '.min';
+	$mce_suffix = false !== strpos( $wp_version, '-src' ) ? '' : '.min';
 	
-		$bgspinner = '"'.admin_url( '/images/spinner.gif').'"';
+	if ( $compressed )
+	{
+		wp_enqueue_script( 'stt2extat-tinymce', includes_url( 'js/tinymce' ) . '/wp-tinymce.php?c=1', array(), $tinymce_version, true );
+	} 
+	else
+	{
+		wp_enqueue_script( 'stt2extat-tinymce', includes_url( 'js/tinymce' ) . '/tinymce' . $mce_suffix . '.js', array(), $tinymce_version, true );
+		wp_enqueue_script( 'stt2extat-tinymce-compat3x', includes_url( 'js/tinymce' ) . '/plugins/compat3x/plugin' . $suffix . '.js', array( 'stt2extat-tinymce' ), $tinymce_version, true );
+	}
+
+	$currentscreen = get_current_screen();
+	$stt2screen    = searchterms_tagging2_screen_id();
+	$plugin_url    = plugin_dir_url( __FILE__ );
+	$includes_url  = includes_url( '/css/editor.min.css' );
+	$nonce         = wp_create_nonce( 'stt2extat_action' );
+	$maxchar       = $stt2extat_settings['stt2extat_max_char'];
+	
+    if ( $currentscreen->id == $stt2screen ) :
+		wp_enqueue_script( 'jquery-stt2extat', $plugin_url . 'js/jquery-stt2extat.min.js' , array( 'jquery' ), STT2EXTAT_VER, true );
+		wp_enqueue_script( 'googlesuggest-stt2extat', $plugin_url . 'js/jquery-google-suggest-autocomplete.js', array('jquery'), STT2EXTAT_VER, true );
+		wp_enqueue_script( 'jquery-ui', $plugin_url . 'js/jquery-ui.min.js', array( 'jquery' ), STT2EXTAT_VER, true );
+		wp_enqueue_style( 'jqui', $plugin_url . 'css/jquery-ui.min.css',array( 'editor-styles' ), STT2EXTAT_VER, false );
+		wp_enqueue_style( 'editor-styles', $includes_url );
+		wp_enqueue_script( 'postbox' );
+		wp_localize_script( 'jquery-stt2extat', 'stt2extatL10n', array(
+            1  => $nonce,
+			2  => __( 'Remove Irrelevant Search Terms', 'stt2extat' ),
+			3  => __( 'Incoming search terms: Empty!', 'stt2extat' ),
+			4  => __( 'Oops! Fail to update', 'stt2extat' ),
+			5  => __( 'Contain Badwords!', 'stt2extat' ),
+			6  => __( 'Preview:', 'stt2extat' ),
+			7  => __( 'Irrelevant!', 'stt2extat' ),
+			8  => __( 'Oops! No Post Selected!', 'stt2extat' ),
+			9  => __( 'Oops! No Terms Input!', 'stt2extat' ),
+			10 => __( 'Olala.. you don&#39;t have permission', 'stt2extat' ),
+			11 => __( 'Oops! Error!.', 'stt2extat' ),
+			12 => __( 'No results found', 'stt2extat' ),
+			13 => '...',
+			14 => __( 'Remove', 'stt2extat' ),
+			15 => __( 'Add', 'stt2extat' ),
+			16 => __( 'Too Short. Min 4 character (A-Z,a-z,0-9)', 'stt2extat' ),
+			17 => __( 'Too Long. Max {$maxchar} character (A-Z,a-z,0-9)', 'stt2extat' ),
+			18 => __( 'Success add to field', 'stt2extat' ),		
+			19 => __( 'Your browser does not support for this plugin! Compatible for latest version Firefox, Safari, or Chrome.', 'stt2extat' ),
+			20 => __( 'Collapse Tab', 'stt2extat' ),
+			21 => intval( $maxchar ),
+			22 => __( 'Success Updated!', 'stt2extat' ),
+			23 => __( 'Loading...', 'stt2extat' ),
+		) );
+	
+		$bgspinner     = '"' . admin_url( '/images/spinner.gif') . ' "';
 		$stt2extat_css = '
 							input.ui-autocomplete-loading {
-							  background: url('.$bgspinner.') center right no-repeat;
+							  background: url(' . $bgspinner . ') center right no-repeat;
 							}
 
 							#searchtermpost {
@@ -101,7 +105,7 @@ function stt2extat_admin_enqueu_scripts() {
 							  content: "\f139";
 							}
 
-							#gsuggestPopup,#notmatchfeatPopup,#brocatPopup,#thehint,#screen-meta-links,#fullpost,#loading {
+							#gsuggestPopup, #notmatchfeatPopup, #brocatPopup, #thehint, #screen-meta-links, #fullpost, #loading {
 							  display: none;
 							}
 
@@ -124,7 +128,7 @@ function stt2extat_admin_enqueu_scripts() {
 							  padding: 0;
 							}
 
-							i.termlist:hover,i.termcnt:hover,.more:hover,.view-fullpost:hover,.alltag:hover {
+							i.termlist:hover, i.termcnt:hover,.more:hover, .view-fullpost:hover, .alltag:hover {
 							  color: #0073aa;
 							  cursor: pointer;
 							}
@@ -187,7 +191,7 @@ function stt2extat_admin_enqueu_scripts() {
 							  opacity: 1;
 							}
 
-							.key-inline.key-arrow-up:before,.key-inline.key-arrow-up:after,.key-inline.key-arrow-down:before,.key-inline.key-arrow-down:after {
+							.key-inline.key-arrow-up:before, .key-inline.key-arrow-up:after, .key-inline.key-arrow-down:before, .key-inline.key-arrow-down:after {
 							  position: absolute;
 							  left: 50%;
 							  display: block;
@@ -198,12 +202,12 @@ function stt2extat_admin_enqueu_scripts() {
 							  content: "";
 							}
 
-							.key-inline.key-arrow-down:before,.key-inline.key-arrow-up:before {
+							.key-inline.key-arrow-down:before, .key-inline.key-arrow-up:before {
 							  border-width: 9px;
 							  margin-left: -9px;
 							}
 
-							.key-inline.key-arrow-down:after,.key-inline.key-arrow-up:after {
+							.key-inline.key-arrow-down:after, .key-inline.key-arrow-up:after {
 							  border-width: 8px;
 							  margin-left: -8px;
 							}
@@ -249,7 +253,7 @@ function stt2extat_admin_enqueu_scripts() {
 							  color: #0073aa;
 							}
 
-							.tab-arrow-right:before,.tab-arrow-right:after,.tab-arrow-left:before,.tab-arrow-left:after {
+							.tab-arrow-right:before, .tab-arrow-right:after, .tab-arrow-left:before, .tab-arrow-left:after {
 							  width: 0;
 							  height: 0;
 							  border-style: solid;
@@ -291,33 +295,57 @@ function stt2extat_admin_enqueu_scripts() {
     endif;
 }
 
-function stt2extat_inline_js() {
-   $currentscreen = get_current_screen();
-   $stt2screen = searchterms_tagging2_screen_id();
+function stt2extat_inline_js()
+{
+	$currentscreen = get_current_screen();
+	$stt2screen    = searchterms_tagging2_screen_id();
 	
-   if($currentscreen->id == $stt2screen ) :
-   delete_option('stt2exat_admin_notice_goto');
-   stt2extat_footer();
+	if ( $currentscreen->id == $stt2screen ) :
+		delete_option( 'stt2exat_admin_notice_goto' );
+		stt2extat_footer();
 ?>
 <script type="text/javascript">
-jQuery(document).ready(function($) {
-var tb_pathToImage = thickboxL10n.loadingAnimation,
-	idForm = "stt2extat-form";
- 	imgLoader = new Image();
-	imgLoader.src = tb_pathToImage;
-    $("div.wrap > div.postbox-container:last").before($('<div>',{id:idForm,html:$('<img>',{src: imgLoader.src,width: 208})}));
-    data = {action: 'stt2extat_action',stt2extat_nonce: stt2extatL10n[1],};
-	$.post(ajaxurl, data, function(response) {
-		$("#"+idForm).html(response);
-		$.stt2extat.extatTab();
-		$.stt2extat.searchPost();
-		$.stt2extat.insertTerm();
-		$(".if-js-closed").removeClass("if-js-closed").addClass("closed");
-		postboxes.add_postbox_toggles( "apmbt");
-	});
-});
+jQuery( document ).ready(
+	function( $ )
+	{
+		var tb_pathToImage = thickboxL10n.loadingAnimation,
+			idForm         = "stt2extat-form";
+		imgLoader      = new Image();
+		imgLoader.src  = tb_pathToImage;
+		
+		$( 'div.wrap > div.postbox-container:last' ).before( 
+			$( '<div>', 
+				{ 
+					'id'   : idForm, 
+					'html' : $( '<img>',
+						{ 
+							'src'   : imgLoader.src,
+							'width' : 208
+						} 
+					)
+				} 
+			) 
+		);
+		data =  { 
+			action          : 'stt2extat_action', 
+			stt2extat_nonce : stt2extatL10n[1]
+		};
+		
+		$.post( ajaxurl, data,
+			function( response )
+			{
+				$( '#' + idForm ).html( response );
+				$.stt2extat.extatTab();
+				$.stt2extat.searchPost();
+				$.stt2extat.insertTerm();
+				$( '.if-js-closed' ).removeClass( 'if-js-closed' ).addClass( 'closed' );
+				postboxes.add_postbox_toggles( 'apmbt' );
+			}
+		);
+	}
+);
 </script>
 <?php 
-endif;
+	endif;
 }
 ?>

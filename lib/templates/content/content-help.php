@@ -9,5 +9,9 @@
 if ( ! defined( 'ABSPATH' ) || ! defined( 'STT2EXTAT_PLUGIN_FILE' ) )
 	exit;
 
-?><h3><?php _e('Error in SEO SearchTerms Tagging 2') ?></h3><p><?php _e('However, SEO SearchTerms Tagging 2 plugin never been updated since over 4 years but it still support for the latest version of WordPress (4.2.2). Some commons error you get from, could be fixed.') ?></p><ul><li><strong><?php _e('Fixing Error "Warning: Missing argument 2 for wpdb::prepare()"') ?></strong><br><?php _e('Open <kbd>searchterms-tagging2.php</kbd> plugin file, edit the code in line 658 and 695<br><code>$post_count = $wpdb->get_var($wpdb->prepare( $sql ));</code><br> change with <br><code>$post_count = $wpdb->get_var($wpdb->prepare( $sql, &#39;&#39; ));</code><br>Save your work then.') ?></li></ul>
-<?php wp_die();?>
+printf( '<h3>%s</h3><p>%s</p><p>%s</p>',
+	__( 'Modified version of SEO SearchTerms Tagging 2 plugin', 'stt2extat' ),
+	wp_kses( __( 'Download the latest modified version of SEO SearchTerms Tagging 2 plugin <a class="dashicons dashicons-external" target="_blank" href="https://github.com/Jevuska/stt2-extension-add-terms/releases/tag/STT2-v1.535"></a>.', 'stt2extat' ), array( 'a' => array( 'href' => array(), 'target' => array(), 'class' => array() ) ) ),
+	wp_kses( __( 'Support contact via email at <a href="mailto:contact@jevuska.com">contact@jevuska.com</a> or <a href="https://github.com/Jevuska/stt2-extension-add-terms" target="_blank">GitHub</a>', 'stt2extat' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) )
+);
+wp_die();

@@ -1,0 +1,493 @@
+# STT2 Extension Add Terms
+# Copyright (C) 2015 ...
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: STT2 Extension Add Terms v1.0.2\n"
+"Report-Msgid-Bugs-To: Jevuska <contact@jevuska.com>\n"
+"POT-Creation-Date: 2015-10-16 02:09+0800\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Jevuska <contact@jevuska.com>\n"
+"Language: id_ID\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Textdomain-Support: yesX-Generator: Poedit 1.6.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
+"_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 1.8.4\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#. Plugin Name of the plugin/theme
+msgid "STT2 Extension Add Terms"
+msgstr "STT2 Extension Add Terms"
+
+#. Author of the plugin/theme
+msgid "Jevuska"
+msgstr "Jevuska"
+
+#. Author URI of the plugin/theme
+msgid "http://www.jevuska.com/"
+msgstr "http://www.jevuska.com/"
+
+#. Description of the plugin/theme
+msgid ""
+"Manage your search terms better, extended version of <strong>SEO SearchTerms "
+"Tagging 2</strong> plugin. Add search terms into single post manually. "
+"Search the terms that relevant of post content as well as WordPress search "
+"default algorithm. JavaScript browser enabled required and the latest "
+"modified version of <a href=\"https://github.com/Jevuska/stt2-extension-add-"
+"terms/releases/tag/STT2-v1.535\">SEO SearchTerms Tagging 2</a> plugin "
+"installed."
+msgstr ""
+"Mengelola istilah pencarian yang lebih baik, plugin <strong>SEO SearchTerms "
+"Tagging 2</strong> versi luas. Tambahkan pencarian ke dalam satu postingan "
+"secara manual. Cari istilah yang relevan dengan isi postingan sebagaimana "
+"algoritma default WordPress pencarian. Browser JavaScript wajib diaktifkan "
+"dan instal plugin <a href=\"https://github.com/Jevuska/stt2-extension-add-"
+"terms/releases/tag/STT2-v1.535\">SEO SearchTerms Tagging 2</a> versi "
+"modifikasi terbaru."
+
+#: assets/assets.php:57
+msgid "Remove Irrelevant Search Terms"
+msgstr "Hilangkan Istilah Pencarian Yang Tidak Relevan"
+
+#: assets/assets.php:58 includes/functions.php:280
+msgid "Incoming search terms: Empty!"
+msgstr "Istilah pencarian yang masuk: Kosong!"
+
+#: assets/assets.php:59
+msgid "Oops! Fail to update"
+msgstr "Oops! Gagal perbarui"
+
+#: assets/assets.php:60
+msgid "Contain Badwords!"
+msgstr "Mengandung Badwords!"
+
+#: assets/assets.php:61
+msgid "Preview:"
+msgstr "Cuplikan:"
+
+#: assets/assets.php:62 includes/functions.php:93
+msgid "Irrelevant!"
+msgstr "Tidak Relevan!"
+
+#: assets/assets.php:63
+msgid "Oops! No Post Selected!"
+msgstr "Oops! Tidak Ada Postingan Yang Dipilih!"
+
+#: assets/assets.php:64
+msgid "Oops! No Terms Input!"
+msgstr "Oops! Tidak Ada Input Istilah pencarian!"
+
+#: assets/assets.php:65
+msgid "Olala.. you don&#39;t have permission"
+msgstr "Olala.. Anda tidak diizinkan"
+
+#: assets/assets.php:66
+msgid "Oops! Error!."
+msgstr "Oops! Ada Kesalahan!."
+
+#: assets/assets.php:67
+msgid "No results found"
+msgstr "Tidak ada hasil"
+
+#: assets/assets.php:69
+msgid "Remove"
+msgstr "Hapus"
+
+#: assets/assets.php:70
+msgid "Add"
+msgstr "Tambahkan"
+
+#: assets/assets.php:71
+msgid "Too Short. Min 4 character (A-Z,a-z,0-9)"
+msgstr "Terlalu singkat. Minimal 4 karakter (A-Z,a-z,0-9)"
+
+#: assets/assets.php:72
+msgid "Too Long. Max {$maxchar} character (A-Z,a-z,0-9)"
+msgstr "Terlalu panjang. Maksimal {$maxchar} karakter (A-Z,a-z,0-9)"
+
+#: assets/assets.php:73
+msgid "Success add to field"
+msgstr "Berhasil ditambahkan"
+
+#: assets/assets.php:74
+msgid ""
+"Your browser does not support for this plugin! Compatible for latest version "
+"Firefox, Safari, or Chrome."
+msgstr ""
+"Browser tidak mendukung untuk plugin ini! Plugin ini cocok untuk browser "
+"Firefox, Safari, Chrom versi terbaru."
+
+#: assets/assets.php:75
+msgid "Collapse Tab"
+msgstr "Tab Kolaps"
+
+#: assets/assets.php:77
+msgid "Success Updated!"
+msgstr "Berhasil Diperbarui!"
+
+#: assets/assets.php:78
+msgid "Loading..."
+msgstr "Sedang Proses..."
+
+#: hooks/hook-delete-search-term.php:18
+msgid "Fail to delete! Try to reload your page."
+msgstr "Gagal menghapus! Coba untuk me-reload halaman Anda."
+
+#: hooks/hook-get-list-search-term.php:18 hooks/hook-search-post.php:42
+#: hooks/hook-search-relevant-post.php:23
+msgid "Security check"
+msgstr "Periksa Keamanan"
+
+#: hooks/hook-insert-search-term.php:54
+msgid "already exist in"
+msgstr "telah tersedia"
+
+#: hooks/hook-insert-search-term.php:57
+msgid "Hits"
+msgstr "Hits"
+
+#: hooks/hook-insert-search-term.php:59 hooks/hook-insert-search-term.php:97
+#: hooks/hook-insert-search-term.php:107 hooks/hook-insert-search-term.php:116
+#: hooks/hook-insert-search-term.php:125
+msgid "Dismiss this notice."
+msgstr "Acuhkan pemberitahuan ini"
+
+#: hooks/hook-insert-search-term.php:106
+msgid "contain badword(s), can not be added!."
+msgstr "Mengandung badword, tidak dapat ditambahkan!."
+
+#: hooks/hook-insert-search-term.php:115
+msgid "irrelevant, can not be added!."
+msgstr "tidak relevan, tidak dapat ditambahkan!."
+
+#: hooks/hook-insert-search-term.php:124
+msgid "too short, can not be added!."
+msgstr "terlalu singkat, tidak dapat ditambahkan!."
+
+#: hooks/hook-settings.php:19 hooks/hook-update-hits-search-term.php:24
+msgid "Fail to update! Try to reload your page."
+msgstr "Gagal memperbarui! Coba untuk me-reload halaman Anda."
+
+#: includes/functions.php:29 includes/functions.php:162
+#: includes/functions.php:174 includes/functions.php:192
+#: includes/functions.php:213 includes/functions.php:258
+#: includes/functions.php:291 includes/template-functions.php:107
+#: templates/themes/themes.php:17
+msgid "Olala... something wrong. Try again."
+msgstr "Olala... ada kesalahan. Coba lagi."
+
+#: includes/functions.php:41
+msgid "Relevant! ( Existed )"
+msgstr "Relevan! ( Sudah Ada )"
+
+#: includes/functions.php:50
+msgid "Relevant!"
+msgstr "Relevan!"
+
+#: includes/functions.php:77
+msgid "Irrelevant! ( Existed )"
+msgstr "Tidak Relevan! ( Sudah Ada )"
+
+#: includes/functions.php:226 includes/functions.php:268
+msgid "Increase Number"
+msgstr "Tingkatkan Angka"
+
+#: includes/functions.php:226 includes/functions.php:268
+msgid "Decrease Number"
+msgstr "Turunkan Angka"
+
+#: includes/functions.php:274
+msgid "Incoming search terms:"
+msgstr "Istilah pencarian yang masuk:"
+
+#: includes/plugins.php:21 templates/content/content-menu-contextual.php:13
+msgid "Manage"
+msgstr "Pengelolaan"
+
+#: includes/template-functions.php:51
+msgid "Olala.. you are in wrong way."
+msgstr "Olala.. Anda di jalur yang salah."
+
+#: notices/functions-notices.php:15
+msgid "Enable your browser javascript to load"
+msgstr "Aktifkan javascript browser Anda"
+
+#: notices/functions-notices.php:25
+msgid "plugin active. Please install and activate"
+msgstr "plugin aktif. Silahkan install dan aktifkan"
+
+#: notices/functions-notices.php:35
+msgid "Enable your SEO SearchTerms Tagging 2 plugin."
+msgstr "Aktifkan plugin SEO SearchTerms Tagging 2 Anda."
+
+#: notices/functions-notices.php:42
+msgid "Upgrade your SEO SearchTerms Tagging 2 plugin."
+msgstr "Upgrade plugin SEO SearchTerms Tagging 2 Anda."
+
+#: notices/functions-notices.php:54
+msgid "plugin can not be activated. Your WordPress version is"
+msgstr "plugin tidak dapat diaktifkan. Versi WordPress Anda adalah"
+
+#: notices/functions-notices.php:56
+msgid "required minimal"
+msgstr "diperlukan minimal"
+
+#: notices/functions-notices.php:59
+msgid "Please update yours"
+msgstr "Silahkan Perbaharui"
+
+#: notices/functions-notices.php:80
+msgid "is ready! Manage"
+msgstr "siap! Kelola"
+
+#: notices/functions-notices.php:82
+msgid "here"
+msgstr "di sini"
+
+#: notices/functions-notices.php:83
+msgid "Dismiss this notice"
+msgstr "Acuhkan pemberitahuan ini"
+
+#: templates/content/content-checkbox-google.php:13
+msgid "Google Suggestion Feature"
+msgstr "Fitur Saran Google"
+
+#: templates/content/content-checkbox-google.php:14
+msgid ""
+"BY ENABLING THIS, YOU UNDERSTAND AND AGREE THAT YOU WILL BE SOLELY "
+"RESPONSIBLE FOR THE RISK OF ANY AND ALL DAMAGE OR LOSS FROM USE OF, OR "
+"INABILITY TO USE, THIS FEATURE."
+msgstr ""
+"DENGAN MENGAKTIFKAN FITUR INI, ANDA MEMAHAMI DAN SETUJU BAHWA ANDA AKAN "
+"BERTANGGUNG JAWAB UNTUK RISIKO APAPUN DAN SEMUA KERUSAKAN ATAU KERUGIAN DARI "
+"PENGGUNAAN ATAU KETIDAKMAMPUAN UNTUK MENGGUNAKAN , FITUR INI ."
+
+#: templates/content/content-checkbox-irrelevant.php:13
+msgid "Ignore Irrelevant Post"
+msgstr "Acuhkan Postingan Tidak Relevan"
+
+#: templates/content/content-checkbox-irrelevant.php:14
+msgid ""
+"By checking this, you can add irrelevant search terms into selected post. "
+"So, be a wise if you need to use it, provide users with the most relevant "
+"search terms and a great user experience."
+msgstr ""
+"Dengan mencentang ini, Anda dapat menambahkan istilah pencarian yang tidak "
+"relevan dalam postingan yang dipilih. Jadi, bijaksanalah dalam "
+"menggunakannya, berikan pengguna istilah pencarian yang paling relevan dan "
+"pengalaman penggunaan yang lebih baik."
+
+#: templates/content/content-donate.php:15
+msgid "Don&#39;t buy me a coffee."
+msgstr "Jangan belikan saya kopi."
+
+#: templates/content/content-donate.php:16
+msgid "Bro"
+msgstr "Bro"
+
+#: templates/content/content-donate.php:17
+msgid ""
+"It&#39;s my female cat name, and please don&#39;t bothering me about why "
+"\"Bro\"?, why not \"Sist\"?!. It was my fault and it was happened. She get "
+"pregnant right now and need more"
+msgstr ""
+"Ini nama kucing betina saya, dan jangan bertanya tentang mengapa \"Bro\" ?, "
+"mengapa tidak \"Sist\"?!. Itu adalah kesalahan saya dan itu telah terjadi. "
+"Dia hamil sekarang dan membutuhkan lebih banyak"
+
+#: templates/content/content-donate.php:18
+msgid "Would you mind...?"
+msgstr "Apakah Anda keberatan...?"
+
+#: templates/content/content-donate.php:19
+msgid "The safer, easier way to pay online"
+msgstr "Lebih aman, cara yang lebih mudah untuk membayar secara online"
+
+#: templates/content/content-donate.php:20
+msgid "Oops... sorry, here my Bro"
+msgstr "Oops... maaf, ini Bro saya"
+
+#: templates/content/content-donate.php:22
+msgid "Bro: <i>&quot;I need more Wish<s>cash</s>&quot;</i>"
+msgstr "Bro: <i>&quot;Saya butuh Whis<s>cash</s>&quot;</i>"
+
+#: templates/content/content-form.php:14
+msgid "Search post by your terms or type post url here:"
+msgstr ""
+"Cari postingan berdasarkan istilah pencarian atau ketik url postingan di "
+"sini:"
+
+#: templates/content/content-form.php:15
+msgid ""
+"Search terms will be inserted below then you can type manually, separated by "
+"a comma ( e.g.: keyword1, keyword2 ):"
+msgstr ""
+"Istilah pencarian disisipkan di bawah ini kemudian Anda dapat mengetik "
+"secara manual, pisahkan dengan tanda koma ( misalnya: keyword1, keyword2 ):"
+
+#: templates/content/content-form.php:17
+msgid "Insert"
+msgstr "Sisipkan"
+
+#: templates/content/content-help.php:13
+msgid "Modified version of SEO SearchTerms Tagging 2 plugin"
+msgstr "Plugin SEO SearchTerms Tagging 2 versi modifikasi"
+
+#: templates/content/content-help.php:14
+msgid ""
+"Download the latest modified version of SEO SearchTerms Tagging 2 plugin <a "
+"class=\"dashicons dashicons-external\" target=\"_blank\" href=\"https://"
+"github.com/Jevuska/stt2-extension-add-terms/releases/tag/STT2-v1.535\"></a>."
+msgstr ""
+"Unduh plugin SEO SearchTerms Tagging 2 versi modifikasi terbaru <a class="
+"\"dashicons dashicons-external\" target=\"_blank\" href=\"https://github.com/"
+"Jevuska/stt2-extension-add-terms/releases/tag/STT2-v1.535\"></a>."
+
+#: templates/content/content-help.php:15
+msgid ""
+"Support contact via email at <a href=\"mailto:contact@jevuska.com"
+"\">contact@jevuska.com</a> or <a href=\"https://github.com/Jevuska/stt2-"
+"extension-add-terms\" target=\"_blank\">GitHub</a>"
+msgstr ""
+"Hubungi dukungan melalui email di <a href=\"mailto:contact@jevuska.com"
+"\">contact@jevuska.com</a> atau <a href=\"https://github.com/Jevuska/stt2-"
+"extension-add-terms\" target=\"_blank\">GitHub</a>"
+
+#: templates/content/content-hint.php:14
+msgid "Hint:"
+msgstr "Petunjuk:"
+
+#: templates/content/content-hint.php:15
+msgid "Search the post by your terms, and select the one (required)."
+msgstr "Cari postingan dengan istilah Anda, dan pilih salah satu satu (wajib)."
+
+#: templates/content/content-hint.php:16
+msgid ""
+"Populate your search terms for the first time then you can type in text box "
+"area directly to insert them into database."
+msgstr ""
+"Isi istilah pencarian Anda untuk pertama kalinya kemudian Anda dapat "
+"mengetik di daerah kotak teks secara langsung untuk ditambahkan ke dalam "
+"database."
+
+#: templates/content/content-hint.php:17
+msgid ""
+"Three methods to populate your search terms - by type, by suggestion and by "
+"double click text or text selection in \"Full Post\" section."
+msgstr ""
+"Tiga metode untuk mengisi istilah pencarian Anda - dengan mengetik, dengan "
+"saran Google dan dengan klik text ganda atau pilihan teks dalam bagian "
+"\"Full Post\"."
+
+#: templates/content/content-hint.php:18
+msgid "Always use \"comma\" to separate your search terms."
+msgstr "Selalu gunakan tanda \"koma\" untuk memisahkan istilah pencarian Anda."
+
+#: templates/content/content-hint.php:19
+msgid "Comma sign "
+msgstr "Tanda koma"
+
+#: templates/content/content-hint.php:20
+msgid "in populate terms box is a trigger to searching relevant post."
+msgstr "dalam kotak adalah pemicu untuk mencari postingan yang berkaitan."
+
+#: templates/content/content-hint.php:21
+msgid ""
+"Increase or decrease hits number of search term by click the term or number "
+"text."
+msgstr ""
+"Tingkatkan atau turunkan jumlah angka istilah pencarian dengan mengklik teks "
+"istilah atau nomor."
+
+#: templates/content/content-menu-contextual.php:14
+#: templates/content/content-settings.php:14
+msgid "Settings"
+msgstr "Pengaturan"
+
+#: templates/content/content-menu-contextual.php:15
+msgid "Next Features"
+msgstr "Fitur Mendatang"
+
+#: templates/content/content-menu-contextual.php:16
+msgid "Help"
+msgstr "Bantuan"
+
+#: templates/content/content-menu-contextual.php:17
+msgid "Donate"
+msgstr "Donasi"
+
+#: templates/content/content-next-feature.php:13
+msgid "NEW FEATURES"
+msgstr "FITUR TERBARU"
+
+#: templates/content/content-next-feature.php:14
+msgid "Bulk update search terms to make them relevant to post."
+msgstr ""
+"Pembaruan istilah pencarian massal untuk membuat mereka relevan dengan "
+"postingan."
+
+#: templates/content/content-next-feature.php:15
+msgid "Insert search terms as post tag."
+msgstr "Sisipkan istilah pencarian sebagai tag postingan."
+
+#: templates/content/content-next-feature.php:16
+msgid "Front end search terms delete."
+msgstr "Hapust istilah pencarian dari Front end"
+
+#: templates/content/content-relevant-post-search-field.php:13
+msgid "Populate relevant terms with post above ( min 4 characters )"
+msgstr ""
+"Isi dengan istilah pencarian relevan berdasarkan postingan di atas ( minimal "
+"4 karakter )"
+
+#: templates/content/content-relevant-post-search-field.php:14
+msgid "Enable Google Suggestion"
+msgstr "Aktifkan Saran Google"
+
+#: templates/content/content-relevant-post-search-field.php:15
+msgid "Ignore Irrelevant Notice"
+msgstr "Acuhkan Pemberitahuan Tidak Relevan"
+
+#: templates/content/content-searchterms.php:13
+msgid "OK"
+msgstr "OK"
+
+#: templates/content/content-settings.php:15
+msgid "Maximal Characters of Search Terms"
+msgstr "Maksimal Karakter Istilah Pencarian"
+
+#: templates/content/content-tags.php:13
+msgid "as post tag"
+msgstr "sebagai tag postingan"
+
+#: templates/content/content-thickbox.php:13
+msgid "Attention"
+msgstr "Perhatian"
+
+#: templates/content/content-thickbox.php:14
+msgid "Warning"
+msgstr "Peringatan"
+
+#: templates/metabox/metabox-form.php:18
+msgid "Click to toggle"
+msgstr "Klik Toggle"
+
+#: templates/metabox/metabox-screenmeta.php:15
+msgid "View Full Post"
+msgstr "Lihat Postingan Penuh"
+
+#~ msgid "Populate relevant terms with post above ( min 3 characters )"
+#~ msgstr ""
+#~ "Isi dengan istilah pencarian relevan berdasarkan postingan di atas "
+#~ "( minimal 3 karakter )"
+
+#~ msgid "Check for updates"
+#~ msgstr "Periksa Pembaruan"

@@ -27,7 +27,7 @@ Manage your search terms better, extended version of SEO SearchTerms Tagging 2 p
 
 == Frequently Asked Questions ==
 = Can I add bulk search terms ? =
-Yes, you can. After you add one or more search terms in input field, just add your search terms list that separated by comma into textarea.
+Yes, you can. After you add one or more search terms via input field, just add your search terms list that separated by comma into textarea.
 
 == Screenshots ==
 1. STT2 Extension Add Terms Feature screenshot-1.jpg.

@@ -1,7 +1,7 @@
 === STT2 Extension Add Terms ===
 Contributors: Jevuska
 Donate link: http://www.jevuska.com/contact/
-Tags: posts, searchterms, keywords, seo, tagging
+Tags: post, searchterms, keywords, seo, tagging, search, stt2
 Requires at least: 4.2.2
 Tested up to: 4.3
 Stable tag: 4.3
@@ -21,7 +21,7 @@ Manage your search terms better, extended version of SEO SearchTerms Tagging 2 p
 * Google Suggest by haochi
 
 == Installation ==
-1. Upload the entire `STT2 Extension Add Terms` folder to the /wp-content/plugins/ directory.
+1. Upload the entire `STT2 Extension Add Terms` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. `STT2 Extension Add Terms` tool inside `SEO SearchTerms Tagging 2` menu in your WordPress admin dashboard.
 

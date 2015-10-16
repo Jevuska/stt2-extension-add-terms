@@ -22,7 +22,7 @@ Manage your search terms better, extended version of SEO SearchTerms Tagging 2 p
 Yes, you can. After you add one or more search terms via input field, just add your search terms list that separated by comma into textarea.
 
 ## Installation
-1. Upload the entire `STT2 Extension Add Terms` folder to the /wp-content/plugins/ directory.
+1. Upload the entire `STT2 Extension Add Terms` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. `STT2 Extension Add Terms` tool inside `SEO SearchTerms Tagging 2` menu in your WordPress admin dashboard.
 

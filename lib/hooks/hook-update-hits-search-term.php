@@ -33,7 +33,7 @@ function update_meta_count_extat_callback()
 			$term 
 		) );
 		
-		if( false !== $result )
+		if( false !== $results )
 			echo $term;
 	
 		$wpdb->flush();

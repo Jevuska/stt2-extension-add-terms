@@ -20,10 +20,12 @@ function admin_notice_nojs_stt2extat()
 
 function admin_notice_noexists_stt2extat()
 {
+	$stt2_url_github = "https://github.com/Jevuska/stt2-extension-add-terms/releases/tag/STT2-v1.535";
+	
     printf( '<div class="update-nag"> <b>%1$s</b> %2$s <a href="%3$s">%4$s</a> %5$s</div>',
 		'STT2 Extension Add Terms',
 		__( 'plugin active. Please install and activate', 'stt2extat' ),
-		'https://github.com/Jevuska/stt2-extension-add-terms/releases/tag/STT2-v1.535',
+		esc_url( $stt2_url_github ),
 		'SEO SearchTerms Tagging 2',
 		'plugin.'
 	);

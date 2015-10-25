@@ -16,6 +16,7 @@ add_action( 'wp_ajax_stt2extat_tab_content', 'stt2extat_tab_content_callback' );
 add_action( 'stt2extat_thickbox', 'stt2extat_thickbox_callback' );
 add_action( 'stt2extat_checkbox_google', 'stt2extat_checkbox_google_callback' );
 add_action( 'stt2extat_checkbox_irrelevant', 'stt2extat_checkbox_irrelevant_callback' );
+add_filter( 'stt2extat_footer', 'stt2extat_footer_callback' );
 add_action( 'stt2extat_screenmeta', 'stt2extat_screenmeta_callback' );
 
 function stt2extat_plugin_file()
@@ -29,7 +30,7 @@ function stt2extat_plugin_name_callback()
 	$plugin      = get_plugins();
 	$pluginfile  = stt2extat_plugin_file();
     $plugin_name = $plugin[ $pluginfile ]['Name'] . ' v.' . $plugin[ $pluginfile ]['Version'];
-    print $plugin_name;
+    echo $plugin_name;
 }
 
 function stt2extat_menu_callback()
@@ -44,13 +45,11 @@ function stt2extat_hint_callback()
 
 function stt2extat_tab_content_callback()
 {
-	$nonce = $_REQUEST['wpnonce'];
-	$tab   = $_POST['tab'];
- 
-	if ( ! wp_verify_nonce( $nonce, 'stt2extat_action' ) )
+	if ( ! wp_verify_nonce( $_REQUEST['wpnonce'], 'stt2extat_action' ) )
 		wp_die( __( 'Olala.. you are in wrong way.' ) );
 
-	if ( wp_verify_nonce( $nonce, 'stt2extat_action') && check_admin_referer( 'stt2extat_action', 'wpnonce' ) && isset( $tab ) ) :
+	if ( check_admin_referer( 'stt2extat_action', 'wpnonce' ) && isset( $_POST['tab'] ) ) :
+		$tab   = sanitize_html_class( $_POST['tab'] );
 		switch ( $tab )
 		{
 			case 'tab-panel-feature':
@@ -91,7 +90,7 @@ function stt2extat_checkbox_irrelevant_callback()
 	return stt2extat_get_template_part( 'content', 'checkbox-irrelevant' );
 }
 
-function stt2extat_footer()
+function stt2extat_footer_callback()
 {
 	return stt2extat_get_template_part( 'content', 'searchterms' );
 }
@@ -101,10 +100,8 @@ function stt2extat_screenmeta_callback()
 	return stt2extat_get_template_part( 'metabox', 'screenmeta' );
 }
 
-function stt2extat_theme_default( $nonce )
+function stt2extat_theme_default()
 {
-	if ( ! wp_verify_nonce( $nonce, 'stt2extat_action' ) ) 
-		wp_die( __( 'Olala... something wrong. Try again.', 'stt2extat' ) );
 	return stt2extat_get_template_part( 'themes', 'default' );
 }
 
@@ -117,7 +114,7 @@ function stt2extat_get_template_part( $template, $name )
 {
 	$path      = stt2extat_template_path() . $template;
 	$filename  = $template . '-' . $name . '.php';
-	$templates = $path . '/' . $filename;
+	$templates = $path . '/' . sanitize_file_name( $filename );
 	include( $templates );
 }
 ?>

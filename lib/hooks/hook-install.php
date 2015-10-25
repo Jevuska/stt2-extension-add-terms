@@ -16,13 +16,13 @@ function stt2extat_install()
 	$stt2extat_settings = stt2extat_settings();
 	if( empty( $stt2extat_settings ) ) :
 		$stt2extat_settings = array(
-			'required_wp_version'			=> '4.2.2',
-			'stt2extat_max_char'			=> 55
+			'required_wp_version' => '4.2.2',
+			'max_char'  => 55
 		);
 	else:
 		$new_update = array(
-			'required_wp_version'			=> '4.2.2',
-			'stt2extat_max_char'			=> 55
+			'required_wp_version' => '4.2.2',
+			'max_char'  => 55
 		);
 		
 		foreach( $new_update as $key =>	$value )
@@ -43,8 +43,13 @@ function stt2extat_install()
 
 	if ( is_network_admin() || isset( $_GET['activate-multi'] ) )
 		return;
+}
 
-	set_transient( '_stt2extat_activation_redirect', true, 30 );
+function stt2extat_deactivation()
+{
+	global $stt2extat_settings;
+	delete_option( 'stt2extat_version_upgraded_from' );
+	delete_option( 'stt2extat_version' );
 }
 
 function stt2extat_uninstall()
@@ -55,7 +60,6 @@ function stt2extat_uninstall()
 	delete_option( 'stt2extat_version_upgraded_from' );
 	delete_option( 'stt2extat_version' );
 	delete_option( 'stt2exat_admin_notice_goto' );
-	delete_option( 'stt2extat_max_char' );
 }
 
 function stt2extat_after_install()
@@ -66,27 +70,26 @@ function stt2extat_after_install()
 	$activation_pages = get_transient( '_stt2extat_activation_pages' );
 
 	if ( false === $activation_pages )
-		return;
+
+	$current_version = get_option( 'stt2extat_version' );
+	
+	if ( version_compare( $current_version, '1.0.3', '<' ) )
+	{
+		include( STT2EXTAT_PATH_UPDATES . 'stt2extat-1.0.3.php' );
+		update_option( 'stt2extat_version' , '1.0.3');
+	}
 	
 	delete_transient( '_stt2extat_activation_pages' );
 	do_action( 'stt2extat_after_install', $activation_pages );
 }
 
-function stt2extat_plugin_updates()
-{
-	$current_version = get_option( 'stt2extat_version' );
-	if ( version_compare( $current_version, '1.0.0', '<' ) )
-	{
-		include( STT2EXTAT_PATH_UPDATES . 'stt2extat-1.0.0.php' );
-		update_option( 'stt2extat_version' , '1.0.0');
-	}
-}
-
 function stt2extat_loaded()
 {
    global $stt2extat_settings, $wp_version;
-   $required_wp_version = $stt2extat_settings['required_wp_version'];
-   if ( ! empty( $required_wp_version ) &&  version_compare( $wp_version, $required_wp_version, '<' ) )
+
+   $stt2_screen_id = searchterms_tagging2_screen_id();
+   
+   if ( ! empty( $stt2extat_settings['required_wp_version'] ) &&  version_compare( $wp_version, $stt2extat_settings['required_wp_version'], '<' ) )
       add_action( 'admin_notices', 'admin_notice_upgrade_wp_stt2extat' );
   
     if ( ! function_exists( 'pk_stt2_admin_menu_hook' ) ) :
@@ -104,7 +107,7 @@ function stt2extat_loaded()
 			add_action( 'admin_notices', 'admin_notice_nojs_stt2extat' ); 
 			add_filter( 'plugin_action_links', 'stt2extat_plugin_action_links', 10, 2 );
 			add_action( 'admin_enqueue_scripts', 'stt2extat_admin_enqueu_scripts' );
-			add_action( 'admin_footer', 'stt2extat_inline_js' );
+			add_action( 'admin_footer-' . $stt2_screen_id, 'stt2extat_inline_js' );
 			add_action( 'wp_ajax_stt2extat_action','stt2extat_form_handler' );
 		endif;
    endif;

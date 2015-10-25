@@ -9,13 +9,6 @@ License: GPLv3
 ## STT2 Extension Add Terms WordPress Plugin
 Manage your search terms better, extended version of SEO SearchTerms Tagging 2 plugin. Add search terms into single post manually. Search the terms that relevant of post content as well as WordPress search default algorithm. JavaScript browser enabled required and the latest modified version of [SEO SearchTerms Tagging 2 plugin](https://github.com/Jevuska/stt2-extension-add-terms/releases/tag/STT2-v1.535) installed.
 
-#### Script Features
-* jQuery
-* jQuery UI
-* Ajax
-* Plugin Search Excerpt by Scott Yang
-* Google Suggest by haochi
-
 ## Frequently Asked Questions
 
 #### Can I add bulk search terms ?
@@ -37,6 +30,12 @@ Yes, you can. After you add one or more search terms via input field, just add y
 ![screenshot 3](lib/assets/img/screenshot-3.jpg)
 
 ## Changelog
+* 1.0.3 = October 25, 2015
+ * Sanitize, escape, and validate POST, REQUEST calls
+ * Remove old jquery UI, use jQuery UI WP Core
+ * Update jquery-stt2extat.js
+ * Remove unused files and fixes other functions for a security related bug
+
 * 1.0.2 = October 16, 2015
  * Fix readability code
  * Fix undefined variable
@@ -52,5 +51,8 @@ Yes, you can. After you add one or more search terms via input field, just add y
  * First official release!
 
 ## Upgrade Notice
-* v1.0.2
- * This version fixes a security related bug.  Upgrade immediately.
+= v1.0.3 =
+This version fixes a security related bug.  Upgrade immediately.
+
+= v1.0.2 =
+This version fixes a security related bug.  Upgrade immediately.

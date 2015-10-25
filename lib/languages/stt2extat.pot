@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: STT2 Extension Add Terms v1.0.2\n"
-"POT-Creation-Date: 2015-10-16 01:39+0800\n"
+"POT-Creation-Date: 2015-10-24 02:42+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Jevuska <contact@jevuska.com>\n"
 "Language-Team: Jevuska <contact@jevuska.com>\n"
@@ -38,123 +38,169 @@ msgstr ""
 msgid "Manage your search terms better, extended version of <strong>SEO SearchTerms Tagging 2</strong> plugin. Add search terms into single post manually. Search the terms that relevant of post content as well as WordPress search default algorithm. JavaScript browser enabled required and the latest modified version of <a href="https://github.com/Jevuska/stt2-extension-add-terms/releases/tag/STT2-v1.535">SEO SearchTerms Tagging 2</a> plugin installed."
 msgstr ""
 
-#: assets/assets.php:57
+#: assets/assets.php:64
 msgid "Remove Irrelevant Search Terms"
 msgstr ""
 
-#: assets/assets.php:58 includes/functions.php:280
+#: assets/assets.php:65 includes/functions.php:284
 msgid "Incoming search terms: Empty!"
 msgstr ""
 
-#: assets/assets.php:59
+#: assets/assets.php:66
 msgid "Oops! Fail to update"
 msgstr ""
 
-#: assets/assets.php:60
+#: assets/assets.php:67
 msgid "Contain Badwords!"
 msgstr ""
 
-#: assets/assets.php:61
+#: assets/assets.php:68
 msgid "Preview:"
 msgstr ""
 
-#: assets/assets.php:62 includes/functions.php:93
+#: assets/assets.php:69 includes/functions.php:93
 msgid "Irrelevant!"
 msgstr ""
 
-#: assets/assets.php:63
+#: assets/assets.php:70
 msgid "Oops! No Post Selected!"
 msgstr ""
 
-#: assets/assets.php:64
+#: assets/assets.php:71
 msgid "Oops! No Terms Input!"
 msgstr ""
 
-#: assets/assets.php:65
+#: assets/assets.php:72
 msgid "Olala.. you don&#39;t have permission"
 msgstr ""
 
-#: assets/assets.php:66
+#: assets/assets.php:73
 msgid "Oops! Error!."
 msgstr ""
 
-#: assets/assets.php:67
-msgid "No results found"
+#: assets/assets.php:74
+msgid "No Post found"
 msgstr ""
 
-#: assets/assets.php:69
+#: assets/assets.php:76
 msgid "Remove"
 msgstr ""
 
-#: assets/assets.php:70
+#: assets/assets.php:77
 msgid "Add"
 msgstr ""
 
-#: assets/assets.php:71
+#: assets/assets.php:78
 msgid "Too Short. Min 4 character (A-Z,a-z,0-9)"
 msgstr ""
 
-#: assets/assets.php:72
+#: assets/assets.php:79
 msgid "Too Long. Max {$maxchar} character (A-Z,a-z,0-9)"
 msgstr ""
 
-#: assets/assets.php:73
+#: assets/assets.php:80
 msgid "Success add to field"
 msgstr ""
 
-#: assets/assets.php:74
+#: assets/assets.php:81
 msgid "Your browser does not support for this plugin! Compatible for latest version Firefox, Safari, or Chrome."
 msgstr ""
 
-#: assets/assets.php:75
+#: assets/assets.php:82
 msgid "Collapse Tab"
 msgstr ""
 
-#: assets/assets.php:77
+#: assets/assets.php:84
 msgid "Success Updated!"
 msgstr ""
 
-#: assets/assets.php:78
+#: assets/assets.php:85
 msgid "Loading..."
 msgstr ""
 
-#: hooks/hook-delete-search-term.php:18
-msgid "Fail to delete! Try to reload your page."
-msgstr ""
-
-#: hooks/hook-get-list-search-term.php:18 hooks/hook-search-post.php:42 hooks/hook-search-relevant-post.php:23
+#: hooks/hook-functions.php:17 hooks/hook-functions.php:67
+#: hooks/hook-functions.php:88
 msgid "Security check"
 msgstr ""
 
-#: hooks/hook-insert-search-term.php:54
+#: hooks/hook-functions.php:146
 msgid "already exist in"
 msgstr ""
 
-#: hooks/hook-insert-search-term.php:57
+#: hooks/hook-functions.php:149
 msgid "Hits"
 msgstr ""
 
-#: hooks/hook-insert-search-term.php:59 hooks/hook-insert-search-term.php:97 hooks/hook-insert-search-term.php:107 hooks/hook-insert-search-term.php:116 hooks/hook-insert-search-term.php:125
+#: hooks/hook-functions.php:151 hooks/hook-functions.php:184
+#: hooks/hook-functions.php:196 hooks/hook-functions.php:206
+#: hooks/hook-functions.php:216
 msgid "Dismiss this notice."
 msgstr ""
 
-#: hooks/hook-insert-search-term.php:106
+#: hooks/hook-functions.php:195
 msgid "contain badword(s), can not be added!."
 msgstr ""
 
-#: hooks/hook-insert-search-term.php:115
+#: hooks/hook-functions.php:205
 msgid "irrelevant, can not be added!."
 msgstr ""
 
-#: hooks/hook-insert-search-term.php:124
+#: hooks/hook-functions.php:215
 msgid "too short, can not be added!."
 msgstr ""
 
-#: hooks/hook-settings.php:19 hooks/hook-update-hits-search-term.php:24
+#: hooks/hook-functions.php:229
+msgid "Fail to delete! Try to reload your page."
+msgstr ""
+
+#: hooks/hook-functions.php:247 hooks/hook-functions.php:276
 msgid "Fail to update! Try to reload your page."
 msgstr ""
 
-#: includes/functions.php:29 includes/functions.php:162 includes/functions.php:174 includes/functions.php:192 includes/functions.php:213 includes/functions.php:258 includes/functions.php:291 includes/template-functions.php:107 templates/themes/themes.php:17
+#: includes/functions-notices.php:15
+msgid "Enable your browser javascript to load"
+msgstr ""
+
+#: includes/functions-notices.php:27
+msgid "plugin active. Please install and activate"
+msgstr ""
+
+#: includes/functions-notices.php:37
+msgid "Enable your SEO SearchTerms Tagging 2 plugin."
+msgstr ""
+
+#: includes/functions-notices.php:44
+msgid "Upgrade your SEO SearchTerms Tagging 2 plugin."
+msgstr ""
+
+#: includes/functions-notices.php:56
+msgid "plugin can not be activated. Your WordPress version is"
+msgstr ""
+
+#: includes/functions-notices.php:58
+msgid "required minimal"
+msgstr ""
+
+#: includes/functions-notices.php:61
+msgid "Please update yours"
+msgstr ""
+
+#: includes/functions-notices.php:82
+msgid "is ready! Manage"
+msgstr ""
+
+#: includes/functions-notices.php:84
+msgid "here"
+msgstr ""
+
+#: includes/functions-notices.php:85
+msgid "Dismiss this notice"
+msgstr ""
+
+#: includes/functions.php:17 includes/functions.php:137
+#: includes/functions.php:155 includes/functions.php:178
+#: includes/functions.php:200 includes/functions.php:257
+#: includes/functions.php:292 templates/themes/themes.php:15
 msgid "Olala... something wrong. Try again."
 msgstr ""
 
@@ -170,15 +216,15 @@ msgstr ""
 msgid "Irrelevant! ( Existed )"
 msgstr ""
 
-#: includes/functions.php:226 includes/functions.php:268
+#: includes/functions.php:221 includes/functions.php:268
 msgid "Increase Number"
 msgstr ""
 
-#: includes/functions.php:226 includes/functions.php:268
+#: includes/functions.php:223 includes/functions.php:270
 msgid "Decrease Number"
 msgstr ""
 
-#: includes/functions.php:274
+#: includes/functions.php:278
 msgid "Incoming search terms:"
 msgstr ""
 
@@ -186,48 +232,8 @@ msgstr ""
 msgid "Manage"
 msgstr ""
 
-#: includes/template-functions.php:51
+#: includes/template-functions.php:49
 msgid "Olala.. you are in wrong way."
-msgstr ""
-
-#: notices/functions-notices.php:15
-msgid "Enable your browser javascript to load"
-msgstr ""
-
-#: notices/functions-notices.php:25
-msgid "plugin active. Please install and activate"
-msgstr ""
-
-#: notices/functions-notices.php:35
-msgid "Enable your SEO SearchTerms Tagging 2 plugin."
-msgstr ""
-
-#: notices/functions-notices.php:42
-msgid "Upgrade your SEO SearchTerms Tagging 2 plugin."
-msgstr ""
-
-#: notices/functions-notices.php:54
-msgid "plugin can not be activated. Your WordPress version is"
-msgstr ""
-
-#: notices/functions-notices.php:56
-msgid "required minimal"
-msgstr ""
-
-#: notices/functions-notices.php:59
-msgid "Please update yours"
-msgstr ""
-
-#: notices/functions-notices.php:80
-msgid "is ready! Manage"
-msgstr ""
-
-#: notices/functions-notices.php:82
-msgid "here"
-msgstr ""
-
-#: notices/functions-notices.php:83
-msgid "Dismiss this notice"
 msgstr ""
 
 #: templates/content/content-checkbox-google.php:13
@@ -246,43 +252,39 @@ msgstr ""
 msgid "By checking this, you can add irrelevant search terms into selected post. So, be a wise if you need to use it, provide users with the most relevant search terms and a great user experience."
 msgstr ""
 
-#: templates/content/content-donate.php:15
+#: templates/content/content-donate.php:21
 msgid "Don&#39;t buy me a coffee."
 msgstr ""
 
-#: templates/content/content-donate.php:16
-msgid "Bro"
+#: templates/content/content-donate.php:22
+msgid "It&#39;s my female cat name, and please don&#39;t bothering me about why \"Bro\"? why not \"Sist\"?, it was my fault and it was happened. She get pregnant right now and need more"
 msgstr ""
 
-#: templates/content/content-donate.php:17
-msgid "It&#39;s my female cat name, and please don&#39;t bothering me about why \"Bro\"?, why not \"Sist\"?!. It was my fault and it was happened. She get pregnant right now and need more"
-msgstr ""
-
-#: templates/content/content-donate.php:18
+#: templates/content/content-donate.php:23
 msgid "Would you mind...?"
 msgstr ""
 
-#: templates/content/content-donate.php:19
-msgid "The safer, easier way to pay online"
+#: templates/content/content-donate.php:27
+msgid "PayPal - The safer, easier way to pay online!"
 msgstr ""
 
-#: templates/content/content-donate.php:20
+#: templates/content/content-donate.php:29
 msgid "Oops... sorry, here my Bro"
 msgstr ""
 
-#: templates/content/content-donate.php:22
+#: templates/content/content-donate.php:31
 msgid "Bro: <i>&quot;I need more Wish<s>cash</s>&quot;</i>"
 msgstr ""
 
-#: templates/content/content-form.php:14
+#: templates/content/content-form.php:27
 msgid "Search post by your terms or type post url here:"
 msgstr ""
 
-#: templates/content/content-form.php:15
+#: templates/content/content-form.php:28
 msgid "Search terms will be inserted below then you can type manually, separated by a comma ( e.g.: keyword1, keyword2 ):"
 msgstr ""
 
-#: templates/content/content-form.php:17
+#: templates/content/content-form.php:32
 msgid "Insert"
 msgstr ""
 
@@ -330,7 +332,8 @@ msgstr ""
 msgid "Increase or decrease hits number of search term by click the term or number text."
 msgstr ""
 
-#: templates/content/content-menu-contextual.php:14 templates/content/content-settings.php:14
+#: templates/content/content-menu-contextual.php:14
+#: templates/content/content-settings.php:20
 msgid "Settings"
 msgstr ""
 
@@ -363,7 +366,7 @@ msgid "Front end search terms delete."
 msgstr ""
 
 #: templates/content/content-relevant-post-search-field.php:13
-msgid "Populate relevant terms with post above ( min 4 characters )"
+msgid "Populate relevant terms by comma ( min 4 characters )"
 msgstr ""
 
 #: templates/content/content-relevant-post-search-field.php:14
@@ -378,7 +381,7 @@ msgstr ""
 msgid "OK"
 msgstr ""
 
-#: templates/content/content-settings.php:15
+#: templates/content/content-settings.php:21
 msgid "Maximal Characters of Search Terms"
 msgstr ""
 
@@ -398,6 +401,6 @@ msgstr ""
 msgid "Click to toggle"
 msgstr ""
 
-#: templates/metabox/metabox-screenmeta.php:15
+#: templates/metabox/metabox-screenmeta.php:13
 msgid "View Full Post"
 msgstr ""

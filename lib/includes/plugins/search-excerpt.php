@@ -145,7 +145,7 @@ function stt2exat_highlight_excerpt( $keys, $text )
 		
 	$text = ( isset( $newranges[0] ) ? '' : '...&nbsp;' ) . implode( '&nbsp;...&nbsp;', $out ) . '&nbsp;...';
 	$text = preg_replace( '/( ' . implode( '|', $keys ) . ' )/iu', 
-		'<strong class="search-excerpt">\0</strong>', 
+		'<mark>\0</mark>', 
 		$text
 	);
 	return "<p>$text</p>";

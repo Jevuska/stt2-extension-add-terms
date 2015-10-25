@@ -4,7 +4,7 @@ Donate link: http://www.jevuska.com/contact/
 Tags: post, searchterms, keywords, seo, tagging, search, stt2
 Requires at least: 4.2.2
 Tested up to: 4.3
-Stable tag: 4.3
+Stable tag: 1.0.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -13,12 +13,6 @@ Extended SEO SearchTerms Tagging 2 plugin, add your search terms into single pos
 == Description ==
 Manage your search terms better, extended version of SEO SearchTerms Tagging 2 plugin. Add search terms into single post manually. Search the terms that relevant of post content as well as WordPress search default algorithm. JavaScript browser enabled required and the latest modified version of [SEO SearchTerms Tagging 2](https://github.com/Jevuska/stt2-extension-add-terms/releases/tag/STT2-v1.535 "Modified version of SEO SearchTerms Tagging 2 plugin") plugin installed. 
 
-= Script Features =
-* jQuery
-* jQuery UI
-* Ajax
-* Plugin Search Excerpt by Scott Yang
-* Google Suggest by haochi
 
 == Installation ==
 1. Upload the entire `STT2 Extension Add Terms` folder to the `/wp-content/plugins/` directory.
@@ -35,6 +29,12 @@ Yes, you can. After you add one or more search terms via input field, just add y
 3. Insert keywords manually screenshot-3.jpg.
 
 == Changelog ==
+* 1.0.3 = October 25, 2015
+ * Sanitize, escape, and validate POST, REQUEST calls
+ * Remove old jquery UI, use jQuery UI WP Core
+ * Update jquery-stt2extat.js
+ * Remove unused files and fixes other functions for a security related bug
+
 * 1.0.2 = October 16, 2015
  * Fix readability code
  * Fix undefined variable
@@ -50,5 +50,8 @@ Yes, you can. After you add one or more search terms via input field, just add y
  * First official release!
 
 == Upgrade Notice ==
+= v1.0.3 =
+This version fixes a security related bug.  Upgrade immediately.
+
 = v1.0.2 =
 This version fixes a security related bug.  Upgrade immediately.

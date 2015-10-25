@@ -17,7 +17,7 @@ function stt2extat_get_settings()
 		return $stt2extat_settings;
 	
 	$stt2extat_settings = get_option( 'stt2extat_settings' );
-
+	
 	return $stt2extat_settings;
 }
 

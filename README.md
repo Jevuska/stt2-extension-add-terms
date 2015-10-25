@@ -51,8 +51,8 @@ Yes, you can. After you add one or more search terms via input field, just add y
  * First official release!
 
 ## Upgrade Notice
-= v1.0.3 =
+###### v1.0.3
 This version fixes a security related bug.  Upgrade immediately.
 
-= v1.0.2 =
+###### v1.0.2 =
 This version fixes a security related bug.  Upgrade immediately.

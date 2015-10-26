@@ -4,7 +4,7 @@ Donate link: http://www.jevuska.com/contact/
 Tags: post, searchterms, keywords, seo, tagging, search, stt2
 Requires at least: 4.2.2
 Tested up to: 4.3
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -29,6 +29,9 @@ Yes, you can. After you add one or more search terms via input field, just add y
 3. Insert keywords manually screenshot-3.jpg.
 
 == Changelog ==
+* 1.0.4 = October 26, 2015
+ * Change short syntax for arrays at `stt2extat_insert_callback` to work under PHP 5.4
+ 
 * 1.0.3 = October 25, 2015
  * Sanitize, escape, and validate POST, REQUEST calls
  * Remove old jquery UI, use jQuery UI WP Core

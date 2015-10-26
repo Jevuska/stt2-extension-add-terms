@@ -5,10 +5,10 @@ Plugin URI: http://www.jevuska.com/2015/06/28/injeksi-manual-keyword-add-onsexte
 Description:  Manage your search terms better, extended version of <strong>SEO SearchTerms Tagging 2</strong> plugin. Add search terms into single post manually. Search the terms that relevant of post content as well as WordPress search default algorithm. JavaScript browser enabled required and the latest modified version of <a href="https://github.com/Jevuska/stt2-extension-add-terms/releases/tag/STT2-v1.535">SEO SearchTerms Tagging 2</a> plugin installed.
 Author: Jevuska
 Author URI: http://www.jevuska.com
-Version: 1.0.3
+Version: 1.0.4
 Text Domain: stt2extat
 License: GPL version 3 - http://www.gnu.org/licenses/gpl-3.0.html
- ** update: October 25, 2015
+ ** update: October 26, 2015
  * :: required latest version of WordPress, min.version 4.2.2
  * :: required SEO SearchTerms Tagging 2 plugin installed https://github.com/Jevuska/stt2-extension-add-terms/releases/tag/STT2-v1.535 ( modified version )
  * :: required browser JavaScript enabled
@@ -54,7 +54,7 @@ if ( ! class_exists( 'Initial_STT2EXTAT' ) ) :
 		{
 
 			if ( ! defined( 'STT2EXTAT_VER' ) )
-				define( 'STT2EXTAT_VER', '1.0.3' );
+				define( 'STT2EXTAT_VER', '1.0.4' );
 			
 			if ( ! defined( 'STT2EXTAT_DB_VER' ) )
 				define( 'STT2EXTAT_DB_VER', '1.0' );

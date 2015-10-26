@@ -73,10 +73,15 @@ function stt2extat_after_install()
 
 	$current_version = get_option( 'stt2extat_version' );
 	
-	if ( version_compare( $current_version, '1.0.3', '<' ) )
+	if ( version_compare( $current_version, '1.0.4', '<' ) )
 	{
-		include( STT2EXTAT_PATH_UPDATES . 'stt2extat-1.0.3.php' );
-		update_option( 'stt2extat_version' , '1.0.3');
+		$filename = STT2EXTAT_PATH_UPDATES . 'stt2extat-1.0.4.php';
+		
+		if ( file_exists( $filename ) ) :
+			include( STT2EXTAT_PATH_UPDATES . 'stt2extat-1.0.4.php' );
+			update_option( 'stt2extat_version' , '1.0.4');
+		endif;
+		
 	}
 	
 	delete_transient( '_stt2extat_activation_pages' );

@@ -169,10 +169,10 @@ function stt2extat_insert_callback()
 		$ignore      = wp_validate_boolean( $_POST['ignore'] );
         $terms_array = explode( ',', $terms );
 		
-		$exist_term_array = [];
-		$badwords_array   = [];
-		$irrelevant_array = [];
-		$short_term_array = [];
+		$exist_term_array = array();
+		$badwords_array   = array();
+		$irrelevant_array = array();
+		$short_term_array = array();
 		
         foreach ( $terms_array as $q )
 		{

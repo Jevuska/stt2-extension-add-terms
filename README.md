@@ -30,6 +30,9 @@ Yes, you can. After you add one or more search terms via input field, just add y
 ![screenshot 3](lib/assets/img/screenshot-3.jpg)
 
 ## Changelog
+* 1.0.4 = October 26 2015
+ * Change short syntax for arrays at `stt2extat_insert_callback` to work under PHP 5.4
+ 
 * 1.0.3 = October 25, 2015
  * Sanitize, escape, and validate POST, REQUEST calls
  * Remove old jquery UI, use jQuery UI WP Core

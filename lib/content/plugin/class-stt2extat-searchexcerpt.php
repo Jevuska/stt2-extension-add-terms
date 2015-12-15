@@ -45,10 +45,12 @@ if ( ! class_exists( 'STT2EXTAT_SearchExcerpt' ) )
 			if ( is_admin() )
 				$wp = $stt2extat_query;
 			
-			if ( null == $args['searchterms'] )
-				$this->text = stt2extat_filter_text( $wp->query_vars['s'] );
-			else
+			if ( null == $args['searchterms'] ) :
+				$text = stt2extat_filter_text( $wp->query_vars['s'] );
+				$this->text = ( ! is_array( $text ) ) ? $text : '';
+			else :
 				$this->text = sanitize_text_field( $args['searchterms'] );
+			endif;
 			
 			$this->post_id   = absint( $args['post_id'] );
 			$this->highlight = $args['highlight'];

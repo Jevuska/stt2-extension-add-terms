@@ -30,13 +30,13 @@ Yes, you can. After you add one or more terms via input field, just add your ter
 
 ## Screenshot
 1. STT2EXTAT General Settings
-![screenshot 1](lib/assets/img/screenshot-1.jpg)
+![screenshot 1](lib/admin/assets/img/screenshot-1.jpg)
 
 2. STT2EXTAT Manual Insert Tool and Term Stats
-![screenshot 2](lib/assets/img/screenshot-2.jpg)
+![screenshot 2](lib/admin/assets/img/screenshot-2.jpg)
 
 3. STT2EXTAT Widget
-![screenshot 3](lib/assets/img/screenshot-3.jpg)
+![screenshot 3](lib/admin/assets/img/screenshot-3.jpg)
 
 ## Changelog
 * 1.1.0 = December 15, 2015

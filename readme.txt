@@ -45,7 +45,7 @@ Yes, you can. After you add one or more terms via input field, just add your ter
 == Changelog ==
 * 1.1.1 = December 16, 2015
  * Patch `wp_list_pluck` when `array_column` function undefined during installation, even this plugin no longer support server with PHP versions lower than 7.
- * Fix `jquery-stt2extat.js` to enable `enter` key when input terms into textararea.
+ * Fix `jquery-stt2extat.js` to enable `enter` key when input terms into textarea.
  
 * 1.1.0 = December 15, 2015
  * Create admin plugin

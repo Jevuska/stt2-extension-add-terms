@@ -1,34 +1,56 @@
 === STT2 Extension Add Terms ===
 Contributors: Jevuska
-Donate link: http://www.jevuska.com/contact/
-Tags: post, searchterms, keywords, seo, tagging, search, stt2
-Requires at least: 4.2.2
-Tested up to: 4.3
-Stable tag: 1.0.4
-License: GPLv3
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Donate link: http://www.jevuska.com/donate/
+Tags: post, searchterms, keywords, seo, tagging, search, stt2, postmeta
+Requires at least: 4.4
+Tested up to: 4.4
+Stable tag: 1.1.0
+License: GPLv2
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Extended SEO SearchTerms Tagging 2 plugin, add your search terms into single post manually.
+Add your terms into single post manually, get terms via referrer, and save them as post meta.
 
 == Description ==
-Manage your search terms better, extended version of SEO SearchTerms Tagging 2 plugin. Add search terms into single post manually. Search the terms that relevant of post content as well as WordPress search default algorithm. JavaScript browser enabled required and the latest modified version of [SEO SearchTerms Tagging 2](https://github.com/Jevuska/stt2-extension-add-terms/releases/tag/STT2-v1.535 "Modified version of SEO SearchTerms Tagging 2 plugin") plugin installed. 
+Manage your terms better, add terms into single post manually, get terms via referrer, and save them as post meta. Search the terms that relevant of post content as well as WordPress search default algorithm.
 
+= Requirement =
+ * jQuery latest version
+ * WordPress version 4.4
+ * PHP Server version 7.0
+ 
+= Package =
+ * The excerpt preview of terms result is supported by Plugin Search Excerpt by Scott Yang
+ * Autocomplete terms suggestion is supported by Google Suggest for jQuery plugin by Haochi Chen
 
 == Installation ==
 1. Upload the entire `STT2 Extension Add Terms` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. `STT2 Extension Add Terms` tool inside `SEO SearchTerms Tagging 2` menu in your WordPress admin dashboard.
+3. Configure your settings and you are ready to go.
 
 == Frequently Asked Questions ==
-= Can I add bulk search terms ? =
-Yes, you can. After you add one or more search terms via input field, just add your search terms list that separated by comma into textarea.
+= Can I add bulk terms ? =
+Yes, you can. After you add one or more terms via input field, just add your terms list that separated by comma into textarea.
 
 == Screenshots ==
-1. STT2 Extension Add Terms Feature screenshot-1.jpg.
-2. Select keywords screenshot-2.jpg.
-3. Insert keywords manually screenshot-3.jpg.
+1. STT2EXTAT General Settings
+2. STT2EXTAT Manual Insert Tool and Term Stats
+3. STT2EXTAT Widget
 
 == Changelog ==
+* 1.1.0 = December 15, 2015
+ * Create admin plugin
+ * Available to get terms via referrer
+ * Insert terms as post meta
+ * Shortcode and widget available
+ * Sanitizing input and output of incoming terms
+ * Add Search Excerpt plugin for search page snippet
+ * Fix hook setup on activation an deactivation
+ * Delete files stt2extat-x.x.x.php (x.x.x = version), and create stt2extat-1.1.0.php include in stable minor version 1.1
+ * Add comments in each functions
+ * Fix translation in Bahasa Indonesia
+ * WordPress version 4.4
+ * PHP Server version 7.0
+ 
 * 1.0.4 = October 26, 2015
  * Change short syntax for arrays at `stt2extat_insert_callback` to work under PHP 5.4
  
@@ -53,8 +75,14 @@ Yes, you can. After you add one or more search terms via input field, just add y
  * First official release!
 
 == Upgrade Notice ==
+= v1.1.0 =
+This new minor and patch version to fixes a security related bug. Upgrade immediately.
+
 = v1.0.3 =
 This version fixes a security related bug.  Upgrade immediately.
 
 = v1.0.2 =
 This version fixes a security related bug.  Upgrade immediately.
+
+== Note ==
+Search Excerpt plugin under package of this plugin, a setting available to enable or disable it.

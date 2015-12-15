@@ -1,10 +1,9 @@
 <?php
 /* Do not modify the files in this folder
- *
  * @since 1.0
  *
- * add readme.txt
+ * Remove unused image on jquery UI custome css
  *
- * @since 1.0.2
+ * @since 1.0.3
  *
  */

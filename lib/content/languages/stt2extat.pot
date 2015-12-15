@@ -1,0 +1,861 @@
+# STT2 Extension Add Terms
+# Copyright (C) 2015
+# This file is distributed under the GNU General Public License v2 or later.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: STT2 Extension Add Terms v1.1.0\n"
+"POT-Creation-Date: 2015-12-15 00:41+0800\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Jevuska <contact@jevuska.com>\n"
+"Language-Team: Jevuska <contact@jevuska.com>\n"
+"Report-Msgid-Bugs-To: Jevuska <contact@jevuska.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Textdomain-Support: yesX-Generator: Poedit 1.6.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
+"X-Poedit-Basepath: ../../..\n"
+"Language: en_US\n"
+"X-Generator: Poedit 1.8.4\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#. Author of the plugin/theme
+msgid "Jevuska"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.jevuska.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Manage your terms better, add terms into single post manually, get terms via referrer, and save them as post meta. Search the terms that relevant of post content as well as WordPress search default algorithm."
+msgstr ""
+
+#: lib/admin/class-stt2extat-admin.php:176
+msgid "Settings Reseted."
+msgstr ""
+
+#: lib/admin/class-stt2extat-admin.php:399
+msgid "Edit Terms"
+msgstr ""
+
+#: lib/admin/class-stt2extat-admin.php:473
+msgid "Migrate terms of SEO SearchTerms Tagging 2"
+msgstr ""
+
+#: lib/admin/class-stt2extat-admin.php:475
+msgid "Relevant Only"
+msgstr ""
+
+#: lib/admin/class-stt2extat-admin.php:476
+msgid "Delete All Terms"
+msgstr ""
+
+#: lib/admin/class-stt2extat-admin.php:489
+msgid "Update"
+msgstr ""
+
+#: lib/admin/class-stt2extat-admin.php:508
+msgid "Save Changes"
+msgstr ""
+
+#: lib/admin/class-stt2extat-admin.php:513
+msgid "Reset"
+msgstr ""
+
+#: lib/admin/class-stt2extat-admin.php:607
+msgid "PayPal Donate"
+msgstr ""
+
+#: lib/admin/class-stt2extat-admin.php:630
+msgid "Setup Widget"
+msgstr ""
+
+#: lib/admin/class-stt2extat-admin.php:632
+msgid "Manual Input"
+msgstr ""
+
+#: lib/admin/class-stt2extat-admin.php:646
+#, php-format
+msgid "If you like, you may enter custom structures for your search <abbr title=\"Universal Resource Locator\">URL</abbr>s here. For example, using <code>topics</code> as your search base would make your search links like <code>%s/topics/search+term</code>. If you leave these blank the defaults will be used."
+msgstr ""
+
+#: lib/admin/class-stt2extat-admin.php:652
+msgid "STT2EXTAT Permalink"
+msgstr ""
+
+#: lib/admin/class-stt2extat-admin.php:664
+msgctxt "sample permalink base"
+msgid "search"
+msgstr ""
+
+#: lib/admin/class-stt2extat-admin.php:676
+msgctxt "sample permalink base"
+msgid "topics"
+msgstr ""
+
+#: lib/admin/class-stt2extat-admin.php:1154
+msgid "hit(s)"
+msgstr ""
+
+#: lib/admin/class-stt2extat-admin.php:1157
+msgid "Terms updated "
+msgstr ""
+
+#: lib/admin/class-stt2extat-admin.php:1159
+msgid "days ago. Having count"
+msgstr ""
+
+#: lib/admin/class-stt2extat-admin.php:1165
+msgid "Next schedule"
+msgstr ""
+
+#: lib/admin/class-stt2extat-admin.php:1206
+msgid "item"
+msgstr ""
+
+#: lib/admin/class-stt2extat-admin.php:1208
+msgid "Show All"
+msgstr ""
+
+#: lib/admin/class-stt2extat-admin.php:1216
+msgid "Referrer"
+msgstr ""
+
+#: lib/admin/class-stt2extat-admin.php:1216
+msgid "Query Param"
+msgstr ""
+
+#: lib/admin/class-stt2extat-admin.php:1234
+msgid "Add More"
+msgstr ""
+
+#: lib/admin/class-stt2extat-admin.php:1618
+msgid "plugin by"
+msgstr ""
+
+#: lib/admin/class-stt2extat-admin.php:1633
+msgid "Version"
+msgstr ""
+
+#: lib/content/templates/content/content-checkbox-google.php:21
+msgid "Google Suggestion Feature"
+msgstr ""
+
+#: lib/content/templates/content/content-checkbox-google.php:22
+msgid "BY ENABLING THIS, YOU UNDERSTAND AND AGREE THAT YOU WILL BE SOLELY RESPONSIBLE FOR THE RISK OF ANY AND ALL DAMAGE OR LOSS FROM USE OF, OR INABILITY TO USE, THIS FEATURE."
+msgstr ""
+
+#: lib/content/templates/content/content-checkbox-irrelevant.php:20
+msgid "Ignore Irrelevant Post"
+msgstr ""
+
+#: lib/content/templates/content/content-checkbox-irrelevant.php:21
+msgid "By checking this, you can add irrelevant terms into selected post. So, be a wise if you need to use it, provide users with the most relevant terms and a great user experience."
+msgstr ""
+
+#: lib/content/templates/content/content-create-tax.php:21
+#: lib/content/templates/content/content-relevant-post-search-field.php:20
+msgid "Populate terms by comma ( min 4 characters )"
+msgstr ""
+
+#: lib/content/templates/content/content-create-tax.php:22
+#: lib/content/templates/content/content-relevant-post-search-field.php:21
+msgid "Enable Google Suggestion"
+msgstr ""
+
+#: lib/content/templates/content/content-create-tax.php:23
+#: lib/content/templates/content/content-relevant-post-search-field.php:22
+msgid "Add Irrelevant Term"
+msgstr ""
+
+#: lib/content/templates/content/content-form.php:39
+msgid "Search post by terms, post ID, or post url:"
+msgstr ""
+
+#: lib/content/templates/content/content-form.php:40
+msgid "The terms will be inserted below, you can type or paste manually, add per-line, or separated by a comma ( e.g.: term1, term2 ):"
+msgstr ""
+
+#: lib/content/templates/content/content-form.php:41
+msgid "Insert"
+msgstr ""
+
+#: lib/content/templates/content/content-searchterms.php:23
+msgid "OK"
+msgstr ""
+
+#: lib/content/templates/content/content-thickbox.php:20
+msgid "Attention"
+msgstr ""
+
+#: lib/content/templates/content/content-thickbox.php:21
+msgid "Warning"
+msgstr ""
+
+#: lib/content/templates/metabox/metabox-screenmeta.php:19
+msgid "View Full Post"
+msgstr ""
+
+#: lib/includes/class-stt2extat-load.php:171
+msgid "Manage"
+msgstr ""
+
+#: lib/includes/class-stt2extat-load.php:317
+msgid "Once Weekly"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:201
+msgid "Activate Get Referrer"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:202
+msgid "Method to get terms from referrer."
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:204
+#: lib/includes/class-stt2extat-sanitize.php:220
+#: lib/includes/class-stt2extat-sanitize.php:232
+#: lib/includes/class-stt2extat-sanitize.php:244
+#: lib/includes/class-stt2extat-sanitize.php:266
+#: lib/includes/class-stt2extat-sanitize.php:282
+#: lib/includes/class-stt2extat-sanitize.php:294
+#: lib/includes/class-stt2extat-sanitize.php:310
+#: lib/includes/class-stt2extat-sanitize.php:326
+#: lib/includes/class-stt2extat-sanitize.php:344
+#: lib/includes/class-stt2extat-sanitize.php:387
+#: lib/includes/class-stt2extat-sanitize.php:399
+#: lib/includes/class-stt2extat-sanitize.php:411
+msgid "general settings"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:217
+msgid "Auto Add"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:218
+msgid "Add list automatically right after post content"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:229
+msgid "Number List"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:230
+msgid "Maximum number of terms on list"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:239
+msgid "Incoming Terms"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:240
+msgid "Terms"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:241
+msgid "Text Header"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:242
+msgid "Title of terms list"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:263
+msgid "HTML Heading"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:264
+msgid "HTML heading of text title"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:279
+msgid "List Style"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:280
+msgid "List style of terms"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:291
+msgid "Filter Words"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:292
+msgid "Filter word or phrase, add per-line or by comma"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:307
+msgid "Convert Text Link"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:308
+#, php-format
+msgid "Convert terms into links. Set custom structure for search link on <a href=\"%1$s\">Permalink Settings</a> page."
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:323
+msgid "Hits Count"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:324
+msgid "Type of terms counts display."
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:341
+msgid "Auto Delete Terms"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:342
+msgid "Delete unused terms before these days, 0 = disable. Scheduled once weekly."
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:384
+msgid "User Agents/Referrer"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:385
+msgid "Manage referrer from these user agents"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:396
+msgid "Max character length"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:397
+msgid "Max character length of terms."
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:408
+msgid "Excerpt"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:409
+msgid "Create snippet with highlighted terms of each post on search page via plugin Search Excerpt"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:422
+msgid "manual input"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:434
+msgid "term stats"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:446
+msgid "migrate &amp; delete terms"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:455
+#: lib/includes/class-stt2extat-sanitize.php:456
+msgid "Name"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:458
+#: lib/includes/class-stt2extat-sanitize.php:470
+msgid "update terms"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:467
+#: lib/includes/class-stt2extat-sanitize.php:468
+#: lib/includes/class-stt2extat-table.php:178
+msgid "Slug"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:480
+#, php-format
+msgid "<p><i class=\"%1$s\">Remember, if you ever need a helping hand, you will find one at the end of each of your arms. As you grow older, you will discover that you have two hands, one for helping yourself and the other for helping others.</i></p><p class=\"%2$s\"> &#126; Sam Levenson</p><p class=\"%2$s\">Here my support contact &amp; PayPal email <i class=\"%3$s\"></i> <a target=\"_blank\" href=\"%4$s\" title=\"%5$s\">%6$s</a></p>"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:494
+msgid "Help Support, Credit &amp; Donate"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:504
+msgid "STT2EXTAT features."
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:506
+msgid "Features"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:518
+msgid "save your settings"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:527
+msgid "Overview"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:528
+msgid "Manage your terms better, add terms into single post manually, get terms via referrer, and save them as post meta. Search the terms that relevant of post content as well as WordPress search default algorithm. Abuse with any extension that you made is welcome to support this plugin. Have fun!."
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:531
+msgid "Troubleshooting"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:532
+msgid "Try to deactivated or uninstall, then install this plugin again if you get an error php code. Using caching to make your pages become static and make your website load faster, it also lessens the load on your server&#39;s CPU, Memory and HD."
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:535
+msgid "Instructions"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:537
+msgid "Hint:"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:538
+msgid "Search the post by your terms, and select the one (required)."
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:539
+msgid "Populate your terms for the first time then you can type in text box area directly to insert them into database."
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:540
+msgid "Three methods to populate your terms - by type, by suggestion and by double click text or text selection in \"Full Post\" section."
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:541
+msgid "Always use \"comma\" to separate your terms."
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:542
+msgid "Comma sign "
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:543
+msgid "in populate terms box is a trigger to searching relevant post."
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:544
+msgid "Increase or decrease hits number of search term by click the term or number text."
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:545
+msgid "Usage populate terms by select texts in full post area; SELECT the text(s) to add into populate box; CLICK each of selected text to remove it from your terms. The selected text(s) will be separated by comma automatically in populate box."
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:550
+msgid "Help Tab"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:552
+msgid "For more information:"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:554
+msgid "Plugin Page"
+msgstr ""
+
+#: lib/includes/class-stt2extat-sanitize.php:559
+msgid "help tab settings"
+msgstr ""
+
+#: lib/includes/class-stt2extat-table.php:81
+#, php-format
+msgid "Edit &#8220;%s&#8221;"
+msgstr ""
+
+#: lib/includes/class-stt2extat-table.php:90
+#: lib/includes/class-stt2extat-table.php:144
+msgid "Edit"
+msgstr ""
+
+#: lib/includes/class-stt2extat-table.php:94
+msgid "Delete"
+msgstr ""
+
+#: lib/includes/class-stt2extat-table.php:134
+msgid "Permalink to: "
+msgstr ""
+
+#: lib/includes/class-stt2extat-table.php:161
+msgid " ago"
+msgstr ""
+
+#: lib/includes/class-stt2extat-table.php:177
+msgid "Term"
+msgstr ""
+
+#: lib/includes/class-stt2extat-table.php:179
+msgid "Post ID"
+msgstr ""
+
+#: lib/includes/class-stt2extat-table.php:180 lib/includes/functions.php:183
+msgid "Hits"
+msgstr ""
+
+#: lib/includes/class-stt2extat-table.php:181
+msgid "Updated"
+msgstr ""
+
+#: lib/includes/class-stt2extat-table.php:266
+#, php-format
+msgid "1 item"
+msgid_plural "%s items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/includes/functions.php:32
+msgid "Cheatin&#8217; uh?"
+msgstr ""
+
+#: lib/includes/functions.php:180
+msgid "already exist in"
+msgstr ""
+
+#: lib/includes/functions.php:223
+msgid "Dismiss this notice."
+msgstr ""
+
+#: lib/includes/functions.php:259
+msgid "added into"
+msgstr ""
+
+#: lib/includes/functions.php:273
+msgid "this term not allowed."
+msgstr ""
+
+#: lib/includes/functions.php:280 lib/includes/functions.php:1185
+msgid "include in filter word(s), can not be added!."
+msgstr ""
+
+#: lib/includes/functions.php:287
+msgid "irrelevant, can not be added!."
+msgstr ""
+
+#: lib/includes/functions.php:294
+msgid "too long, can not be added!."
+msgstr ""
+
+#: lib/includes/functions.php:301
+msgid "too short, can not be added!."
+msgstr ""
+
+#: lib/includes/functions.php:642 lib/includes/widgets.php:164
+#, php-format
+msgid "%s hit"
+msgid_plural "%s hits"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/includes/functions.php:1011
+msgid "Terms of post:"
+msgstr ""
+
+#: lib/includes/functions.php:1018 lib/includes/functions.php:2099
+msgid "Terms of post: Empty!"
+msgstr ""
+
+#: lib/includes/functions.php:1074
+msgid "Increase Number"
+msgstr ""
+
+#: lib/includes/functions.php:1076
+msgid "Decrease Number"
+msgstr ""
+
+#: lib/includes/functions.php:1155 lib/includes/functions.php:2052
+#: lib/includes/functions.php:2106
+msgid "You do not have permission to do that."
+msgstr ""
+
+#: lib/includes/functions.php:1297
+msgid "Posts Without Terms"
+msgstr ""
+
+#: lib/includes/functions.php:1297
+msgid "Show"
+msgstr ""
+
+#: lib/includes/functions.php:1398 lib/includes/widgets.php:167
+#, php-format
+msgid "%s topic"
+msgid_plural "%s topics"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/includes/functions.php:1816
+msgid "No results found."
+msgstr ""
+
+#: lib/includes/functions.php:1947
+msgid "plugin can not be activated. Your WordPress version is"
+msgstr ""
+
+#: lib/includes/functions.php:1949 lib/includes/functions.php:1973
+msgid "required minimal"
+msgstr ""
+
+#: lib/includes/functions.php:1952 lib/includes/functions.php:1976
+msgid "Please update yours."
+msgstr ""
+
+#: lib/includes/functions.php:1953 lib/includes/functions.php:1977
+#: lib/includes/functions.php:2006 lib/includes/functions.php:2024
+#: lib/includes/functions.php:2075
+msgid "Dismiss this notice"
+msgstr ""
+
+#: lib/includes/functions.php:1971
+msgid "plugin can not be activated. Your PHP server version is"
+msgstr ""
+
+#: lib/includes/functions.php:2003
+msgid "is ready! Manage"
+msgstr ""
+
+#: lib/includes/functions.php:2005
+msgid "here"
+msgstr ""
+
+#: lib/includes/functions.php:2021
+msgid "Enable your browser javascript to load"
+msgstr ""
+
+#: lib/includes/functions.php:2044
+msgid "Term added."
+msgstr ""
+
+#: lib/includes/functions.php:2045
+msgid "Term deleted."
+msgstr ""
+
+#: lib/includes/functions.php:2046
+msgid "Term updated."
+msgstr ""
+
+#: lib/includes/functions.php:2047
+msgid "Term not added."
+msgstr ""
+
+#: lib/includes/functions.php:2048
+msgid "Term not updated."
+msgstr ""
+
+#: lib/includes/functions.php:2049
+msgid "Term empty."
+msgstr ""
+
+#: lib/includes/functions.php:2050
+msgid "Term was exists."
+msgstr ""
+
+#: lib/includes/functions.php:2051
+msgid "Terms deleted."
+msgstr ""
+
+#: lib/includes/functions.php:2053
+msgid "You attempted to edit an item that doesn&#8217;t exist. Perhaps it was deleted?."
+msgstr ""
+
+#: lib/includes/functions.php:2054
+msgid "Term was deleted."
+msgstr ""
+
+#: lib/includes/functions.php:2055
+msgid "Term too short ( min 4 characters )."
+msgstr ""
+
+#: lib/includes/functions.php:2056
+msgid "Term too long ( max 70 characters )."
+msgstr ""
+
+#: lib/includes/functions.php:2057 lib/includes/functions.php:2107
+msgid "An unidentified error has occurred."
+msgstr ""
+
+#: lib/includes/functions.php:2058
+msgid "Terms migrated."
+msgstr ""
+
+#: lib/includes/functions.php:2098
+msgid "Remove Irrelevant Terms"
+msgstr ""
+
+#: lib/includes/functions.php:2100
+msgid "Not Updated."
+msgstr ""
+
+#: lib/includes/functions.php:2101
+msgid "Contain Stopwords!"
+msgstr ""
+
+#: lib/includes/functions.php:2102
+msgid "Preview:"
+msgstr ""
+
+#: lib/includes/functions.php:2103
+msgid "Irrelevant!"
+msgstr ""
+
+#: lib/includes/functions.php:2104
+msgid "No Post Selected!"
+msgstr ""
+
+#: lib/includes/functions.php:2105
+msgid "No terms input!"
+msgstr ""
+
+#: lib/includes/functions.php:2108
+msgid "No Post found"
+msgstr ""
+
+#: lib/includes/functions.php:2109
+msgid "Read More"
+msgstr ""
+
+#: lib/includes/functions.php:2110
+msgid "Remove"
+msgstr ""
+
+#: lib/includes/functions.php:2111
+msgid "Add"
+msgstr ""
+
+#: lib/includes/functions.php:2112
+msgid "Too Short. Min 4 character (A-Z,a-z,0-9)"
+msgstr ""
+
+#: lib/includes/functions.php:2113
+msgid "Too Long. Max {$maxchar} character (A-Z,a-z,0-9)"
+msgstr ""
+
+#: lib/includes/functions.php:2114
+msgid "Success add to field"
+msgstr ""
+
+#: lib/includes/functions.php:2115
+msgid "Your browser does not support for this plugin! Compatible for latest version Firefox, Safari, or Chrome."
+msgstr ""
+
+#: lib/includes/functions.php:2116
+msgid "Collapse Tab"
+msgstr ""
+
+#: lib/includes/functions.php:2118
+msgid "Success Updated!"
+msgstr ""
+
+#: lib/includes/functions.php:2119
+msgid "Loading..."
+msgstr ""
+
+#: lib/includes/functions.php:2121
+msgid "Fail to add into database."
+msgstr ""
+
+#: lib/includes/functions.php:2122
+msgid "Please try another terms."
+msgstr ""
+
+#: lib/includes/widgets.php:19
+msgid "Add terms list to your sidebar."
+msgstr ""
+
+#: lib/includes/widgets.php:24
+msgid "STT2EXTAT Terms List"
+msgstr ""
+
+#: lib/includes/widgets.php:52
+msgid "Popular Terms"
+msgstr ""
+
+#: lib/includes/widgets.php:85
+msgid " Post"
+msgstr ""
+
+#: lib/includes/widgets.php:91
+msgid "Recent Terms"
+msgstr ""
+
+#: lib/includes/widgets.php:99 lib/includes/widgets.php:244
+msgid "Recent Terms Post"
+msgstr ""
+
+#: lib/includes/widgets.php:105
+msgid "Term Cloud"
+msgstr ""
+
+#: lib/includes/widgets.php:235
+msgid "Title:"
+msgstr ""
+
+#: lib/includes/widgets.php:238
+msgid "Type:"
+msgstr ""
+
+#: lib/includes/widgets.php:240
+msgid "Popular Terms All"
+msgstr ""
+
+#: lib/includes/widgets.php:241
+msgid "Popular in Taxonomy"
+msgstr ""
+
+#: lib/includes/widgets.php:242
+msgid "Popular in Post"
+msgstr ""
+
+#: lib/includes/widgets.php:243
+msgid "Recent Terms All"
+msgstr ""
+
+#: lib/includes/widgets.php:245
+msgid "Terms Cloud"
+msgstr ""
+
+#: lib/includes/widgets.php:249
+msgid "Interval:"
+msgstr ""
+
+#: lib/includes/widgets.php:251
+msgid "Last 7 Days"
+msgstr ""
+
+#: lib/includes/widgets.php:252
+msgid "Last 30 Days"
+msgstr ""
+
+#: lib/includes/widgets.php:253
+msgid "All Time"
+msgstr ""
+
+#: lib/includes/widgets.php:257
+msgid "Number of terms to show:"
+msgstr ""
+
+#: lib/includes/widgets.php:261
+msgid "Display Count Type:"
+msgstr ""
+
+#: lib/includes/widgets.php:263 lib/includes/widgets.php:271
+msgid "Disable"
+msgstr ""
+
+#: lib/includes/widgets.php:264
+msgid "Tooltips"
+msgstr ""
+
+#: lib/includes/widgets.php:265
+msgid "Sup"
+msgstr ""
+
+#: lib/includes/widgets.php:269
+msgid "Convert terms:"
+msgstr ""
+
+#: lib/includes/widgets.php:272
+msgid "Link to post"
+msgstr ""
+
+#: lib/includes/widgets.php:273
+msgid "Link to search page"
+msgstr ""

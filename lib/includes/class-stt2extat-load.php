@@ -391,6 +391,14 @@ class STT2EXTAT_Load
 		exit;
 	}
 	
+	public function wp_get_referer()
+	{
+		if ( ! isset( $_SERVER['HTTP_REFERER'] ) || ( '' == $_SERVER['HTTP_REFERER'] ) )
+			return false;
+		return $this->referrer = $_SERVER['HTTP_REFERER'];
+	}
+	
+	
 	/**
 	 * referrer callback from wp_head
 	 *
@@ -403,12 +411,15 @@ class STT2EXTAT_Load
 		if ( ! $is_single && ! is_search() )
 			return false;
 		
-		if ( wp_get_referer() ) :
-			$referrer = wp_get_referer();
-			if ( false !== strpos( $referrer, get_admin_url() ) )
+		if ( false != $this->wp_get_referer() ) :
+		
+			if ( false !== strpos( $this->referrer, get_admin_url() ) )
 				return false;
-			return $this->ref_proccess( $referrer );
+			
+			return $this->ref_proccess( $this->referrer );
+			
 		endif;
+		
 		return false;
 	}
 	

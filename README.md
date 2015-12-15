@@ -47,6 +47,9 @@ Yes, you can. After you add one or more terms via input field, just add your ter
 ![screenshot 4](lib/admin/includes/assets/img/screenshot-4.jpg)
 
 ## Changelog
+* 1.1.4 = December 16, 2015
+ * Fixes wp_get_referer
+ 
 * 1.1.3 = December 16, 2015
  * Fixes bug on search excerpt plugin
  
@@ -98,6 +101,9 @@ Yes, you can. After you add one or more terms via input field, just add your ter
  * First official release!
 
 ## Upgrade Notice
+###### v1.1.4
+Fixes referer. Upgrade immediately.
+
 ###### v1.1.3
 Fixes a security related bug. Upgrade immediately.
 

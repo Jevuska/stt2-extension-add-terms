@@ -708,7 +708,8 @@ function _stt2extat_data_format( $data, $html, $count, $number, $display, $conve
 		uasort( $list, '_usort_terms_by_count' );
 	
 	if ( array_filter( $list ) && 0 < $number ) :
-		$list = array_map( 'trim', array_column( $list, 'text_link' ) );
+		$list = ( ! function_exists( 'array_column' ) ) ? wp_list_pluck( $list, 'text_link' ) : array_column( $list, 'text_link' );
+		$list = array_map( 'trim', $list );
 		$list = implode( "</$li>$sep<$li>", $list );
 	endif;
 	
@@ -1930,7 +1931,6 @@ function stt2extat_admin_notices()
 	return stt2extat_nojs();
 }
 
-
 /*
  * ADMIN NOTICE
  *
@@ -2029,6 +2029,7 @@ function stt2extat_nojs()
 		__( 'Dismiss this notice', 'stt2extat' )
 	);
 }
+
 
 /**
  * give notice on edited terms

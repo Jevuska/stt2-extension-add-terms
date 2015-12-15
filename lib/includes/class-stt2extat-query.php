@@ -18,7 +18,9 @@ if ( ! defined( 'ABSPATH' ) || ! defined( 'STT2EXTAT_PLUGIN_FILE' ) )
 function stt2extat_popular_each_post_id( $args = array() )
 {
 	$data_query = stt2extat_data_query( $args );
-	$list = array_unique( array_column( $data_query, 'post_id' ) );
+	
+	$list = ( ! function_exists( 'array_column' ) ) ? wp_list_pluck( $data_query, 'post_id' ) : array_column( $data_query, 'post_id' );
+	$list = array_values( array_unique( $list ) );
 	
 	$data  = array();
 	$count = count( $list );

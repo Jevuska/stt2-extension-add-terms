@@ -614,8 +614,11 @@ class STT2EXTAT_Sanitize
 	public function default_setting()
 	{
 		$data = array_splice( $this->data, 0, 14 );
-		$data = array_column( $data, 'normal', 'parameter' );
-		$this->data   = $data;
+		
+		$data = ( ! function_exists( 'array_column' ) ) ? wp_list_pluck( $data, 'normal' ) : array_column( $data, 'normal', 'parameter' );
+		
+		$this->data = $data;
+		
 		return apply_filters( 'stt2extat_default_setting', $this->data );
 	}
 }

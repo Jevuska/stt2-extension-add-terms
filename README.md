@@ -17,6 +17,9 @@ Manage your terms better, add terms into single post manually, get terms via ref
 #### Package
  * The excerpt preview of terms result is supported by Plugin Search Excerpt by Scott Yang
  * Autocomplete terms suggestion is supported by Google Suggest for jQuery plugin by Haochi Chen
+
+#### Next Feature
+ * Convert terms into custom taxonomy and feature on terms meta
  
 ## Frequently Asked Questions
 
@@ -27,6 +30,8 @@ Yes, you can. After you add one or more terms via input field, just add your ter
 1. Upload the entire `STT2 Extension Add Terms` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Configure your settings and you are ready to go.
+4. Multiple Widget available under title `STT2EXTAT Terms List`
+5. You can use shortcode `[stt2extat]` to show terms list inside post content.
 
 ## Screenshot
 1. STT2EXTAT General Settings
@@ -35,10 +40,17 @@ Yes, you can. After you add one or more terms via input field, just add your ter
 2. STT2EXTAT Manual Insert Tool and Term Stats
 ![screenshot 2](lib/admin/includes/assets/img/screenshot-2.jpg)
 
-3. STT2EXTAT Widget
+3. STT2EXTAT Multiple Widget
 ![screenshot 3](lib/admin/includes/assets/img/screenshot-3.jpg)
 
+4. STT2EXTAT Permalink for search page
+![screenshot 4](lib/admin/includes/assets/img/screenshot-4.jpg)
+
 ## Changelog
+* 1.1.1 = December 16, 2015
+ * Patch `wp_list_pluck` when `array_column` function undefined during installation, even this plugin no longer support server with PHP versions lower than 7.
+ * Fix `jquery-stt2extat.js` to enable `enter` key when input terms into textararea.
+  
 * 1.1.0 = December 15, 2015
  * Create admin plugin
  * Available to get terms via referrer
@@ -77,6 +89,9 @@ Yes, you can. After you add one or more terms via input field, just add your ter
  * First official release!
 
 ## Upgrade Notice
+###### v1.1.1
+Fixes error during installation with PHP versions lower than 7.
+
 ###### v1.1.0
 This new minor and patch version to fixes a security related bug. Upgrade immediately.
 

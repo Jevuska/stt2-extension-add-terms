@@ -1,10 +1,10 @@
 === STT2 Extension Add Terms ===
 Contributors: Jevuska
 Donate link: http://www.jevuska.com/donate/
-Tags: post, searchterms, keywords, seo, tagging, search, stt2, postmeta
+Tags: post, searchterms, keywords, seo, tagging, search, stt2, postmeta, shortcode, widget
 Requires at least: 4.4
 Tested up to: 4.4
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,21 +22,31 @@ Manage your terms better, add terms into single post manually, get terms via ref
  * The excerpt preview of terms result is supported by Plugin Search Excerpt by Scott Yang
  * Autocomplete terms suggestion is supported by Google Suggest for jQuery plugin by Haochi Chen
 
+= Next Feature =
+ * Convert terms into custom taxonomy and feature on terms meta
+ 
 == Installation ==
 1. Upload the entire `STT2 Extension Add Terms` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Configure your settings and you are ready to go.
+4. Multiple Widget available under title `STT2EXTAT Terms List`
+5. You can use shortcode `[stt2extat]` to show terms list inside post content.
 
 == Frequently Asked Questions ==
 = Can I add bulk terms ? =
-Yes, you can. After you add one or more terms via input field, just add your terms list that separated by comma into textarea.
+Yes, you can. After you add one or more terms via input field, just add your terms list that separated by comma or add per-line into textarea.
 
 == Screenshots ==
 1. STT2EXTAT General Settings
 2. STT2EXTAT Manual Insert Tool and Term Stats
-3. STT2EXTAT Widget
+3. STT2EXTAT Multiple Widget
+4. STT2EXTAT Permalink for search page
 
 == Changelog ==
+* 1.1.1 = December 16, 2015
+ * Patch `wp_list_pluck` when `array_column` function undefined during installation, even this plugin no longer support server with PHP versions lower than 7.
+ * Fix `jquery-stt2extat.js` to enable `enter` key when input terms into textararea.
+ 
 * 1.1.0 = December 15, 2015
  * Create admin plugin
  * Available to get terms via referrer
@@ -75,6 +85,9 @@ Yes, you can. After you add one or more terms via input field, just add your ter
  * First official release!
 
 == Upgrade Notice ==
+= v1.1.1 =
+Fixes error during installation with PHP versions lower than 7.
+
 = v1.1.0 =
 This new minor and patch version to fixes a security related bug. Upgrade immediately.
 

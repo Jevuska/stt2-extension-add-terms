@@ -346,7 +346,7 @@ class STT2EXTAT_Load
 			exit;
 		
 		$list = ( ! function_exists( 'array_column' ) ) ? wp_list_pluck( $data, 'post_id' ) : array_column( $data, 'post_id' );
-		$list = array_unique( array_column( $list, 'post_id' ) );
+		$list = array_unique( $list );
 		
 		$func = function( $terms, $list, $meta_key )
 		{

@@ -47,6 +47,9 @@ Yes, you can. After you add one or more terms via input field, just add your ter
 ![screenshot 4](lib/admin/includes/assets/img/screenshot-4.jpg)
 
 ## Changelog
+* 1.1.2 = December 16, 2015
+ * Fixes bug empty array when scheduling to delete unused terms
+ 
 * 1.1.1 = December 16, 2015
  * Patch `wp_list_pluck` when `array_column` function undefined during installation, even this plugin no longer support server with PHP versions lower than 7.
  * Fix `jquery-stt2extat.js` to enable `enter` key when input terms into textarea.
@@ -89,6 +92,9 @@ Yes, you can. After you add one or more terms via input field, just add your ter
  * First official release!
 
 ## Upgrade Notice
+###### v1.1.2
+Fixes error on scheduling delete unused terms.
+
 ###### v1.1.1
 Fixes error during installation with PHP versions lower than 7.
 

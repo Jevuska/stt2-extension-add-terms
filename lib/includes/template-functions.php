@@ -111,7 +111,7 @@ function stt2extat_theme_default()
  */
 function stt2extat_template_path()
 {
-	return apply_filters( 'stt2extat_template_path', STT2EXTAT_PATH_LIB_CONTENT . 'templates/' );
+	return apply_filters( 'stt2extat_template_path', wp_normalize_path( STT2EXTAT_PATH_LIB_CONTENT . 'templates/' ) );
 }
 
 /**

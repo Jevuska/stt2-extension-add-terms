@@ -30,7 +30,7 @@ add_action( 'widgets_init', 'stt2extat_widgets_init' );
 add_action( 'parse_request', 'stt2extat_parse_request' );
 add_filter( 'search_link', 'stt2extat_filter_search_link', 1, 2 );
 add_filter( 'wp_search_stopwords', 'stt2extat_search_stopwords', 10, 2 );
-add_filter( 'wp_title', 'stt2extat_filter_search_page_title', 10, 2 );
+add_filter( 'wp_title', 'stt2extat_filter_search_page_title', 10, 3 );
 add_filter( 'get_the_excerpt', 'stt2exat_the_excerpt', 5, 3 );
 
 add_action( 'stt2extat_edited_action', 'stt2extat_edited_action_callback', 10, 1 );

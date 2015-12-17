@@ -222,7 +222,7 @@ class STT2EXTAT_Widget_Terms_List extends WP_Widget
 		$default = array(
 			'title'    => '',
 			'sort'     => 'count',
-			'interval' => '-1 week',
+			'interval' => 'all',
 			'number'   => 5,
 			'count'    => 'tooltips',
 			'convert'  => 'n'
@@ -235,7 +235,7 @@ class STT2EXTAT_Widget_Terms_List extends WP_Widget
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'sort' ); ?>"><?php _e( 'Type:' ); ?></label>
+			<label for="<?php echo $this->get_field_id( 'sort' ); ?>"><?php _e( 'Type:', 'stt2extat' ); ?></label>
 			<select name="<?php echo $this->get_field_name( 'sort' ); ?>" id="<?php echo $this->get_field_id( 'sort' ); ?>" class="widefat">
 				<option value="count"<?php selected( $instance['sort'], 'count' ); ?>><?php _e( 'Popular Terms All', 'stt2extat' ); ?></option>
 				<option value="taxonomy"<?php selected( $instance['sort'], 'taxonomy' ); ?>><?php _e( 'Popular in Taxonomy', 'stt2extat' ); ?></option>
@@ -260,7 +260,7 @@ class STT2EXTAT_Widget_Terms_List extends WP_Widget
 		<p>
 			<label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Display Count Type:', 'stt2extat' ); ?></label>
 			<select name="<?php echo $this->get_field_name( 'count' ); ?>" id="<?php echo $this->get_field_id( 'count' ); ?>" class="widefat">
-				<option value="n"<?php selected( $instance['count'], 'n' ); ?>><?php _e( 'Disable', 'stt2extat' ); ?></option>
+				<option value="n"<?php selected( $instance['count'], 'n' ); ?>><?php _e( 'Disabled', 'stt2extat' ); ?></option>
 				<option value="tooltips"<?php selected( $instance['count'], 'tooltips' ); ?>><?php _e( 'Tooltips', 'stt2extat' ); ?></option>
 				<option value="sup"<?php selected( $instance['count'], 'sup' ); ?>><?php _e( 'Sup', 'stt2extat' ); ?></option>
 			</select>
@@ -268,7 +268,7 @@ class STT2EXTAT_Widget_Terms_List extends WP_Widget
 		<p>
 			<label for="<?php echo $this->get_field_id( 'convert' ); ?>"><?php _e( 'Convert terms:', 'stt2extat' ); ?></label>
 			<select name="<?php echo $this->get_field_name( 'convert' ); ?>" id="<?php echo $this->get_field_id( 'convert' ); ?>" class="widefat">
-				<option value="n"<?php selected( $instance['convert'], 'n' ); ?>><?php _e( 'Disable', 'stt2extat' ); ?></option>
+				<option value="n"<?php selected( $instance['convert'], 'n' ); ?>><?php _e( 'Disabled', 'stt2extat' ); ?></option>
 				<option value="post"<?php selected( $instance['convert'], 'post' ); ?>><?php _e( 'Link to post', 'stt2extat' ); ?></option>
 				<option value="search"<?php selected( $instance['convert'], 'search' ); ?>><?php _e( 'Link to search page', 'stt2extat' ); ?></option>
 			</select>

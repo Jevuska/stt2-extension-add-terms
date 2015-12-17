@@ -31,10 +31,21 @@ class STT2EXTAT_Table extends WP_List_Table
 		$table_class = $this->get_table_classes();
 		$data        = $this->table_data();
 		
+		if ( isset( $_REQUEST['s'] ) && '' != $_REQUEST['s'] && wp_get_referer() ) :
+			$s = sanitize_text_field( $_REQUEST['s'] );
+			foreach( $data as $key => $value ) :
+				if ( false === strpos( $value->name, $s ) )
+					unset( $data[ $key ] );
+			endforeach;
+		endif;
+		
 		function usort_reorder( $a, $b )
 		{
+			$a->id   = $b->id = $a->term_id = $b->term_id;
+			
             $orderby = ( isset( $_REQUEST['orderby'] ) && '' != $_REQUEST['orderby'] ) ? sanitize_key( $_REQUEST['orderby'] ) : 'term_id';
 			$order   = ( isset( $_REQUEST['order'] )  && '' != $_REQUEST['order'] ) ? sanitize_key( $_REQUEST['order'] ) : 'asc';
+			
 			$result  = strcmp( $a->$orderby, $b->$orderby );
 			
 			if ( 'term_id' === $orderby || 'count' === $orderby )
@@ -44,7 +55,7 @@ class STT2EXTAT_Table extends WP_List_Table
         }
 		uasort( $data, 'usort_reorder' );
 		
-		$per_page     = 5;
+		$per_page     = $this->get_items_per_page( 'stt2extat_term_stats_per_page', 5 );
 		$current_page = $this->get_pagenum();
 		$total_items  = count( $data );
 		
@@ -54,7 +65,6 @@ class STT2EXTAT_Table extends WP_List_Table
 			'total_pages' => ceil( $total_items/$per_page ),
 			'orderby'     => ( isset( $_REQUEST['orderby'] ) ) ? sanitize_key( $_REQUEST['orderby'] ) : 'term_id',
 			'order'       => ( isset( $_REQUEST['order'] ) ) ? sanitize_key( $_REQUEST['order'] ) : 'asc'
-			
 		) );
 		
 		$data = array_slice( $data, ( ( $current_page-1 ) * $per_page ), $per_page );
@@ -116,7 +126,7 @@ class STT2EXTAT_Table extends WP_List_Table
 			'term_name' => esc_html( $item->name )
 		);
 		
-		return stt2extat_build_query_nonce( $data, $action, true );
+		return stt2extat_build_query_nonce( $data, $action, $nonce = true );
 	}
 	
 	public function column_post_id( $item )
@@ -225,14 +235,66 @@ class STT2EXTAT_Table extends WP_List_Table
 		parent::display();
 	}
 	
+	public function get_search_box( $text, $input_id )
+	{
+		if ( empty( $_REQUEST['s'] )&& ! $this->has_items() )
+			return;
+		
+		$s        = ( isset( $_REQUEST['s'] ) ) ? wp_unslash( $_REQUEST['s'] ) : '';
+		$input_id = $input_id . '-search-input';
+		$output   = '<input type="hidden" name="page" value="' . esc_attr( $this->page ) . '" />';
+		
+		if ( ! empty( $_REQUEST['orderby'] ) )
+			$output .= '<input type="hidden" name="orderby" value="' . esc_attr( $_REQUEST['orderby'] ) . '" />';
+		if ( ! empty( $_REQUEST['order'] ) )
+			$output .= '<input type="hidden" name="order" value="' . esc_attr( $_REQUEST['order'] ) . '" />';
+		
+		$output .= sprintf( '<p class="search-box"><label class="screen-reader-text" for="%1$s">%2$s:</label><input type="search" id="%1$s" name="s" value="%3$s" />%4$s</p>',
+			esc_attr( $input_id ),
+			$text,
+			esc_attr( $s ),
+			get_submit_button( esc_attr( $text ), 'button', '', false, array( 'id' => 'search-submit' ) )
+		);
+		
+		return $output;
+	}
+	
+	public function display_tablenav( $which ) {
+		
+		if ( 'top' === $which ) {
+			
+			if ( ! empty( $_REQUEST['s'] ) )
+				printf( '<h3><span class="subtitle">' . __( 'Search results for &#8220;%1$s&#8221;' ) . '</span></h3>', esc_html( wp_unslash( $_REQUEST['s'] ) ) );
+		
+			wp_nonce_field( 'bulk-' . $this->_args['plural'], '_wpnonce', $referrer = false );
+		}
+		?>
+		<div class="tablenav <?php echo esc_attr( $which ); ?>">
+			<?php
+			if ( 'top' === $which ) {
+				$this->extra_tablenav( $which );
+			}
+			$this->pagination( $which );
+			?>
+
+			<br class="clear" />
+		</div>
+		<?php
+	}
+	
+	public function extra_tablenav( $which )
+	{
+		printf( '<div class="alignleft">%1$s</div>', $this->get_search_box( __( 'Search', 'stt2extat' ), 'stt2extat' ) );
+	}
+	
 	public function ajax_response()
 	{
 		check_ajax_referer( 'bulk-table-stt2extat', '_wpnonce' );
 		
 		$this->prepare_items();
 		
-		extract( $this->_args );
-		extract( $this->_pagination_args, EXTR_SKIP );
+		compact( $this->_args );
+		compact( $this->_pagination_args );
 		
 		ob_start();
 		

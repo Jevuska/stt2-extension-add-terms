@@ -40,6 +40,7 @@ class STT2EXTAT_Admin
 		if ( is_multisite() && !is_subdomain_install() && is_main_site() )
 			$this->blog_prefix = '/blog';
 		
+		
 		add_action( 'admin_init', array(
 			$this,
 			'page_init'
@@ -49,6 +50,15 @@ class STT2EXTAT_Admin
 			$this,
 			'options_permalink_add_js'
 		) );
+		
+		add_filter(
+			'set-screen-option',
+			array(
+				$this,
+				'term_stats_set_screen_option'
+			),
+			10, 3
+		);
 		
 		add_action( 'admin_menu', array(
 			$this,
@@ -155,6 +165,7 @@ class STT2EXTAT_Admin
 			$this,
 			'screen_tab' 
 		), 20 );
+		
 	}
 	
 	/**
@@ -203,7 +214,7 @@ class STT2EXTAT_Admin
 		
 		if ( isset( $input['term_postid'], $input['term_id'], $input['term_name'], $input['old_term'] ) && check_admin_referer( $this->plugin_data->TextDomain . '_update_term-options', '_wpnonce' ) ) :
 		
-			$update = false;
+			$code = false;
 		
 			$new_term  = strtolower( sanitize_text_field( $input['term_name'] ) );
 			$old_term  = strtolower( sanitize_text_field( $input['old_term'] ) );
@@ -211,19 +222,19 @@ class STT2EXTAT_Admin
 			$term_id   = absint( $input['term_id'] );
 			
 			if ( $new_term == $old_term )
-				$update = 5;
+				$code = 5;
 			else
-				$update = stt2extat_update_postmeta( $new_term, $post_id, $old_term, 0,$stt2extat_data->terms, $term_id );
+				$code = stt2extat_update_postmeta( $new_term, $post_id, $old_term, 0,$stt2extat_data->terms, $term_id );
 			
-			if ( is_int( $update ) ) :
-				$msg = stt2extat_edit_term_notice( $update, '', true );
+			if ( is_int( $code ) ) :
+				$msg = stt2extat_edit_term_notice( $code, '', $add_setting_error = true );
 				add_settings_error(
 					'stt2extat_term_error',
-					esc_attr( 'stt2extat_error_' . absint( $update ) ),
+					esc_attr( 'stt2extat_error_' . absint( $code ) ),
 					$msg,
 					'error'
 				);
-				return absint( $update );
+				return absint( $code );
 			endif;
 			
 			$location = 'options-general.php?page=stt2extat';
@@ -264,9 +275,9 @@ class STT2EXTAT_Admin
 		);
 		
 		$error = false;
-		if ( isset( $_REQUEST['message'] ) && $msg = (int) $_REQUEST['message'] ) :
+		if ( isset( $_REQUEST['message'] ) && $code = (int) $_REQUEST['message'] ) :
 			$error = ( isset( $_GET['error'] ) ) ? wp_validate_boolean( $_GET['error'] ) : $error;
-			do_action( 'stt2extat_notice', $msg, $error, false );
+			do_action( 'stt2extat_notice', $code, $error, $add_setting_error = false );
 		endif;
 		
 		$_SERVER['REQUEST_URI'] = remove_query_arg( array( 'message', 'error' ), $_SERVER['REQUEST_URI'] );
@@ -343,9 +354,24 @@ class STT2EXTAT_Admin
 			);
 			
 			foreach ( $this->data as $item ) :
+			
 				if ( $id == $item['group'] ) :
-					if ( 'sidebar' == $item['parameter'] || 'manual' == $item['parameter'] || 'stats' == $item['parameter'] )
+				
+					if ( 'sidebar' == $item['parameter'] || 'manual' == $item['parameter'] )
 							continue;
+					
+					if ( 'stats' == $item['parameter'] ) :
+						add_screen_option(
+							'per_page',
+							array(
+								'label' => _x( 'Number of items per page:', 'items per page', 'stt2extat' ),
+								'default' => 5,
+								'option' => $this->plugin_data->TextDomain . '_term_' . $item['parameter'] . '_per_page'
+							)
+						);
+						continue;
+					endif;
+		
 					add_settings_field(
 						$item['parameter'] . '_setting',
 						$item['subtitle'],
@@ -358,9 +384,28 @@ class STT2EXTAT_Admin
 						array( 'label_for' => $item['parameter'], 'parameter' => $item['parameter'], 'optional' => $item['optional'], 'description' => $item['description'] )
 					);
 				endif;
+				
 			endforeach;
 			
 		endforeach;
+	}
+	
+	
+	/**
+	 * set-screen-option per_page of Term Stats STT2EXTAT_Table
+	 * meta_key usermeta is stt2extat_term_stats_per_page
+	 *
+	 * @since 1.1.5
+	 *
+	*/
+	public function term_stats_set_screen_option( $status, $option, $value )
+	{
+		global $stt2extat_screen_id, $current_screen;
+		
+		if ( $current_screen->id != $stt2extat_screen_id )
+			return;
+		
+		return $value;
 	}
 	
 	/**
@@ -419,10 +464,16 @@ class STT2EXTAT_Admin
 		?>				<form id="stt2extat-main-form" method="post" action="options.php">
 							<div id="postbox-container-2" class="postbox-container">
 								<?php do_meta_boxes( $current_screen, 'advanced', 'stt2extat_settings' ); ?>
-								<?php do_meta_boxes( $current_screen, 'normal', 'stt2extat_settings' ); ?>
 							</div>
 							<div id="postbox-container-1" class="postbox-container">
 								<?php do_meta_boxes( $current_screen, 'side', 'stt2extat_settings' ); ?>
+							</div>
+							<div class="clear"></div>
+						</form>
+						
+						<form class="search-form" method="get" action="options-general.php">
+							<div id="postbox-container-2" class="postbox-container">
+								<?php do_meta_boxes( $current_screen, 'normal', 'stt2extat_settings' ); ?>
 							</div>
 							<div class="clear"></div>
 						</form>
@@ -454,7 +505,20 @@ class STT2EXTAT_Admin
 				break;
 			
 			case 'stats' :
-				do_settings_sections( 'stt2extat_stats' );
+				global $current_screen;
+				
+				echo '<div id="ajax-response"></div><div id="stt2extat-table-stats"></div>';
+				
+				$args = array(
+					'singular' => 'table-stt2extat',
+					'plural'   => 'table-stt2extat',
+					'ajax'     => true,
+					'screen'   => $current_screen->id,
+				);
+				
+				$table = new STT2EXTAT_Table( $args );
+				$table->prepare_items();
+				$table->display();
 				break;
 			
 			case 'delete' :
@@ -574,22 +638,7 @@ class STT2EXTAT_Admin
 	*/
 	public function section_stats()
 	{
-		global $current_screen;
-		
 		do_action( 'stt2extat_section_stats' );
-		
-		echo '<div id="ajax-response"></div><div id="stt2extat-table-stats"></div>';
-		
-		$args = array(
-            'singular' => 'table-stt2extat',
-			'plural'   => 'table-stt2extat',
-			'ajax'     => true,
-			'screen'   => $current_screen->id,
-		);
-		
-		$table = new STT2EXTAT_Table( $args );
-		$table->prepare_items();
-		$table->display();
 	}
 	
 	/**
@@ -789,7 +838,7 @@ class STT2EXTAT_Admin
 	}
 	
 	/**
-	 * Load Table via ajax for Terms Stats
+	 * Load terms on table via ajax
 	 *
 	 * @since 1.1
 	 *
@@ -804,6 +853,7 @@ class STT2EXTAT_Admin
 		);
 		
 		$table = new STT2EXTAT_Table( $args );
+		
 		$table->ajax_response();
 	}
 	
@@ -828,7 +878,7 @@ class STT2EXTAT_Admin
 	public function check_relevant_terms()
 	{
 		if ( ! isset( $_REQUEST['_wpnonce'], $_POST['val'] ) || ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'heartbeat-nonce' ) ) :
-			do_action( 'stt2extat_notice', 9, true, false );
+			do_action( 'stt2extat_notice', $code = 9, $error = true, $add_setting_error = false );
 			wp_die();
 		endif;
 		
@@ -836,7 +886,7 @@ class STT2EXTAT_Admin
 		if( update_option( 'stt2extat_check_relevant_terms', $val ) );
 			wp_die( $val );
 			
-		do_action( 'stt2extat_notice', 11, true, false );
+		do_action( 'stt2extat_notice', $code = 11, $error = true, $add_setting_error = false );
 		wp_die();
 	}
 	
@@ -849,7 +899,7 @@ class STT2EXTAT_Admin
 	public function migrate_stt2_terms()
 	{
 		if ( ! isset( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'heartbeat-nonce' ) ) :
-			do_action( 'stt2extat_notice', 9, true, false );
+			do_action( 'stt2extat_notice', $code = 9, $error = true, $add_setting_error = false );
 			wp_die();
 		endif;
 		
@@ -920,7 +970,7 @@ class STT2EXTAT_Admin
 			
 			$location = add_query_arg( array( 'error' => false, 'message' => 15 ), $location );
 		else :
-			do_action( 'stt2extat_notice', 6, true, false );
+			do_action( 'stt2extat_notice', $code = 6, $error = true, $add_setting_error = false );
 			wp_die();
 		endif;
 		
@@ -1250,7 +1300,7 @@ class STT2EXTAT_Admin
 			if ( ! is_array( $value ) )
 				$value = array( $value );
 			
-			$value = implode( "\n", array_map( 'esc_textarea', $value ) );
+			$value = implode( ", ", array_map( 'esc_textarea', $value ) );
 		endif;
 		
 		$output = sprintf( '<label for="%1$s"><textarea id="%1$s" name="stt2extat_settings[%1$s]" class="%1$s-area large-text" aria-expanded="false"/>%2$s</textarea><p class="description">%3$s</p></label><div id="textarea-bottom"></div>',
@@ -1349,18 +1399,15 @@ class STT2EXTAT_Admin
 		
 		wp_localize_script( 'jquery-stt2extat', 'stt2extatL10n', stt2extat_notice_localize() );
 		
-		$spinner = '"' . admin_url( '/images/spinner.gif') . ' "';
-		$css     = 'input.ui-autocomplete-loading
-{
-	background: url(' . $spinner . ') center right no-repeat;
-}
-#searchtermpost
-{
-	padding:10px 0;
+		$css = 'input.ui-autocomplete-loading { 
+	background: url("' . admin_url( '/images/spinner.gif') . '") center right no-repeat;
 }
 
-#wp-link .link-search-wrapper span.existlink
-{
+#searchtermpost {
+	padding: 10px 0;
+}
+
+#wp-link .link-search-wrapper span.existlink {
 	-moz-osx-font-smoothing:grayscale;
 	-webkit-font-smoothing:antialiased;
 	background-image:none!important;
@@ -1372,211 +1419,193 @@ class STT2EXTAT_Admin
 	speak:none;
 }
 
-span.existlink:before
-{
-	content:"\f139";
-	text-decoration:none;
+span.existlink:before {
+	content: "\f139";
+	text-decoration: none;
 }
 
-#gsuggestPopup,#notmatchPopup,#thehint,#fullpost,#loading
-{
-	display:none;
+#gsuggest-popup,#notmatch-popup,#thehint,#fullpost,#loading {
+	display: none;
 }
 
-#stt2extat-wo-terms
-{
-	display:inline-block;
+#stt2extat-wo-terms {
+	display: inline-block;
 }
 
-#stt2extat-wo-terms span
-{
+#stt2extat-wo-terms span {
+	-webkit-border-radius: 10px;
 	background-color: #d54e21;
-    color: #fff;
-    display: inline;
-    padding: 1px 6px;
-    font-size: 10px;
-    font-weight: 700;
+	border-radius: 10px;
+	color: #fff;
+	display: inline;
+	font-size: 10px;
+	font-weight: 700;
+	padding: 1px 6px;
 	vertical-align: top;
-    -webkit-border-radius: 10px;
-    border-radius: 10px
 }
 
-#fullpost .post-permalink
-{
+#fullpost .post-permalink {
 	word-break:break-all;
 }
-#fullpost p
-{
-	font-size:20px;
-}
-#stt2extat-form
-{
-	display:table;
-	width:100%;
+
+#fullpost p {
+	font-size: 20px;
 }
 
-.more
-{
-	color:#ccc;
-	display:inline-table;
-	font-size:41px;
-	line-height:21px;
-	margin:10px 0 0;
-	padding:0;
-	vertical-align:top;
-	width:50px;
+#stt2extat-form {
+	display: table;
+	width: 100%;
 }
 
-i.termlist:hover,i.termcnt:hover,.more:hover,.alltag:hover,#ua-list .dashicons-menu:hover
-{
-	color:#0073aa;
-	cursor:pointer;
+.more {
+	color: #ccc;
+	display: inline-table;
+	font-size: 41px;
+	line-height: 21px;
+	margin: 10px 0 0;
+	padding: 0;
+	vertical-align: top;
+	width: 50px;
 }
 
-a i.dashicons
-{
-	text-decoration:none;
+i.termlist:hover,
+i.termcnt:hover,
+.more:hover,
+.alltag:hover,
+#ua-list .dashicons-menu:hover {
+	color: #0073aa;
+	cursor: pointer;
 }
 
-.termadd,.closebtn
-{
+a i.dashicons {
+	text-decoration: none;
+}
+
+.termadd,
+.closebtn {
 	float:left;
 }
 
-#ins-btn
-{
-	line-height:27px;
+#ins-btn {
+	line-height: 27px;
 }
 
-#loading
-{
-	background-color:#ffd700;
-	border-radius:4px;
-	box-shadow:1px 6px 6px 0 #ccc;
-	font-weight:600;
-	height:20px;
-	left:50%;
-	padding:5px;
-	position:fixed;
-	text-align:center;
-	top:40px;
-	width:300px;
-	z-index:2;
+#loading {
+	background-color: #ffd700;
+	border-radius: 4px;
+	box-shadow: 1px 6px 6px 0 #ccc;
+	font-weight: 600;
+	height: 20px;
+	left: 50%;
+	padding: 5px;
+	position: fixed;
+	text-align: center;
+	top: 40px;
+	width: 300px;
+	z-index: 2;
 }
 
-.key-inline
-{
-	background:#f5f5f5;
-	border:1px solid #0073aa;
-	border-radius:2px;
-	color:#0073aa;
-	display:none;
-	line-height:21px;
-	margin-bottom:8px;
-	padding:5px;
-	position:absolute;
+.key-inline {
+	background: #f5f5f5;
+	border: 1px solid #0073aa;
+	border-radius: 2px;
+	color: #0073aa;
+	display: none;
+	line-height: 21px;
+	margin-bottom: 8px;
+	padding: 5px;
+	position: absolute;
 }
 
-.btn-key
-{
-	float:right;
-	margin-left:4px!important;
+.btn-key {
+	float: right;
+	margin-left: 4px !important;
 }
 
-.key
-{
-	padding:0 2px;
-	text-decoration:underline;
+.key {
+	padding: 0 2px;
+	text-decoration: underline;
 }
 
-div.key-inline.key-inline-active
-{
-	opacity:1;
-	transition:top .1s ease-out, left .1s ease-out, opacity .1s ease-in-out;
+div.key-inline.key-inline-active {
+	opacity: 1;
+	transition: top .1s ease-out, left .1s ease-out, opacity .1s ease-in-out;
 }
 
-.key-inline.key-arrow-up:before,.key-inline.key-arrow-up:after,.key-inline.key-arrow-down:before,.key-inline.key-arrow-down:after
-{
-	border-color:transparent;
-	border-style:solid;
-	content:"";
-	display:block;
-	height:0;
-	left:50%;
-	position:absolute;
-	width:0;
+.key-inline.key-arrow-up:before,
+.key-inline.key-arrow-up:after,
+.key-inline.key-arrow-down:before,
+.key-inline.key-arrow-down:after {
+	border-color: transparent;
+	border-style: solid;
+	content: "";
+	display: block;
+	height: 0;
+	left: 50%;
+	position: absolute;
+	width: 0;
 }
 
-.key-inline.key-arrow-down:before,.key-inline.key-arrow-up:before
-{
-	border-width:9px;
-	margin-left:-9px;
+.key-inline.key-arrow-down:before,
+.key-inline.key-arrow-up:before {
+	border-width: 9px;
+	margin-left: -9px;
 }
 
-.key-inline.key-arrow-down:after,.key-inline.key-arrow-up:after
-{
-	border-width:8px;
-	margin-left:-8px;
+.key-inline.key-arrow-down:after,
+.key-inline.key-arrow-up:after {
+	border-width: 8px;
+	margin-left: -8px;
 }
 
-.key-inline.key-arrow-down:before
-{
-	border-top-color:#0073aa;
-	bottom:-18px;
+.key-inline.key-arrow-down:before {
+	border-top-color: #0073aa;
+	bottom: -18px;
 }
 
-.key-inline.key-arrow-down:after
-{
-	border-top-color:#f5f5f5;
-	bottom:-16px;
+.key-inline.key-arrow-down:after {
+	border-top-color: #f5f5f5;
+	bottom: -16px;
 }
 
-.key-inline.key-arrow-up:before
-{
-	border-bottom-color:#0073aa;
-	top:-18px;
+.key-inline.key-arrow-up:before {
+	border-bottom-color: #0073aa;
+	top: -18px;
 }
 
-.key-inline.key-arrow-up:after
-{
-	border-bottom-color:#f5f5f5;
-	top:-16px;
+.key-inline.key-arrow-up:after {
+	border-bottom-color: #f5f5f5;
+	top: -16px;
 }
 
-#stt2extat-form a:focus
-{
-	box-shadow:none;
+#stt2extat-form a:focus {
+	box-shadow: none;
 }
 
-#message.notice p
-{
-	word-break:break-all;
+#message.notice p {
+	word-break: break-all;
 }
 
-.table-stt2extat .column-link
-{
-	width:30%;
+.table-stt2extat .column-link {
+	width: 30%;
 }
 
-.table-stt2extat .column-count,.table-stt2extat .column-post_id
-{
-	width:10%;
+.table-stt2extat .column-count,
+.table-stt2extat .column-post_id {
+	width: 10%;
 }
 
-.table-stt2extat .column-post_modified
-{
-	width:12%;
+.table-stt2extat .column-post_modified {
+	width: 12%;
 }
 
-#ua-list label:nth-child(1n+8)
-{
-	display:none;
+#ua-list label:nth-child(1n+8) {
+	display: none;
 }
 
-.collapse-textarea:before
-{
-	content:"\f142";
-	font:400 20px/1 dashicons;
+.collapse-textarea:before {
+	content: "\f142";
+	font: 400 20px/1 dashicons;
 }';
 		add_thickbox();					
 		wp_add_inline_style( 'editor-styles', $css );

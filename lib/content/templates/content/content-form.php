@@ -32,7 +32,7 @@ $after_insert_btn = apply_filters( 'stt2extat_after_insert_btn', $after_insert_b
 $after_form = '';
 $after_form = apply_filters( 'stt2extat_after_form', $after_form );
 
-$html_form_top = '%1$s<div id="search-panel"><label for="title"><h4 class="search-label">%2$s</h4></label><div id="titlediv"><input type="text" id="title" class="link-search-field" autocomplete="off" placeholder="Search..."/></div><div id="searchtermpost"></div><div id="searchdiv"></div><input type="hidden" id="id-field" class="link-search-field"/><label for="insertterms"><em>%3$s</em></label><br><textarea id="insertterms" class="searchterms large-text"></textarea><div id="badterms"></div><br><div id="ins-btn"><input type="button" id="btninsert" class="button button-large" value="%4$s" disabled="disabled">%5$s<div class="loader" style="display: inline-block;padding-left: 10px"></div></div></div>%6$s';
+$html_form_top = '%1$s<div id="search-panel"><label for="title"><h4 class="search-label">%2$s</h4></label><div id="titlediv"><input type="text" id="title" class="link-search-field" autocomplete="off" placeholder="Search..."/></div><div id="searchtermpost"></div><div id="searchdiv"></div><input type="hidden" id="id-field" class="link-search-field"/><label for="insertterms"><em>%3$s</em></label><br><textarea id="insertterms" class="searchterms large-text" aria-expanded="false"></textarea><div id="badterms"></div><br><div id="ins-btn"><input type="button" id="btninsert" class="button button-large" value="%4$s" disabled="disabled">%5$s<div class="loader" style="display: inline-block;padding-left: 10px"></div></div></div>%6$s';
 
 printf ( $html_form_top,
 	$before_form,

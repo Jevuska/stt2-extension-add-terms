@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: STT2 Extension Add Terms v1.0.2\n"
 "Report-Msgid-Bugs-To: Jevuska <contact@jevuska.com>\n"
-"POT-Creation-Date: 2015-12-15 00:42+0800\n"
+"POT-Creation-Date: 2015-12-17 10:50+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Jevuska <contact@jevuska.com>\n"
@@ -31,62 +31,67 @@ msgstr "Jevuska"
 msgid "http://www.jevuska.com/"
 msgstr "http://www.jevuska.com/"
 
-#. Description of the plugin/theme
+#: lib/admin/class-stt2extat-admin.php:187
+msgid "Settings Reseted."
+msgstr "Pengaturan diatur ulang"
+
+#: lib/admin/class-stt2extat-admin.php:367
+msgctxt "items per page"
+msgid "Number of items per page:"
+msgstr "Jumlah item per halaman:"
+
+#: lib/admin/class-stt2extat-admin.php:439
 msgid ""
 "Manage your terms better, add terms into single post manually, get terms via "
 "referrer, and save them as post meta. Search the terms that relevant of post "
 "content as well as WordPress search default algorithm."
 msgstr ""
-"Mengelola istilah Anda lebih baik, menambahkan istilah ke dalam satu posting "
-"secara manual, mendapatkan istilah melalui referrer, dan menyimpannya "
-"sebagai post meta. Cari istilah yang relevan isi postingan seperti halnya "
-"algoritma default WordPress pencarian."
+"Kelo istilah Anda lebih baik, menambahkan istilah ke dalam satu pos secara "
+"manual, mendapatkan istilah melalui referrer, dan menyimpannya sebagai post "
+"meta. Cari istilah yang relevan dengan isi pos seperti halnya algoritma "
+"dasar pencarian WordPress."
 
-#: lib/admin/class-stt2extat-admin.php:176
-msgid "Settings Reseted."
-msgstr "Pengaturan diatur ulang"
-
-#: lib/admin/class-stt2extat-admin.php:399
+#: lib/admin/class-stt2extat-admin.php:444
 msgid "Edit Terms"
 msgstr "Edit Istilah"
 
-#: lib/admin/class-stt2extat-admin.php:473
+#: lib/admin/class-stt2extat-admin.php:537
 msgid "Migrate terms of SEO SearchTerms Tagging 2"
 msgstr "Migrais istilah dari plugin SEO SearchTerms Tagging 2"
 
-#: lib/admin/class-stt2extat-admin.php:475
+#: lib/admin/class-stt2extat-admin.php:539
 msgid "Relevant Only"
 msgstr "Hanya Yang Relevan"
 
-#: lib/admin/class-stt2extat-admin.php:476
+#: lib/admin/class-stt2extat-admin.php:540
 msgid "Delete All Terms"
 msgstr "Hapus Semua Istilah"
 
-#: lib/admin/class-stt2extat-admin.php:489
+#: lib/admin/class-stt2extat-admin.php:553
 msgid "Update"
 msgstr "Perbaharui"
 
-#: lib/admin/class-stt2extat-admin.php:508
+#: lib/admin/class-stt2extat-admin.php:572
 msgid "Save Changes"
 msgstr "Simpan Perubahan"
 
-#: lib/admin/class-stt2extat-admin.php:513
+#: lib/admin/class-stt2extat-admin.php:577
 msgid "Reset"
 msgstr "Atur Ulang"
 
-#: lib/admin/class-stt2extat-admin.php:607
+#: lib/admin/class-stt2extat-admin.php:656
 msgid "PayPal Donate"
 msgstr "Donasi Lewat PayPal"
 
-#: lib/admin/class-stt2extat-admin.php:630
+#: lib/admin/class-stt2extat-admin.php:679
 msgid "Setup Widget"
 msgstr "Atur Widget"
 
-#: lib/admin/class-stt2extat-admin.php:632
+#: lib/admin/class-stt2extat-admin.php:681
 msgid "Manual Input"
 msgstr "Input Manual"
 
-#: lib/admin/class-stt2extat-admin.php:646
+#: lib/admin/class-stt2extat-admin.php:695
 #, php-format
 msgid ""
 "If you like, you may enter custom structures for your search <abbr title="
@@ -95,62 +100,67 @@ msgid ""
 "<code>%s/topics/search+term</code>. If you leave these blank the defaults "
 "will be used."
 msgstr ""
+"Jika Anda suka, Anda dapat memasukkan ustom struktur link pencarian Anda "
+"<abbr title=\"Universal Resource Locator\">URL</abbr>di sini. Misalnya, "
+"menggunakan <code>topics</code> sebagai pencarian Anda akan membuat link "
+"Anda seperti <code>%s/topics/search+term</code> . Jika Anda meninggalkan ini "
+"kosong maka nilai default akan digunakan."
 
-#: lib/admin/class-stt2extat-admin.php:652
+#: lib/admin/class-stt2extat-admin.php:701
 msgid "STT2EXTAT Permalink"
 msgstr "STT2EXTAT Permalink"
 
-#: lib/admin/class-stt2extat-admin.php:664
+#: lib/admin/class-stt2extat-admin.php:713
 msgctxt "sample permalink base"
 msgid "search"
 msgstr ""
 
-#: lib/admin/class-stt2extat-admin.php:676
+#: lib/admin/class-stt2extat-admin.php:725
 msgctxt "sample permalink base"
 msgid "topics"
 msgstr ""
 
-#: lib/admin/class-stt2extat-admin.php:1154
+#: lib/admin/class-stt2extat-admin.php:1204
 msgid "hit(s)"
-msgstr ""
+msgstr "hit(s)"
 
-#: lib/admin/class-stt2extat-admin.php:1157
+#: lib/admin/class-stt2extat-admin.php:1207
 msgid "Terms updated "
 msgstr "Istilah diperbaharui"
 
-#: lib/admin/class-stt2extat-admin.php:1159
+#: lib/admin/class-stt2extat-admin.php:1209
 msgid "days ago. Having count"
 msgstr "hari yang lalu. Dengan jumlah"
 
-#: lib/admin/class-stt2extat-admin.php:1165
+#: lib/admin/class-stt2extat-admin.php:1215
 msgid "Next schedule"
 msgstr "Jadwal selanjutnya"
 
-#: lib/admin/class-stt2extat-admin.php:1206
+#: lib/admin/class-stt2extat-admin.php:1256
 msgid "item"
-msgstr ""
+msgstr "item"
 
-#: lib/admin/class-stt2extat-admin.php:1208
+#: lib/admin/class-stt2extat-admin.php:1258
 msgid "Show All"
 msgstr "Tampilkan Semua"
 
-#: lib/admin/class-stt2extat-admin.php:1216
+#: lib/admin/class-stt2extat-admin.php:1266
 msgid "Referrer"
-msgstr ""
+msgstr "Referrer"
 
-#: lib/admin/class-stt2extat-admin.php:1216
+#: lib/admin/class-stt2extat-admin.php:1266
 msgid "Query Param"
-msgstr ""
+msgstr "Parameter Kueri"
 
-#: lib/admin/class-stt2extat-admin.php:1234
+#: lib/admin/class-stt2extat-admin.php:1284
 msgid "Add More"
 msgstr "Tambahkan Lagi"
 
-#: lib/admin/class-stt2extat-admin.php:1618
+#: lib/admin/class-stt2extat-admin.php:1644
 msgid "plugin by"
 msgstr "plugin oleh"
 
-#: lib/admin/class-stt2extat-admin.php:1633
+#: lib/admin/class-stt2extat-admin.php:1659
 msgid "Version"
 msgstr "Versi"
 
@@ -183,24 +193,9 @@ msgstr ""
 "menggunakannya, berikan pengguna istilah pencarian yang paling relevan dan "
 "pengalaman penggunaan yang lebih baik."
 
-#: lib/content/templates/content/content-create-tax.php:21
-#: lib/content/templates/content/content-relevant-post-search-field.php:20
-msgid "Populate terms by comma ( min 4 characters )"
-msgstr "Kumpulkan istilah dengan tanda koma ( minimal 4 karakter )"
-
-#: lib/content/templates/content/content-create-tax.php:22
-#: lib/content/templates/content/content-relevant-post-search-field.php:21
-msgid "Enable Google Suggestion"
-msgstr "Aktifkan Saran Google"
-
-#: lib/content/templates/content/content-create-tax.php:23
-#: lib/content/templates/content/content-relevant-post-search-field.php:22
-msgid "Add Irrelevant Term"
-msgstr "Taambahkan Istilah Yang Tidak Relevan"
-
 #: lib/content/templates/content/content-form.php:39
 msgid "Search post by terms, post ID, or post url:"
-msgstr "Cari postingan berdasarkan istilah,ID, atau url postingan:"
+msgstr "Cari postingan berdasarkan istilah,ID pos, atau url postingan:"
 
 #: lib/content/templates/content/content-form.php:40
 msgid ""
@@ -214,6 +209,18 @@ msgstr ""
 #: lib/content/templates/content/content-form.php:41
 msgid "Insert"
 msgstr "Sisipkan"
+
+#: lib/content/templates/content/content-relevant-post-search-field.php:21
+msgid "Populate terms by comma ( min 4 characters )"
+msgstr "Kumpulkan istilah dengan tanda koma ( minimal 4 karakter )"
+
+#: lib/content/templates/content/content-relevant-post-search-field.php:22
+msgid "Enable Google Suggestion"
+msgstr "Aktifkan Saran Google"
+
+#: lib/content/templates/content/content-relevant-post-search-field.php:23
+msgid "Add Irrelevant Term"
+msgstr "Taambahkan Istilah Yang Tidak Relevan"
 
 #: lib/content/templates/content/content-searchterms.php:23
 msgid "OK"
@@ -239,13 +246,22 @@ msgstr "Pengelolaan"
 msgid "Once Weekly"
 msgstr "Sekali Seminggu"
 
+#: lib/includes/class-stt2extat-sanitize.php:197
+#: lib/includes/class-stt2extat-sanitize.php:213
+#: lib/includes/class-stt2extat-sanitize.php:303
+#: lib/includes/class-stt2extat-sanitize.php:319
+#: lib/includes/class-stt2extat-sanitize.php:407 lib/includes/widgets.php:263
+#: lib/includes/widgets.php:271
+msgid "Disabled"
+msgstr "Non-aktifkan"
+
 #: lib/includes/class-stt2extat-sanitize.php:201
 msgid "Activate Get Referrer"
-msgstr ""
+msgstr "Aktivasi Referrer"
 
 #: lib/includes/class-stt2extat-sanitize.php:202
 msgid "Method to get terms from referrer."
-msgstr ""
+msgstr "Cara mendapatkan istilah dari referrer"
 
 #: lib/includes/class-stt2extat-sanitize.php:204
 #: lib/includes/class-stt2extat-sanitize.php:220
@@ -269,55 +285,55 @@ msgstr "Tampilan Otomatis"
 
 #: lib/includes/class-stt2extat-sanitize.php:218
 msgid "Add list automatically right after post content"
-msgstr ""
+msgstr "Tambahkan list secara otomatis tepat setelah konten pos"
 
 #: lib/includes/class-stt2extat-sanitize.php:229
 msgid "Number List"
-msgstr ""
+msgstr "Jumlah Istilah Di List"
 
 #: lib/includes/class-stt2extat-sanitize.php:230
 msgid "Maximum number of terms on list"
-msgstr ""
+msgstr "Maksimal jumlah Istilah di list"
 
 #: lib/includes/class-stt2extat-sanitize.php:239
 msgid "Incoming Terms"
-msgstr ""
+msgstr "Istilah Yang Masuk"
 
 #: lib/includes/class-stt2extat-sanitize.php:240
 msgid "Terms"
-msgstr ""
+msgstr "Istilah"
 
 #: lib/includes/class-stt2extat-sanitize.php:241
 msgid "Text Header"
-msgstr ""
+msgstr "Teks Header"
 
 #: lib/includes/class-stt2extat-sanitize.php:242
 msgid "Title of terms list"
-msgstr ""
+msgstr "Judul untuk daftar istilah"
 
 #: lib/includes/class-stt2extat-sanitize.php:263
 msgid "HTML Heading"
-msgstr ""
+msgstr "HTML Heading"
 
 #: lib/includes/class-stt2extat-sanitize.php:264
 msgid "HTML heading of text title"
-msgstr ""
+msgstr "Kode HTML untuk judul"
 
 #: lib/includes/class-stt2extat-sanitize.php:279
 msgid "List Style"
-msgstr ""
+msgstr "Model List"
 
 #: lib/includes/class-stt2extat-sanitize.php:280
 msgid "List style of terms"
-msgstr ""
+msgstr "Model list istilah"
 
 #: lib/includes/class-stt2extat-sanitize.php:291
 msgid "Filter Words"
-msgstr ""
+msgstr "Saring Kata"
 
 #: lib/includes/class-stt2extat-sanitize.php:292
 msgid "Filter word or phrase, add per-line or by comma"
-msgstr ""
+msgstr "Saring kata atau frasa, tambahkan per-baris atau dengan tanda koma"
 
 #: lib/includes/class-stt2extat-sanitize.php:307
 msgid "Convert Text Link"
@@ -329,6 +345,8 @@ msgid ""
 "Convert terms into links. Set custom structure for search link on <a href="
 "\"%1$s\">Permalink Settings</a> page."
 msgstr ""
+"Konversi istilah menjadilink. Atur struktur link pencarian di halaman <a "
+"href=\"%1$s\">Pengaturan Permalink</a>"
 
 #: lib/includes/class-stt2extat-sanitize.php:323
 msgid "Hits Count"
@@ -336,7 +354,7 @@ msgstr "Jumlah Hits"
 
 #: lib/includes/class-stt2extat-sanitize.php:324
 msgid "Type of terms counts display."
-msgstr ""
+msgstr "Model tampilan jumlah istilah"
 
 #: lib/includes/class-stt2extat-sanitize.php:341
 msgid "Auto Delete Terms"
@@ -344,62 +362,70 @@ msgstr "Hapus Istilah Otomatis"
 
 #: lib/includes/class-stt2extat-sanitize.php:342
 msgid ""
-"Delete unused terms before these days, 0 = disable. Scheduled once weekly."
+"Delete unused terms before these days, 0 = disabled. Scheduled once weekly."
 msgstr ""
+"Hapus istilah yang tidak digunakan sebelum hari yang dicatumkan, 0 = non-"
+"aktifkan. Penjadwalan seminggu sekali."
 
 #: lib/includes/class-stt2extat-sanitize.php:384
 msgid "User Agents/Referrer"
-msgstr ""
+msgstr "User Agents/Referrer"
 
 #: lib/includes/class-stt2extat-sanitize.php:385
 msgid "Manage referrer from these user agents"
-msgstr ""
+msgstr "Pengaturan referrer untuk user agent"
 
 #: lib/includes/class-stt2extat-sanitize.php:396
 msgid "Max character length"
-msgstr ""
+msgstr "Maksimal panjang karakter istilah"
 
 #: lib/includes/class-stt2extat-sanitize.php:397
 msgid "Max character length of terms."
-msgstr ""
+msgstr "Maksimal panjang karakter istilah."
+
+#: lib/includes/class-stt2extat-sanitize.php:407
+msgid "Enabled"
+msgstr "Aktifkan"
 
 #: lib/includes/class-stt2extat-sanitize.php:408
 msgid "Excerpt"
-msgstr ""
+msgstr "Excerpt"
 
 #: lib/includes/class-stt2extat-sanitize.php:409
 msgid ""
 "Create snippet with highlighted terms of each post on search page via plugin "
 "Search Excerpt"
 msgstr ""
+"Buat snippet dengan istilah yang disorot untuk setiap pos di halaman "
+"pencarian dengan bantuna plugin Search Excerpt"
 
 #: lib/includes/class-stt2extat-sanitize.php:422
 msgid "manual input"
-msgstr ""
+msgstr "input manual"
 
 #: lib/includes/class-stt2extat-sanitize.php:434
 msgid "term stats"
-msgstr ""
+msgstr "Statistik Istilah"
 
 #: lib/includes/class-stt2extat-sanitize.php:446
 msgid "migrate &amp; delete terms"
-msgstr ""
+msgstr "migrasi &amp; hapus istilah"
 
 #: lib/includes/class-stt2extat-sanitize.php:455
 #: lib/includes/class-stt2extat-sanitize.php:456
 msgid "Name"
-msgstr ""
+msgstr "Nama"
 
 #: lib/includes/class-stt2extat-sanitize.php:458
 #: lib/includes/class-stt2extat-sanitize.php:470
 msgid "update terms"
-msgstr ""
+msgstr "perbaharui istilah"
 
 #: lib/includes/class-stt2extat-sanitize.php:467
 #: lib/includes/class-stt2extat-sanitize.php:468
-#: lib/includes/class-stt2extat-table.php:178
+#: lib/includes/class-stt2extat-table.php:188
 msgid "Slug"
-msgstr ""
+msgstr "Slug"
 
 #: lib/includes/class-stt2extat-sanitize.php:480
 #, php-format
@@ -411,6 +437,12 @@ msgid ""
 "\"%2$s\">Here my support contact &amp; PayPal email <i class=\"%3$s\"></i> "
 "<a target=\"_blank\" href=\"%4$s\" title=\"%5$s\">%6$s</a></p>"
 msgstr ""
+"<p><i class=\"%1$s\">Remember, if you ever need a helping hand, you will "
+"find one at the end of each of your arms. As you grow older, you will "
+"discover that you have two hands, one for helping yourself and the other for "
+"helping others.</i></p><p class=\"%2$s\"> &#126; Sam Levenson</p><p class="
+"\"%2$s\">Here my support contact &amp; PayPal email <i class=\"%3$s\"></i> "
+"<a target=\"_blank\" href=\"%4$s\" title=\"%5$s\">%6$s</a></p>"
 
 #: lib/includes/class-stt2extat-sanitize.php:494
 msgid "Help Support, Credit &amp; Donate"
@@ -439,6 +471,11 @@ msgid ""
 "content as well as WordPress search default algorithm. Abuse with any "
 "extension that you made is welcome to support this plugin. Have fun!."
 msgstr ""
+"Kelo istilah Anda lebih baik, menambahkan istilah ke dalam satu posting "
+"secara manual, mendapatkan istilah melalui referrer, dan menyimpannya "
+"sebagai post meta. Cari istilah yang relevan isi postingan seperti halnya "
+"algoritma default WordPress pencarian. Modifikasi dengan ekstensi Anda di "
+"persilahkan untuk mendukung plugin ini. Have fun!."
 
 #: lib/includes/class-stt2extat-sanitize.php:531
 msgid "Troubleshooting"
@@ -520,59 +557,68 @@ msgstr ""
 
 #: lib/includes/class-stt2extat-sanitize.php:550
 msgid "Help Tab"
-msgstr ""
+msgstr "Tab Bantuan"
 
 #: lib/includes/class-stt2extat-sanitize.php:552
 msgid "For more information:"
-msgstr ""
+msgstr "Untuk informasi lanjut:"
 
 #: lib/includes/class-stt2extat-sanitize.php:554
 msgid "Plugin Page"
-msgstr ""
+msgstr "Halaman Plugin"
 
 #: lib/includes/class-stt2extat-sanitize.php:559
 msgid "help tab settings"
-msgstr ""
+msgstr "Pengaturan tab bantuan"
 
-#: lib/includes/class-stt2extat-table.php:81
+#: lib/includes/class-stt2extat-table.php:91
 #, php-format
 msgid "Edit &#8220;%s&#8221;"
-msgstr ""
+msgstr "Edit &#8220;%s&#8221;"
 
-#: lib/includes/class-stt2extat-table.php:90
-#: lib/includes/class-stt2extat-table.php:144
+#: lib/includes/class-stt2extat-table.php:100
+#: lib/includes/class-stt2extat-table.php:154
 msgid "Edit"
-msgstr ""
+msgstr "Edit"
 
-#: lib/includes/class-stt2extat-table.php:94
+#: lib/includes/class-stt2extat-table.php:104
 msgid "Delete"
-msgstr ""
+msgstr "Hapus"
 
-#: lib/includes/class-stt2extat-table.php:134
+#: lib/includes/class-stt2extat-table.php:144
 msgid "Permalink to: "
-msgstr ""
+msgstr "Permalink ke:"
 
-#: lib/includes/class-stt2extat-table.php:161
+#: lib/includes/class-stt2extat-table.php:171
 msgid " ago"
-msgstr ""
+msgstr " yang lalu"
 
-#: lib/includes/class-stt2extat-table.php:177
+#: lib/includes/class-stt2extat-table.php:187
 msgid "Term"
-msgstr ""
+msgstr "Istilah"
 
-#: lib/includes/class-stt2extat-table.php:179
+#: lib/includes/class-stt2extat-table.php:189
 msgid "Post ID"
-msgstr ""
+msgstr "Post ID"
 
-#: lib/includes/class-stt2extat-table.php:180 lib/includes/functions.php:183
+#: lib/includes/class-stt2extat-table.php:190 lib/includes/functions.php:183
 msgid "Hits"
 msgstr "Hits"
 
-#: lib/includes/class-stt2extat-table.php:181
+#: lib/includes/class-stt2extat-table.php:191
 msgid "Updated"
-msgstr ""
+msgstr "Updated"
 
-#: lib/includes/class-stt2extat-table.php:266
+#: lib/includes/class-stt2extat-table.php:233
+msgid "Search"
+msgstr "Cari"
+
+#: lib/includes/class-stt2extat-table.php:283
+#, php-format
+msgid "Search results for &#8220;%s&#8221;"
+msgstr "Hasil pencarian untuk &#8220;%s&#8221;"
+
+#: lib/includes/class-stt2extat-table.php:324
 #, php-format
 msgid "1 item"
 msgid_plural "%s items"
@@ -598,7 +644,7 @@ msgstr "tambahkan ke"
 msgid "this term not allowed."
 msgstr "istilah ini tidak diperbolehkan."
 
-#: lib/includes/functions.php:280 lib/includes/functions.php:1185
+#: lib/includes/functions.php:280 lib/includes/functions.php:1193
 msgid "include in filter word(s), can not be added!."
 msgstr "termasuk dalam filter kata tidak bisa ditambahkan!."
 
@@ -614,118 +660,114 @@ msgstr "terlalu panjang, tidak dapat ditambahkan!."
 msgid "too short, can not be added!."
 msgstr "terlalu singkat, tidak dapat ditambahkan!."
 
-#: lib/includes/functions.php:642 lib/includes/widgets.php:164
+#: lib/includes/functions.php:643 lib/includes/widgets.php:164
 #, php-format
 msgid "%s hit"
 msgid_plural "%s hits"
-msgstr[0] ""
+msgstr[0] "%s hit"
 
-#: lib/includes/functions.php:1011
+#: lib/includes/functions.php:1013
 msgid "Terms of post:"
-msgstr ""
+msgstr "Istilah Pos:"
 
-#: lib/includes/functions.php:1018 lib/includes/functions.php:2099
+#: lib/includes/functions.php:1020 lib/includes/functions.php:2094
 msgid "Terms of post: Empty!"
 msgstr "Istilah Postingan: Kosong!"
 
-#: lib/includes/functions.php:1074
+#: lib/includes/functions.php:1077
 msgid "Increase Number"
 msgstr "Tingkatkan Angka"
 
-#: lib/includes/functions.php:1076
+#: lib/includes/functions.php:1079
 msgid "Decrease Number"
 msgstr "Turunkan Angka"
 
-#: lib/includes/functions.php:1155 lib/includes/functions.php:2052
-#: lib/includes/functions.php:2106
+#: lib/includes/functions.php:1163 lib/includes/functions.php:2047
+#: lib/includes/functions.php:2101
 msgid "You do not have permission to do that."
 msgstr "Anda tidak diizinkan untuk melakukan ini."
 
-#: lib/includes/functions.php:1297
+#: lib/includes/functions.php:1305
 msgid "Posts Without Terms"
 msgstr "Postingan Tanpa Istilah"
 
-#: lib/includes/functions.php:1297
+#: lib/includes/functions.php:1305
 msgid "Show"
 msgstr "Tampilkan"
 
-#: lib/includes/functions.php:1398 lib/includes/widgets.php:167
+#: lib/includes/functions.php:1406 lib/includes/widgets.php:167
 #, php-format
 msgid "%s topic"
 msgid_plural "%s topics"
-msgstr[0] ""
+msgstr[0] "%s topik"
 
-#: lib/includes/functions.php:1816
-msgid "No results found."
-msgstr "Tidak ada hasil"
-
-#: lib/includes/functions.php:1947
+#: lib/includes/functions.php:1939
 msgid "plugin can not be activated. Your WordPress version is"
 msgstr "plugin tidak dapat diaktifkan. Versi WordPress Anda adalah"
 
-#: lib/includes/functions.php:1949 lib/includes/functions.php:1973
+#: lib/includes/functions.php:1941 lib/includes/functions.php:1965
 msgid "required minimal"
 msgstr "diperlukan minimal"
 
-#: lib/includes/functions.php:1952 lib/includes/functions.php:1976
+#: lib/includes/functions.php:1944 lib/includes/functions.php:1968
 msgid "Please update yours."
 msgstr "Silahkan Perbaharui"
 
-#: lib/includes/functions.php:1953 lib/includes/functions.php:1977
-#: lib/includes/functions.php:2006 lib/includes/functions.php:2024
-#: lib/includes/functions.php:2075
+#: lib/includes/functions.php:1945 lib/includes/functions.php:1969
+#: lib/includes/functions.php:1998 lib/includes/functions.php:2016
+#: lib/includes/functions.php:2070
 msgid "Dismiss this notice"
 msgstr "Acuhkan pemberitahuan ini"
 
-#: lib/includes/functions.php:1971
+#: lib/includes/functions.php:1963
 msgid "plugin can not be activated. Your PHP server version is"
 msgstr "plugin tidak dapat diaktifkan. Versi PHP server Anda adalah"
 
-#: lib/includes/functions.php:2003
+#: lib/includes/functions.php:1995
 msgid "is ready! Manage"
 msgstr "siap! Kelola"
 
-#: lib/includes/functions.php:2005
+#: lib/includes/functions.php:1997
 msgid "here"
 msgstr "di sini"
 
-#: lib/includes/functions.php:2021
+#: lib/includes/functions.php:2013
 msgid "Enable your browser javascript to load"
 msgstr "Aktifkan javascript browser Anda"
 
-#: lib/includes/functions.php:2044
+#: lib/includes/functions.php:2039
 msgid "Term added."
-msgstr ""
+msgstr "Istilah telah ditambahkan."
+
+#: lib/includes/functions.php:2040
+msgid "Term deleted."
+msgstr "Istilah telah dihapus."
+
+#: lib/includes/functions.php:2041
+msgid "Term updated."
+msgstr "Istilah telah diperbaharui."
+
+#: lib/includes/functions.php:2042
+msgid "Term not added."
+msgstr "Istilah tidak bertambah."
+
+#: lib/includes/functions.php:2043
+msgid "Term not updated."
+msgstr "Istilah tidak diperbaharui."
+
+#: lib/includes/functions.php:2044
+msgid "Term empty."
+msgstr "Istilah kosong."
 
 #: lib/includes/functions.php:2045
-msgid "Term deleted."
-msgstr ""
+msgid "Term was exists."
+msgstr "Istilah sudah ada."
 
 #: lib/includes/functions.php:2046
-msgid "Term updated."
-msgstr ""
-
-#: lib/includes/functions.php:2047
-msgid "Term not added."
-msgstr ""
-
-#: lib/includes/functions.php:2048
-msgid "Term not updated."
-msgstr ""
-
-#: lib/includes/functions.php:2049
-msgid "Term empty."
-msgstr ""
-
-#: lib/includes/functions.php:2050
-msgid "Term was exists."
-msgstr ""
-
-#: lib/includes/functions.php:2051
 msgid "Terms deleted."
 msgstr "Istilah dihapus."
 
-#: lib/includes/functions.php:2053
+#: lib/includes/functions.php:2048
 msgid ""
 "You attempted to edit an item that doesn&#8217;t exist. Perhaps it was "
 "deleted?."
@@ -733,83 +775,83 @@ msgstr ""
 "Anda berusaha untuk meng-edit item yang tidak ada. Apakah kemungkinan telah "
 "dihapus?"
 
-#: lib/includes/functions.php:2054
+#: lib/includes/functions.php:2049
 msgid "Term was deleted."
 msgstr "Istilah telah dihapus."
 
-#: lib/includes/functions.php:2055
+#: lib/includes/functions.php:2050
 msgid "Term too short ( min 4 characters )."
 msgstr "Istilah terlalu singkat ( min 4 characters )."
 
-#: lib/includes/functions.php:2056
+#: lib/includes/functions.php:2051
 msgid "Term too long ( max 70 characters )."
 msgstr "Istilah terlalu panjang ( max 70 characters )."
 
-#: lib/includes/functions.php:2057 lib/includes/functions.php:2107
+#: lib/includes/functions.php:2052 lib/includes/functions.php:2102
 msgid "An unidentified error has occurred."
 msgstr "Ada error yang tidak dapat dikenali."
 
-#: lib/includes/functions.php:2058
+#: lib/includes/functions.php:2053
 msgid "Terms migrated."
 msgstr "Migrasi Istilah"
 
-#: lib/includes/functions.php:2098
+#: lib/includes/functions.php:2093
 msgid "Remove Irrelevant Terms"
 msgstr "Hapus Istilah Yang Tidak Relevan"
 
-#: lib/includes/functions.php:2100
+#: lib/includes/functions.php:2095
 msgid "Not Updated."
 msgstr "Tidak Diperbaharui."
 
-#: lib/includes/functions.php:2101
+#: lib/includes/functions.php:2096
 msgid "Contain Stopwords!"
 msgstr "Mengandung Stopwords!"
 
-#: lib/includes/functions.php:2102
+#: lib/includes/functions.php:2097
 msgid "Preview:"
 msgstr "Cuplikan:"
 
-#: lib/includes/functions.php:2103
+#: lib/includes/functions.php:2098
 msgid "Irrelevant!"
 msgstr "Tidak Relevan!"
 
-#: lib/includes/functions.php:2104
+#: lib/includes/functions.php:2099
 msgid "No Post Selected!"
 msgstr "Tidak Ada Postingan Yang Dipilih"
 
-#: lib/includes/functions.php:2105
+#: lib/includes/functions.php:2100
 msgid "No terms input!"
 msgstr "Tidak istilah yang diinput!"
 
-#: lib/includes/functions.php:2108
+#: lib/includes/functions.php:2103
 msgid "No Post found"
 msgstr "Tidak ada Post ditemukan"
 
-#: lib/includes/functions.php:2109
+#: lib/includes/functions.php:2104
 msgid "Read More"
 msgstr "Baca Selanjutnya"
 
-#: lib/includes/functions.php:2110
+#: lib/includes/functions.php:2105
 msgid "Remove"
 msgstr "Hapus"
 
-#: lib/includes/functions.php:2111
+#: lib/includes/functions.php:2106
 msgid "Add"
 msgstr "Tambahkan"
 
-#: lib/includes/functions.php:2112
+#: lib/includes/functions.php:2107
 msgid "Too Short. Min 4 character (A-Z,a-z,0-9)"
 msgstr "Terlalu singkat. Minimal 4 karakter (A-Z,a-z,0-9)"
 
-#: lib/includes/functions.php:2113
+#: lib/includes/functions.php:2108
 msgid "Too Long. Max {$maxchar} character (A-Z,a-z,0-9)"
 msgstr "Terlalu panjang. Maksimal {$maxchar} karakter (A-Z,a-z,0-9)"
 
-#: lib/includes/functions.php:2114
+#: lib/includes/functions.php:2109
 msgid "Success add to field"
 msgstr "Berhasil ditambahkan"
 
-#: lib/includes/functions.php:2115
+#: lib/includes/functions.php:2110
 msgid ""
 "Your browser does not support for this plugin! Compatible for latest version "
 "Firefox, Safari, or Chrome."
@@ -817,23 +859,23 @@ msgstr ""
 "Browser tidak mendukung untuk plugin ini! Plugin ini cocok untuk browser "
 "Firefox, Safari, Chrom versi terbaru."
 
-#: lib/includes/functions.php:2116
+#: lib/includes/functions.php:2111
 msgid "Collapse Tab"
 msgstr "Tab Kolaps"
 
-#: lib/includes/functions.php:2118
+#: lib/includes/functions.php:2113
 msgid "Success Updated!"
 msgstr "Berhasil Diperbarui!"
 
-#: lib/includes/functions.php:2119
+#: lib/includes/functions.php:2114
 msgid "Loading..."
 msgstr "Sedang Proses..."
 
-#: lib/includes/functions.php:2121
+#: lib/includes/functions.php:2116
 msgid "Fail to add into database."
 msgstr "Gagal untuk menambahkan ke database"
 
-#: lib/includes/functions.php:2122
+#: lib/includes/functions.php:2117
 msgid "Please try another terms."
 msgstr "Coba lagi dengan istilah lainnya"
 
@@ -843,7 +885,7 @@ msgstr "Tambahkan daftar istilah di sidebar Anda"
 
 #: lib/includes/widgets.php:24
 msgid "STT2EXTAT Terms List"
-msgstr ""
+msgstr "STT2EXTAT Terms List"
 
 #: lib/includes/widgets.php:52
 msgid "Popular Terms"
@@ -851,51 +893,51 @@ msgstr "Istilah Popular"
 
 #: lib/includes/widgets.php:85
 msgid " Post"
-msgstr ""
+msgstr " Pos"
 
 #: lib/includes/widgets.php:91
 msgid "Recent Terms"
-msgstr ""
+msgstr "Istilah Terbaru"
 
 #: lib/includes/widgets.php:99 lib/includes/widgets.php:244
 msgid "Recent Terms Post"
-msgstr ""
+msgstr "Istilah Pos Terbaru"
 
 #: lib/includes/widgets.php:105
 msgid "Term Cloud"
-msgstr ""
+msgstr "Term Cloud"
 
 #: lib/includes/widgets.php:235
 msgid "Title:"
-msgstr ""
+msgstr "judul:"
 
 #: lib/includes/widgets.php:238
 msgid "Type:"
-msgstr ""
+msgstr "Tipe:"
 
 #: lib/includes/widgets.php:240
 msgid "Popular Terms All"
-msgstr ""
+msgstr "Semua Istilah Popular"
 
 #: lib/includes/widgets.php:241
 msgid "Popular in Taxonomy"
-msgstr ""
+msgstr "Popular di Taxonomy"
 
 #: lib/includes/widgets.php:242
 msgid "Popular in Post"
-msgstr ""
+msgstr "Popular di Pos"
 
 #: lib/includes/widgets.php:243
 msgid "Recent Terms All"
-msgstr ""
+msgstr "Semua Istilah Terbaru"
 
 #: lib/includes/widgets.php:245
 msgid "Terms Cloud"
-msgstr ""
+msgstr "Terms Cloud"
 
 #: lib/includes/widgets.php:249
 msgid "Interval:"
-msgstr ""
+msgstr "Jangka Waktu"
 
 #: lib/includes/widgets.php:251
 msgid "Last 7 Days"
@@ -907,27 +949,23 @@ msgstr "30 Hari Terakhir"
 
 #: lib/includes/widgets.php:253
 msgid "All Time"
-msgstr "Sepajang Waktu"
+msgstr "Sepanjang Waktu"
 
 #: lib/includes/widgets.php:257
 msgid "Number of terms to show:"
-msgstr ""
+msgstr "Jumlah Istilah yang ditampilkan"
 
 #: lib/includes/widgets.php:261
 msgid "Display Count Type:"
-msgstr ""
-
-#: lib/includes/widgets.php:263 lib/includes/widgets.php:271
-msgid "Disable"
-msgstr "Non-Aktifkan"
+msgstr "Jenis Tampilan Count"
 
 #: lib/includes/widgets.php:264
 msgid "Tooltips"
-msgstr ""
+msgstr "Tooltips"
 
 #: lib/includes/widgets.php:265
 msgid "Sup"
-msgstr ""
+msgstr "Sup"
 
 #: lib/includes/widgets.php:269
 msgid "Convert terms:"
@@ -935,11 +973,29 @@ msgstr "Konversi Istilah"
 
 #: lib/includes/widgets.php:272
 msgid "Link to post"
-msgstr "Link ke postingan"
+msgstr "Link ke pos"
 
 #: lib/includes/widgets.php:273
 msgid "Link to search page"
 msgstr "Link ke halaman pencarian"
+
+#~ msgid "Search results for"
+#~ msgstr "Hasil Pencarian untuk"
+
+#~ msgid "Search results for &#8220;%1$s&#8221;"
+#~ msgstr "Hasil Pencarian untuk &#8220;%1$s&#8221; "
+
+#~ msgid "Disable"
+#~ msgstr "Non-Aktifkan"
+
+#~ msgid ""
+#~ "Delete unused terms before these days, 0 = disable. Scheduled once weekly."
+#~ msgstr ""
+#~ "Hapus istilah yang tidak digunakan sebelum hari yang dicatumkan, 0 = non-"
+#~ "aktif. Penjadwalan seminggu sekali."
+
+#~ msgid "No results found."
+#~ msgstr "Tidak ada hasil"
 
 #~ msgid ""
 #~ "Manage your search terms better, extended version of <strong>SEO "

@@ -4,7 +4,7 @@ Donate link: http://www.jevuska.com/donate/
 Tags: post, searchterms, keywords, seo, tagging, search, stt2, postmeta, shortcode, widget
 Requires at least: 4.4
 Tested up to: 4.4
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,6 +13,21 @@ Add your terms into single post manually, get terms via referrer, and save them 
 == Description ==
 Manage your terms better, add terms into single post manually, get terms via referrer, and save them as post meta. Search the terms that relevant of post content as well as WordPress search default algorithm.
 
+= Features =
+ * Save terms as postmeta ( private meta_key )
+ * Manual input terms into postmeta
+ * Get terms via referrer ( ajax or PHP )
+ * Characters length of terms is min 4 and max 70
+ * Show terms list in front end ( ajax or html )
+ * General settings, multiple widgets, and shortcode
+ * Terms stats
+ * Manual or scheduling to delete unused terms
+ * Convert text of terms into link ( post or search link )
+ * Easy setup search link structure under options permalink page
+ * Hook `wp_head` on search page to include canonical rel, and add meta no robots if no posts found
+ * Set 404 page with hook pre_get_posts on search page if terms is not allowed or empty ( as note, Headers status code is 200, not 404 )
+ * More features and filters available ( see: [ Plugin page ](http://www.jevuska.com/2015/06/28/injeksi-manual-keyword-add-onsextension-plugin-seo-searchterms-tagging-2/ "Plugin page") )
+ 
 = Requirement =
  * jQuery latest version
  * WordPress version 4.4
@@ -27,8 +42,8 @@ Manage your terms better, add terms into single post manually, get terms via ref
  
 == Installation ==
 1. Upload the entire `STT2 Extension Add Terms` folder to the `/wp-content/plugins/` directory.
-2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Configure your settings and you are ready to go.
+2. Activate the plugin through the `Plugins` menu in WordPress.
+3. Configure your `STT2EXTAT` settings and you are ready to go.
 4. Multiple Widget available under title `STT2EXTAT Terms List`
 5. You can use shortcode `[stt2extat]` to show terms list inside post content.
 
@@ -43,6 +58,16 @@ Yes, you can. After you add one or more terms via input field, just add your ter
 4. STT2EXTAT Permalink for search page
 
 == Changelog ==
+* 1.1.5 = December 17, 2015
+ * Fixes parse_request and patch `set_404` as `pre_get_posts` for not allowed terms on search page.
+ * Normalize path
+ * Fixes list on textarea
+ * Add `per_page` number on Screen Options and search box for Term Stats table
+ * Fixes ajax tabel pagination
+ * Fixes translation bahasa Indonesia
+ * Fixes readme files
+ * Delete `content-create-tax.php` file, its not ready to setup yet
+ 
 * 1.1.4 = December 16, 2015
  * Fixes wp_get_referer
  
@@ -94,8 +119,11 @@ Yes, you can. After you add one or more terms via input field, just add your ter
  * First official release!
 
 == Upgrade Notice ==
+= v1.1.5 =
+Fixes not found search result and bug ajax pagination. Please upgrade yours.
+
 = v1.1.4 =
-Fixes referer. Upgrade immediately.
+Fixes referrer. Upgrade immediately.
 
 = v1.1.3 =
 Fixes a security related bug. Upgrade immediately.

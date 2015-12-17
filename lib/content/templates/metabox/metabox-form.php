@@ -25,10 +25,10 @@ function stt2extat_metabox_content_callback()
 		<?php do_action( 'stt2extat_screenmeta' ); ?>
 		<div id="fullpost"></div>
 		<div id="msgb"></div>
-		<div id="gsuggestPopup">
+		<div id="gsuggest-popup">
 			<?php do_action( 'stt2extat_checkbox_google' ); ?>
 		</div>
-		<div id="notmatchPopup">
+		<div id="notmatch-popup">
 			<?php do_action( 'stt2extat_checkbox_irrelevant' ); ?>
 			<?php do_action( 'stt2extat_thickbox' ); ?>
 		</div>

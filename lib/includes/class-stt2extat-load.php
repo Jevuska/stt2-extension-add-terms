@@ -72,7 +72,7 @@ class STT2EXTAT_Load
 				$current_version = get_option( 'stt2extat_version' );
 			
 			if ( version_compare( $current_version, STT2EXTAT_VER, '<=' ) ) :
-				$filename = STT2EXTAT_PATH_LIB_ADMIN . 'updates/stt2extat-1.1.0.php';
+				$filename = wp_normalize_path( STT2EXTAT_PATH_LIB_ADMIN . 'updates/stt2extat-1.1.0.php' );
 				if ( file_exists( $filename ) ) :
 					include( $filename );
 					update_option( 'stt2extat_version' , STT2EXTAT_DB_VER );
@@ -146,7 +146,7 @@ class STT2EXTAT_Load
 		
 		if ( ( ! empty( $stt2extat_settings['php_version'] ) &&  version_compare( phpversion(), $stt2extat_settings['php_version'], '<' ) ) || ( ! empty( $stt2extat_settings['wp_version'] ) &&  version_compare( $wp_version, $stt2extat_settings['wp_version'], '<' ) ) )
 		{
-			deactivate_plugins( STT2EXTAT_PLUGIN_BASENAME );
+			deactivate_plugins( wp_normalize_path( STT2EXTAT_PLUGIN_BASENAME ) );
 			stt2extat_is_activated() && add_filter( 'gettext', 'stt2extat_change_activate_notice', 99, 3 );
 			remove_filter( 'plugin_action_links', array( $this, 'plugin_action_links' ), 10, 2 );
 		}
@@ -163,7 +163,7 @@ class STT2EXTAT_Load
 		static $plugin;
 		
 		if ( ! isset( $plugin ) )
-			$plugin = STT2EXTAT_PLUGIN_BASENAME;
+			$plugin = wp_normalize_path( STT2EXTAT_PLUGIN_BASENAME );
 		
 		if ( $plugin == $file ) :
 			$link = sprintf( '<a href="%s">%s</a>', 
@@ -391,6 +391,12 @@ class STT2EXTAT_Load
 		exit;
 	}
 	
+	/**
+	 * get referrer
+	 *
+	 * @since 1.1.4
+	 *
+	*/
 	public function wp_get_referer()
 	{
 		if ( ! isset( $_SERVER['HTTP_REFERER'] ) || ( '' == $_SERVER['HTTP_REFERER'] ) )

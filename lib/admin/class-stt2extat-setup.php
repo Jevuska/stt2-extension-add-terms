@@ -38,7 +38,7 @@ class STT2EXTAT_Setup
 		update_option( 'stt2extat_check_relevant_terms', 1 );
 		update_option( 'stt2extat_settings', $stt2extat_settings );
 		update_option( 'stt2extat_settings_update_term', '2' );
-		set_transient( 'stt2exat_go_to_settings', stt2extat_go_to_settings(), 10 );
+		set_transient( 'stt2exat_go_to_settings', stt2extat_go_to_settings(), 3 );
 		$current_version = get_option( 'stt2extat_version' );
 		if ( false !== $current_version )
 			update_option( 'stt2extat_version_upgraded_from', $current_version );
@@ -77,9 +77,10 @@ class STT2EXTAT_Setup
 		delete_option( 'widget_stt2extat_terms_list' );
 		delete_option( 'stt2extat_check_relevant_terms' );
 		delete_transient( 'stt2exat_go_to_settings' );
-		delete_user_meta( $user_id, "closedpostboxes_$stt2extat_screen_id" );
-		delete_user_meta( $user_id, "metaboxhidden_$stt2extat_screen_id" );
-		delete_user_meta( $user_id, "meta-box-order_$stt2extat_screen_id" );
+		delete_user_meta( $user_id, 'closedpostboxes_' . $stt2extat_screen_id );
+		delete_user_meta( $user_id, 'metaboxhidden_' . $stt2extat_screen_id );
+		delete_user_meta( $user_id, 'meta-box-order_' . $stt2extat_screen_id );
+		delete_user_meta( $user_id, 'stt2extat_term_stats_per_page' );
 		wp_clear_scheduled_hook( 'stt2extat_delete_terms' );
 		flush_rewrite_rules();
 	}

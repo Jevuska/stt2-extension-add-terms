@@ -306,6 +306,7 @@ function stt2extat_insert_ajax()
 			echo join( '', $print );
 		
 	endif;
+	
 	wp_die(); 
 }
 
@@ -765,7 +766,7 @@ function stt2extat_delete_term_ajax( $opt = null )
 			if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) :
 				$nonce = 'heartbeat-nonce';
 				if ( ! wp_verify_nonce( $_REQUEST['_wpnonce'],  $nonce ) ) :
-					do_action( 'stt2extat_notice', 9, true, false );
+					do_action( 'stt2extat_notice', $code = 9, $error = true, $add_setting_error = false );
 					wp_die();
 				endif;
 			else :
@@ -782,7 +783,7 @@ function stt2extat_delete_term_ajax( $opt = null )
 				wp_die( $location );
 			endif;
 			
-			do_action( 'stt2extat_notice', 6, true, false );
+			do_action( 'stt2extat_notice', $code = 6, $error = true, $add_setting_error = false );
 			wp_die();
 			exit;
 			
@@ -809,7 +810,7 @@ function stt2extat_delete_term_ajax( $opt = null )
 		if ( ! $prev_value || ! $exist ) :
 			$location = add_query_arg( array( 'error' => true, 'message' => 11 ), $location );
 			if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) :
-				do_action( 'stt2extat_notice', 11, true, false );
+				do_action( 'stt2extat_notice', $code = 11, $error = true, $add_setting_error = false );
 				wp_die();
 			else :
 				wp_redirect( $location );
@@ -822,7 +823,7 @@ function stt2extat_delete_term_ajax( $opt = null )
 			$location = add_query_arg( array( 'error' => true, 'message' => 5 ), $location );
 			
 			if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) :
-				do_action( 'stt2extat_notice', 5, true, false );
+				do_action( 'stt2extat_notice', $code = 5, $error = true, $add_setting_error = false );
 				wp_die();
 			else :
 				wp_redirect( $location );
@@ -840,7 +841,7 @@ function stt2extat_delete_term_ajax( $opt = null )
 			$location = add_query_arg( array( 'error' => false, 'message' => 2 ), $location );
 			
 			if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) :
-				do_action( 'stt2extat_notice', 2, false, false );
+				do_action( 'stt2extat_notice', $code = 2, $error = false, $add_setting_error = false );
 				wp_die();
 			endif;
 			
@@ -1059,6 +1060,7 @@ function stt2extat_list_all_terms_ajax()
 			$result
 		);
     endif;
+	
 	wp_die();
 }
 
@@ -1606,7 +1608,7 @@ function stt2extat_convert_case( $name )
 	else
 		$name = ucwords( $name );
 	
-	return apply_filters( 'stt2extat_convert_case', $name );
+	return $name;
 }
 
 /**
@@ -1615,7 +1617,7 @@ function stt2extat_convert_case( $name )
  * @since 1.1
  *
 */
-function stt2extat_filter_search_page_title( $title )
+function stt2extat_filter_search_page_title( $title, $sep, $loc )
 {
 	if ( is_search() )
 		return stt2extat_convert_case( $title );
@@ -1713,18 +1715,14 @@ function stt2extat_parse_request()
 	global $wp, $wp_query, $stt2extat_settings;
 	
 	if ( ! is_admin() && isset( $wp->query_vars['s'] ) ) :
-		
-		$var = stt2extat_remove_char( $wp->query_vars['s'] );
-		
-		if ( 3 < mb_strlen( $var ) && $stt2extat_settings['max_char'] > mb_strlen( $var ) ) :
-			$wp->extra_query_vars['rel_canonical'] = get_search_link( $var );
-			$wp->set_query_var( 's',  $var );
+		$s = stt2extat_build_terms( stt2extat_remove_char( $wp->query_vars['s'] ) );
+		if ( 3 < mb_strlen( $s ) && $stt2extat_settings['max_char'] > mb_strlen( $s ) ) :
+			$wp->extra_query_vars['rel_canonical'] = get_search_link( $s );
+			$wp->set_query_var( 's',  $s );
 			add_action( 'wp_head', 'stt2extat_search_page_head' );
 		else :
-			add_action( 'wp_head', 'wp_no_robots' );
-			if ( '' == trim( $var ) )
-				add_filter( 'wp_title', '__stt2extat_no_result_found' );
 			$wp->extra_query_vars['not_allowed'] = ( bool ) 1;
+			add_action( 'wp_head', 'wp_no_robots' );
 			add_action( 'pre_get_posts', 'stt2extat_if_no_result' );
 		endif;
 		
@@ -1787,10 +1785,10 @@ function stt2extat_no_robots()
 */
 function stt2extat_if_no_result( $query )
 {
-	global $wp, $wp_query;
+	global $wp;
 	
-	if ( isset( $wp->extra_query_vars['not_allowed'] ) && $wp->extra_query_vars['not_allowed'] )
-		return $wp_query->post_count = 0;
+	if ( isset( $wp->extra_query_vars['not_allowed'] ) && $wp->extra_query_vars['not_allowed'] && $query->is_main_query() )
+		$query->set_404();
 	
 	return apply_filters( 'stt2extat_if_no_result', $query );
 }
@@ -1809,17 +1807,6 @@ function stt2extat_search_stopwords( $stopword )
 		$stopword = wp_parse_args( $stt2extat_settings['stopwords'], $stopword );
 	
 	return $stopword;
-}
-
-/**
- * Filter empty search page title
- *
- * @since 1.1
- *
-*/
-function __stt2extat_no_result_found( $title )
-{
-	return $title = __( 'No results found.' );
 }
 
 /**
@@ -2037,13 +2024,15 @@ function stt2extat_nojs()
  * @since 1.0
  *
 */
-function stt2extat_edit_term_notice( $update, $error, $add_setting_error )
+function stt2extat_edit_term_notice( $code, $error, $add_setting_error )
 {
 	if ( isset( $_GET['term_ID'] ) && '' == stt2extat_get_post_terms( absint( $_GET['post_ID'] ) ) )
 		return;
 	
-	if ( false == $update )
-		$update = 5;
+	if ( false == $code )
+		$code = 5;
+	
+	$code = absint( $code );
 	
 	$messages['searchterms'] = array(
 		0  => '', // Unused. Messages start at index 1.
@@ -2065,8 +2054,8 @@ function stt2extat_edit_term_notice( $update, $error, $add_setting_error )
 	);
 	
 	if ( wp_validate_boolean( $add_setting_error ) ) :
-		if ( isset( $messages['searchterms'][ absint( $update ) ] ) ) 
-			return $messages['searchterms'][ absint( $update ) ];
+		if ( isset( $messages['searchterms'][ $code ] ) ) 
+			return $messages['searchterms'][ $code ];
 		
 		return $messages['searchterms'][1];
 	endif;
@@ -2077,7 +2066,7 @@ function stt2extat_edit_term_notice( $update, $error, $add_setting_error )
 	
 	printf ( '<div id="message" class="%1$s notice is-dismissible"><p>%2$s</p><button type="button" class="notice-dismiss"><span class="screen-reader-text">%3$s.</span></button></div>',
 		sanitize_html_class( $class ),
-		esc_html( $messages['searchterms'][ absint( $update ) ] ),
+		esc_html( $messages['searchterms'][ $code ] ),
 		__( 'Dismiss this notice', 'stt2extat' )
 	);
 	

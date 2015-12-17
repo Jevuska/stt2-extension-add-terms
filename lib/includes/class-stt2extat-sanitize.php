@@ -194,7 +194,7 @@ class STT2EXTAT_Sanitize
 			'parameter'   => 'active',
 			'normal'      => 'abstain',
 			'optional'    => array(
-				'abstain' => 'Disable',
+				'abstain' => __( 'Disabled', 'stt2extat' ),
 				'n'       => 'PHP',
 				'y'       => 'Ajax'
 			),
@@ -210,7 +210,7 @@ class STT2EXTAT_Sanitize
 			'parameter'   => 'auto',
 			'normal'      => 'abstain',
 			'optional'    => array(
-				'abstain' => 'Disable',
+				'abstain' => __( 'Disabled', 'stt2extat' ),
 				'n'       => 'HTML',
 				'y'       => 'Ajax'
 			),
@@ -300,7 +300,7 @@ class STT2EXTAT_Sanitize
 			'parameter'   => 'convert',
 			'normal'      => 'n',
 			'optional'    => array(
-				'n'      => 'Disable',
+				'n'      => __( 'Disabled', 'stt2extat' ),
 				'post'   => 'Link to post content',
 				'search' => 'Link to search page'
 			),
@@ -316,7 +316,7 @@ class STT2EXTAT_Sanitize
 			'parameter'   => 'count',
 			'normal'      => 'n',
 			'optional'    => array( 
-				'n'        => 'Disable',
+				'n'        => __( 'Disabled', 'stt2extat' ),
 				'tooltips' => 'Tooltips',
 				'sup'      => 'Sup'
 			),
@@ -339,7 +339,7 @@ class STT2EXTAT_Sanitize
 				'count'         => ( int ) 1
 			),
 			'subtitle'    => __( 'Auto Delete Terms', 'stt2extat' ),
-			'description' => __( 'Delete unused terms before these days, 0 = disable. Scheduled once weekly.', 'stt2extat' ),
+			'description' => __( 'Delete unused terms before these days, 0 = disabled. Scheduled once weekly.', 'stt2extat' ),
 			'group'       => 'general',
 			'subgroup'    => __( 'general settings', 'stt2extat'),
 			'lang'        => 'array'
@@ -404,7 +404,7 @@ class STT2EXTAT_Sanitize
 			'id'          => 13,
 			'parameter'   => 'searchexcerpt',
 			'normal'      => 'n',
-			'optional'    => array( 'y' => 'Enable', 'n' => 'Disable' ),
+			'optional'    => array( 'y' => __( 'Enabled', 'stt2extat' ), 'n' => __( 'Disabled', 'stt2extat' ) ),
 			'subtitle'    => __( 'Excerpt', 'stt2extat' ),
 			'description' => __( 'Create snippet with highlighted terms of each post on search page via plugin Search Excerpt', 'stt2extat' ),
 			'group'       => 'general',

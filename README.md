@@ -21,7 +21,7 @@ Manage your terms better, add terms into single post manually, get terms via ref
  * Convert text of terms into link ( post or search link )
  * Easy setup search link structure under options permalink page
  * Hook `wp_head` on search page to include canonical rel, and add meta no robots if no posts found
- * Set 404 page with hook pre_get_posts on search page if terms is not allowed or empty ( as note, Headers status code is 200, not 404 )
+ * Set 404 page by hook pre_get_posts on search page if term is not allowed or empty ( as note, Headers status code is 200, not 404 )
  * More features and filters available ( see: [ Plugin page ](http://www.jevuska.com/2015/06/28/injeksi-manual-keyword-add-onsextension-plugin-seo-searchterms-tagging-2/ "Plugin page") )
  
 #### Requirement

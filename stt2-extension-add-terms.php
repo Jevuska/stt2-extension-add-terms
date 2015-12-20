@@ -5,16 +5,16 @@ Plugin URI: http://www.jevuska.com/2015/06/28/injeksi-manual-keyword-add-onsexte
 Description: Manage your terms better, add terms into single post manually, get terms via referrer, and save them as post meta. Search the terms that relevant of post content as well as WordPress search default algorithm.
 Author: Jevuska
 Author URI: http://www.jevuska.com
-Version: 1.1.5
+Version: 1.1.7
 Text Domain: stt2extat
 License: GPL version 2 - http://www.gnu.org/licenses/gpl-2.0.html
- ** update: December 17, 2015
+ ** update: December 21, 2015
  * :: required latest version of WordPress, min.version 4.4
- * :: required laters version PHP Server, min.version 7.0
+ * :: required latest version PHP Server, min.version 7.0
  * :: required browser JavaScript enabled
  * :: Add terms into single post manually
  * :: Add terms via referrer
- * :: Save terms as postmeta
+ * :: All terms will be saved as postmeta
  * :: Search the terms that match post content as well as WordPress search default algorithm
  * STT2 Extension Add Terms is free software: you can copy and distribute verbatim copies
  * of this license document, changing it is allowed.
@@ -74,7 +74,7 @@ if ( ! class_exists( 'Initial_STT2EXTAT' ) ) :
 		public function setup_constants()
 		{
 			if ( ! defined( 'STT2EXTAT_VER' ) )
-				define( 'STT2EXTAT_VER', '1.1.5' );
+				define( 'STT2EXTAT_VER', '1.1.7' );
 			
 			if ( ! defined( 'STT2EXTAT_DB_VER' ) )
 				define( 'STT2EXTAT_DB_VER', '1.1' );
@@ -144,8 +144,6 @@ if ( ! class_exists( 'Initial_STT2EXTAT' ) ) :
 				if ( current_user_can( 'manage_options' ) ) :
 					require_once( STT2EXTAT_PATH_LIB_INCLUDES . 'class-stt2extat-table.php' );
 					require_once( STT2EXTAT_PATH_LIB_INCLUDES . 'template-functions.php' );
-					require_once( STT2EXTAT_PATH_LIB_CONTENT . 'templates/metabox/metabox-form.php' );
-					require_once( STT2EXTAT_PATH_LIB_CONTENT . 'templates/themes/themes.php' );
 					require_once( STT2EXTAT_PATH_LIB_ADMIN . 'class-stt2extat-admin.php' );
 					require_once( STT2EXTAT_PATH_LIB_ADMIN . 'class-stt2extat-setup.php' );
 				endif;

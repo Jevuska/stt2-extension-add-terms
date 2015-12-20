@@ -11,6 +11,7 @@ if ( ! defined( 'ABSPATH' ) || ! defined( 'STT2EXTAT_PLUGIN_FILE' ) )
  
 /**
  * global setting function
+ * @use global $stt2extat_settings
  *
  * @since 1.0
  *

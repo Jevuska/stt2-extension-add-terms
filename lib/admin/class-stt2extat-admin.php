@@ -313,8 +313,13 @@ class STT2EXTAT_Admin
 				continue;
 			
 			$id     = ( 'save' == $v ) ? 'submitdiv' : $v;
+			
 			$screen = $current_screen->id;
 			
+			
+			if ( 'support' == $v || 'features' == $v  )
+				$screen = $current_screen->id . '_undrag';
+		
 			if ( 'sidebar' == $this->data[ $k ]['parameter'] ) :
 				$context = 'side';
 			elseif ( 'general' == $this->data[ $k ]['group'] || 'manual' == $this->data[ $k ]['group'] ) :
@@ -466,6 +471,7 @@ class STT2EXTAT_Admin
 								<?php do_meta_boxes( $current_screen, 'advanced', 'stt2extat_settings' ); ?>
 							</div>
 							<div id="postbox-container-1" class="postbox-container">
+								<?php do_meta_boxes( $current_screen->id . '_undrag', 'side', 'stt2extat_settings' ); ?>
 								<?php do_meta_boxes( $current_screen, 'side', 'stt2extat_settings' ); ?>
 							</div>
 							<div class="clear"></div>
@@ -526,11 +532,11 @@ class STT2EXTAT_Admin
 				printf (
 					'<div class="submitbox">
 						<div class="alignleft">
-							<label for="check_relevant_stt2_terms"><input type="button" id="migrate_stt2_terms" class="button button-secondary migrate-searchterms button-small" value="%1$s"> <input type="checkbox" id="check_relevant_stt2_terms" class="check_relevant_terms" value="1" %2$s> %3$s<span class="spinner"></span></label>
+							<label for="check_relevant_stt2_terms"><input type="button" id="migrate_stt2_terms" class="button button-secondary migrate-searchterms button-small" value="%1$s" /> <input type="checkbox" id="check_relevant_stt2_terms" class="check_relevant_terms" value="1" %2$s /> %3$s<span class="spinner"></span></label>
 							<div class="clear"></div>
 						</div>
 						<div class="alignright">
-							<label for="delete_all_searchterms"><input type="button" id="delete_all_searchterms" class="button delete-searchterms submitdelete" value="%4$s"><span class="spinner"></span></label>
+							<label for="delete_all_searchterms"><input type="button" id="delete_all_searchterms" class="button delete-searchterms submitdelete" value="%4$s" /><span class="spinner"></span></label>
 						</div>
 						<div class="clear"></div>
 					</div>',
@@ -769,7 +775,7 @@ class STT2EXTAT_Admin
 			
 			add_settings_field(
 				$v['id'],
-				sprintf( '<label><input id="%1$s" class="stt2extat-permalink" type="radio" name="stt2extat_search_link" value="%2$s" %3$s %4$s/>%5$s</label>',
+				sprintf( '<label><input id="%1$s" class="stt2extat-permalink" type="radio" name="stt2extat_search_link" value="%2$s" %3$s %4$s />%5$s</label>',
 					esc_attr( $v['id'] ),
 					esc_attr( $v['radio_val'] ),
 					esc_attr( $checked ),
@@ -1121,7 +1127,7 @@ class STT2EXTAT_Admin
 	*/
 	public function checkbox_form( $param, $description )
 	{
-		$output  = sprintf( '<label for="%1$s"><input type="checkbox" id="%1$s" name="stt2extat_settings[%1$s]" value="%2$s" %3$s/> <span class="description">%4$s</span></label>',
+		$output  = sprintf( '<label for="%1$s"><input type="checkbox" id="%1$s" name="stt2extat_settings[%1$s]" value="%2$s" %3$s /> <span class="description">%4$s</span></label>',
 			esc_attr( $param ),
 			( bool ) 1,
 			checked( isset( $this->set[ $param ] ) && false != $this->set[ $param ], true, false ),
@@ -1263,13 +1269,13 @@ class STT2EXTAT_Admin
 		);
 		
 		$html  = ( '' == $num_field ) ? '' : $html_top;
-		$html .= '<label for="ua-top"><input id="ua-top-k" type="text" class="regular-text" value="" placeholder="' . __( 'Referrer', 'stt2extat' ) . '" readonly="readonly"><input id="ua-top-v" type="text" class="medium-text" value="" placeholder="' . __( 'Query Param', 'stt2extat' ) . '" readonly="readonly"></label>';
+		$html .= '<label for="ua-top"><input id="ua-top-k" type="text" class="regular-text" value="" placeholder="' . __( 'Referrer', 'stt2extat' ) . '" readonly="readonly" /><input id="ua-top-v" type="text" class="medium-text" value="" placeholder="' . __( 'Query Param', 'stt2extat' ) . '" readonly="readonly" /></label>';
 		
 		$i = 0;
 		foreach ( $array as $k => $v ) :
 			$i++;
 			
-			$html .= wp_sprintf( '<label for="%1$s-%2$s"><input type="%3$s" id="%1$s-%2$s" name="%4$s[%1$s][k][]" class="%1$s %5$s" value="%6$s"/><input type="%3$s" name="%4$s[%1$s][v][]" class="%1$s medium-text" value="%7$s"/></label>',
+			$html .= wp_sprintf( '<label for="%1$s-%2$s"><input type="%3$s" id="%1$s-%2$s" name="%4$s[%1$s][k][]" class="%1$s %5$s" value="%6$s" /><input type="%3$s" name="%4$s[%1$s][v][]" class="%1$s medium-text" value="%7$s" /></label>',
 				esc_attr( $param ),
 				absint( $i ),
 				esc_attr( $type ),

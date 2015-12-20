@@ -10,24 +10,25 @@ License: GPLv2
 Manage your terms better, add terms into single post manually, get terms via referrer, and save them as post meta. Search the terms that relevant of post content as well as WordPress search default algorithm.
 
 #### Features
- * Save terms as postmeta ( private meta_key )
- * Manual input terms into postmeta
- * Get terms via referrer ( ajax or PHP )
- * Characters length of terms is min 4 and max 70
- * Show terms list in front end ( ajax or html )
- * General settings, multiple widgets, and shortcode
- * Terms stats
- * Manual or scheduling to delete unused terms
- * Convert text of terms into link ( post or search link )
- * Easy setup search link structure under options permalink page
- * Hook `wp_head` on search page to include canonical rel, and add meta no robots if no posts found
- * Set 404 page by hook pre_get_posts on search page if term is not allowed or empty ( as note, Headers status code is 200, not 404 )
- * More features and filters available ( see: [ Plugin page ](http://www.jevuska.com/2015/06/28/injeksi-manual-keyword-add-onsextension-plugin-seo-searchterms-tagging-2/ "Plugin page") )
+ * Save terms as postmeta ( private meta_key ).
+ * Manual input terms into postmeta.
+ * Get terms via referrer ( ajax or PHP ).
+ * Better terms characters input.
+ * Characters length of terms is min 4 and max 70.
+ * Show terms list in front end ( ajax or html ).
+ * General settings, multiple widgets, and shortcode `[stt2extat]`.
+ * Terms stats.
+ * Manual or scheduling to delete unused terms.
+ * Convert text of terms into link ( post or search link ).
+ * Easy setup search link structure under options permalink page.
+ * Hook `wp_head` on search page to include canonical rel, and add meta no robots if no posts found.
+ * Set 404 page by hook `pre_get_posts` on search page if term is not allowed or empty ( as note, Headers status code is 200, not 404 ).
+ * More features and filters available ( see: [ Plugin page ](http://www.jevuska.com/2015/06/28/injeksi-manual-keyword-add-onsextension-plugin-seo-searchterms-tagging-2/ "Plugin page") ).
  
 #### Requirement
  * jQuery latest version
- * WordPress version 4.4
- * PHP Server version 7.0
+ * WordPress min version 4.4
+ * PHP Server min version 7.0
  
 #### Package
  * The excerpt preview of terms result is supported by Plugin Search Excerpt by Scott Yang
@@ -37,6 +38,9 @@ Manage your terms better, add terms into single post manually, get terms via ref
  * Convert terms into custom taxonomy and feature on terms meta
  
 ## Frequently Asked Questions
+
+### My server not support for PHP 7, may I use this plugin?
+You can use *Undevelopment version* of this plugin. Please checkout the [Developers](https://wordpress.org/plugins/stt2-extension-add-terms/developers/ "Developers") page and use `1.1.5-undev` version. It's the same features with `v1.1.5`.
 
 #### Can I add bulk terms ?
 Yes, you can. After you add one or more terms via input field, just add your terms list that separated by comma into textarea.
@@ -62,6 +66,21 @@ Yes, you can. After you add one or more terms via input field, just add your ter
 ![screenshot 4](lib/admin/includes/assets/img/screenshot-4.jpg)
 
 ## Changelog
+* 1.1.7 = December 21, 2015
+ * Fixes plugin setup
+ 
+* 1.1.6 = December 20, 2015
+ * Fixes readme files.
+ * Identified array or object with `array_column` only.
+ * Remove `stt2extat_filter_search_page_title`.
+ * Add function `stt2extat_search_page_title` to filter `document_title_parts`, in comment, see hook.php.
+ * Add function `stt2extat_search_page_title_separator` to filter `document_title_separator`, in comment.
+ * Change a function's name `stt2extat_get_relevant_post_on_search_page` into `stt2extat_get_the_id_relevant_post`.
+ * Fixes `lib/content/templates` files.
+ * Fixes screen option.
+ * Fixes hook.
+ * Fixes translation.
+ 
 * 1.1.5 = December 17, 2015
  * Fixes parse_request and patch `set_404` as `pre_get_posts` for not allowed terms on search page.
  * Normalize path
@@ -126,6 +145,12 @@ Yes, you can. After you add one or more terms via input field, just add your ter
  * First official release!
 
 ## Upgrade Notice
+###### v1.1.7
+Fixes setup bug. Upgrade immediately.
+
+###### v1.1.6
+Fixes manual input templates and improvement searching data. Please upgrade yours.
+
 ###### v1.1.5
 Fixes not found search result and bug ajax pagination. Please upgrade yours.
 

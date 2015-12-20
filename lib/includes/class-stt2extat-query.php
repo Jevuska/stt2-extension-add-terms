@@ -19,7 +19,7 @@ function stt2extat_popular_each_post_id( $args = array() )
 {
 	$data_query = stt2extat_data_query( $args );
 	
-	$list = ( ! function_exists( 'array_column' ) ) ? wp_list_pluck( $data_query, 'post_id' ) : array_column( $data_query, 'post_id' );
+	$list = array_column( $data_query, 'post_id' );
 	$list = array_values( array_unique( $list ) );
 	
 	$data  = array();
@@ -35,7 +35,7 @@ function stt2extat_popular_each_post_id( $args = array() )
 		endwhile;
 		$data[ $maxvalue ] = $data_query[ $maxindex ];
 	endfor;
-	krsort($data);
+	krsort( $data );
 	return $data;
 }
 

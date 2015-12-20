@@ -13,93 +13,62 @@
 
 if ( ! defined( 'ABSPATH' ) || ! defined( 'STT2EXTAT_PLUGIN_FILE' ) )
 	exit;
-/**
- * template hint section
- *
- * @since 1.0.0
- *
- */
-function stt2extat_hint_callback()
-{
-	return stt2extat_get_template_part( 'content', 'hint' );
-}
 
 /**
- * template tab content
+ * handling function via wp ajax to show form of this plugin
  *
- * @since 1.0.0
+ * @since 1.0
  *
- */
-function stt2extat_template_content_ajax()
+*/
+function stt2extat_form_handler()
 {
-	return stt2extat_get_template_part( 'content', 'form' );
+	if ( ! isset( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'heartbeat-nonce' ) ) 
+		wp_die( '-1' );
+	
+	$index = stt2extat_tempate_index();
+	return apply_filters( 'stt2extat_tempate_index', $index );
 }
 
-
-/**
- * template thickbox on donate tab
- *
- * @since 1.0.0
- *
- */
-function stt2extat_thickbox_callback()
-{
-	return stt2extat_get_template_part( 'content', 'thickbox' );
-}
-
-/**
- * template google sugestion fiture
- *
- * @since 1.0.0
- *
- */
-function stt2extat_checkbox_google_callback()
-{
-	return stt2extat_get_template_part( 'content', 'checkbox-google' );
-}
-
-/**
- * template ignore irrelevant fiture
- *
- * @since 1.0.0
- *
- */
-function stt2extat_checkbox_irrelevant_callback()
-{
-	return stt2extat_get_template_part( 'content', 'checkbox-irrelevant' );
-}
-
-/**
- * template list of terms post
- *
- * @since 1.0.0
- *
- */
-function stt2extat_footer_callback()
-{
-	return stt2extat_get_template_part( 'content', 'searchterms' );
-}
-
-/**
- * template screenmeta to toggle view full post
- *
- * @since 1.0.0
- *
- */
-function stt2extat_screenmeta_callback()
-{
-	return stt2extat_get_template_part( 'metabox', 'screenmeta' );
-}
 
 /**
  * template theme default
  *
  * @since 1.0.0
  *
+ * Change function's name stt2extat_theme_default
+ *
+ * @since 1.1.6
+ *
  */
-function stt2extat_theme_default()
+function stt2extat_tempate_index()
 {
-	return stt2extat_get_template_part( 'themes', 'default' );
+	return stt2extat_get_template_part( 'index' );
+}
+
+/**
+ * function to get template name
+ *
+ * @since 1.0.0
+ *
+ * fixes variables
+ * 
+ * @since 1.1.6
+ *
+ */
+function stt2extat_get_template_part( $name, $part_name = null )
+{
+	$template_path = stt2extat_template_path();
+	
+	if ( null != $part_name )
+		$name = "{$name}-{$part_name}";
+	
+	$filename = "{$name}.php";
+	$part     = $template_path . '/' . sanitize_file_name( $filename );
+	
+	if ( file_exists( $part ) )
+		include( $part );
+	else
+		wp_die( '<kbd>' . $filename . '</kbd> ' . __( 'not exists.', 'stt2extat' ) );
 }
 
 /**
@@ -108,23 +77,20 @@ function stt2extat_theme_default()
  *
  * @since 1.0.0
  *
+ * fixes variables
+ *
+ * @since 1.1.6
+ *
  */
 function stt2extat_template_path()
 {
-	return apply_filters( 'stt2extat_template_path', wp_normalize_path( STT2EXTAT_PATH_LIB_CONTENT . 'templates/' ) );
+	$template_name = get_option( 'stt2extat_template_name' );
+	$template_path = wp_normalize_path( STT2EXTAT_PATH_LIB_CONTENT . 'templates/' );
+	$path          = $template_path . 'default';
+	if ( $template_name )
+		$path = $template_path . $template_name;
+	return $path;
 }
 
-/**
- * function to get template name
- *
- * @since 1.0.0
- *
- */
-function stt2extat_get_template_part( $template, $name )
-{
-	$path      = stt2extat_template_path() . $template;
-	$filename  = $template . '-' . $name . '.php';
-	$templates = $path . '/' . sanitize_file_name( $filename );
-	include( $templates );
-}
+require_once( stt2extat_template_path() . '/functions.php' );
 ?>

@@ -205,6 +205,7 @@ function stt2extat_insert_ajax()
 				
 				elseif ( ! $relevant ) :
 					$result['irrelevant'][] = $q;
+					
 				endif;
 				
 			else :
@@ -311,14 +312,14 @@ function stt2extat_insert_ajax()
 }
 
 /**
+ * on search page 
  * $q is term query by referrer, not search query
  *
  * @since 1.1
  *
 */
-function stt2extat_get_relevant_post_on_search_page( $post_ids, $q, $ignore )
+function stt2extat_get_the_id_relevant_post( $post_ids, $q, $ignore )
 {
-
 	$id = null;
 	foreach ( $post_ids as $post_id ) :
 	
@@ -328,6 +329,7 @@ function stt2extat_get_relevant_post_on_search_page( $post_ids, $q, $ignore )
 			wp_validate_boolean( $ignore ),
 			true
 		);
+		
 		if( ! $relevant )
 			continue;
 			
@@ -709,7 +711,7 @@ function _stt2extat_data_format( $data, $html, $count, $number, $display, $conve
 		uasort( $list, '_usort_terms_by_count' );
 	
 	if ( array_filter( $list ) && 0 < $number ) :
-		$list = ( ! function_exists( 'array_column' ) ) ? wp_list_pluck( $list, 'text_link' ) : array_column( $list, 'text_link' );
+		$list = array_column( $list, 'text_link' );
 		$list = array_map( 'trim', $list );
 		$list = implode( "</$li>$sep<$li>", $list );
 	endif;
@@ -1009,7 +1011,7 @@ function stt2extat_terms_list_post_ajax()
 			array_map( 'stt2extat_terms_list_post', $data, $slice )
 		);
 		
-		printf ( '<span><span class="dashicons dashicons-tag"></span> %1$s</span><br><div class="tagchecklist"><span><a class="ntdelbutton"></a>&nbsp;%2$s</span>%3$s</div>',
+		printf ( '<span><span class="dashicons dashicons-tag"></span> %1$s</span><br /><div class="tagchecklist"><span><a class="ntdelbutton"></a>&nbsp;%2$s</span>%3$s</div>',
 			__( 'Terms of post:', 'stt2extat' ),
 			$result,
 			$more
@@ -1122,25 +1124,6 @@ function _usort_terms_by_count( $a, $b )
 function stt2extat_sort_by_hits( $a, $b )
 {
 	return $b[1] - $a[1];
-}
-
-/**
- * get search field to populate relevant terms
- * @deprecated see stt2extat_relevant_post_search_field_callback
- * 
- * @since 1.0.0
- *
- * sanitize $_POST and $_REQUEST and other variable
- *
- * @since 1.0.3
- *
- */
-function stt2extat_search_field_ajax()
-{
-	if ( ! isset( $_REQUEST['_wpnonce'] ) || ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'heartbeat-nonce' ) )
-		wp_die( '-1' );
-	
-	return stt2extat_get_template_part( 'content', 'relevant-post-search-field' );
 }
 
 /**
@@ -1335,7 +1318,6 @@ function stt2extat_post_wo_terms_ajax()
 		'result' => $html,
 		'count'  => absint( $data->number )
 	);
-	
 	wp_send_json( $result );
 }
 
@@ -1616,13 +1598,38 @@ function stt2extat_convert_case( $name )
  *
  * @since 1.1
  *
+ * filter `document_title_parts`
+ *
+ * @since 1.1.6
+ * 
 */
-function stt2extat_filter_search_page_title( $title, $sep, $loc )
+function stt2extat_search_page_title( $title )
 {
-	if ( is_search() )
-		return stt2extat_convert_case( $title );
+	if ( is_search() ) :
+		$search = get_search_query();
+		$search = stt2extat_convert_case( $search );
+		$title['title'] = $search;
+	endif;
 	
 	return $title;
+}
+
+/**
+ * filter the title separator of search page
+ *
+ * @since 1.1
+ *
+ * filter `document_title_separator`
+ *
+ * @since 1.1.6
+ * 
+*/
+function stt2extat_search_page_title_separator( $sep )
+{
+	if ( is_search() )
+		$sep = '&#8212;'; // em-dash HTML number
+		
+	return $sep;
 }
 
 /**
@@ -1904,7 +1911,7 @@ function stt2extat_change_activate_notice( $translated_text, $untranslated_text,
 */
 function stt2extat_admin_notices()
 {
-	global $stt2extat_settings, $wp_version, $required_php_version;
+	global $stt2extat_settings, $wp_version;
 	
 	if ( ! empty( $stt2extat_settings['php_version'] ) &&  version_compare( phpversion(), $stt2extat_settings['php_version'], '<' ) )
 		return stt2extat_upgrade_php();
@@ -1954,7 +1961,7 @@ function stt2extat_upgrade_wp()
 */
 function stt2extat_upgrade_php()
 {
-	global $stt2extat_settings, $required_php_version;
+	global $stt2extat_settings;
 	
 	$url_version = 'http://www.php.net/downloads.php';
 	

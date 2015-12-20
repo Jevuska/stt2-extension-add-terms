@@ -40,9 +40,7 @@ class STT2EXTAT_Table extends WP_List_Table
 		endif;
 		
 		function usort_reorder( $a, $b )
-		{
-			$a->id   = $b->id = $a->term_id = $b->term_id;
-			
+		{			
             $orderby = ( isset( $_REQUEST['orderby'] ) && '' != $_REQUEST['orderby'] ) ? sanitize_key( $_REQUEST['orderby'] ) : 'term_id';
 			$order   = ( isset( $_REQUEST['order'] )  && '' != $_REQUEST['order'] ) ? sanitize_key( $_REQUEST['order'] ) : 'asc';
 			
@@ -53,6 +51,7 @@ class STT2EXTAT_Table extends WP_List_Table
 			
 			return ( 'asc' === $order ) ? $result : -$result;
         }
+		
 		uasort( $data, 'usort_reorder' );
 		
 		$per_page     = $this->get_items_per_page( 'stt2extat_term_stats_per_page', 5 );
@@ -174,7 +173,7 @@ class STT2EXTAT_Table extends WP_List_Table
 	
 	public function column_cb( $item )
 	{
-        return sprintf( '<label class="screen-reader-text" for="cb-select-%2$s">%2$s</label><input type="checkbox" value="%2$s" name="%1$s[]" id="cb-select-%2$s" class="cb-select-%2$s">',
+        return sprintf( '<label class="screen-reader-text" for="cb-select-%2$s">%2$s</label><input type="checkbox" value="%2$s" name="%1$s[]" id="cb-select-%2$s" class="cb-select-%2$s" />',
 			'delete_' . $this->_args['singular'],
 			absint( $item->term_id )
         );

@@ -11,7 +11,6 @@ if ( ! defined( 'ABSPATH' ) || ! defined( 'STT2EXTAT_PLUGIN_FILE' ) )
 
 class STT2EXTAT_Widget_Terms_List extends WP_Widget
 {
-
 	public function __construct()
 	{
 		$widget_ops = array(
@@ -29,7 +28,7 @@ class STT2EXTAT_Widget_Terms_List extends WP_Widget
 		add_action( 'deleted_post', array( $this, 'flush_widget_cache' ) );
 		add_action( 'switch_theme', array( $this, 'flush_widget_cache' ) );
 	}
-
+	
 	public function widget( $args, $instance )
 	{
 		$cache = array();

@@ -142,7 +142,7 @@ class STT2EXTAT_Load
 	*/
 	public function deactivate_plugins()
 	{
-		global $stt2extat_settings, $wp_version, $required_php_version;
+		global $stt2extat_settings, $wp_version;
 		
 		if ( ( ! empty( $stt2extat_settings['php_version'] ) &&  version_compare( phpversion(), $stt2extat_settings['php_version'], '<' ) ) || ( ! empty( $stt2extat_settings['wp_version'] ) &&  version_compare( $wp_version, $stt2extat_settings['wp_version'], '<' ) ) )
 		{
@@ -298,7 +298,7 @@ class STT2EXTAT_Load
 				wp_schedule_event( current_time( 'timestamp' ), 'inseconds', 'stt2extat_delete_terms' );
 			endif;
 		else :
-			if ( wp_next_scheduled( 'stt2extat_delete_terms' ) )
+			if ( false != wp_next_scheduled( 'stt2extat_delete_terms' ) )
 				wp_clear_scheduled_hook( 'stt2extat_delete_terms' );
 		endif;
 	}
@@ -345,7 +345,7 @@ class STT2EXTAT_Load
 		if ( 0 == count( $data ) )
 			exit;
 		
-		$list = ( ! function_exists( 'array_column' ) ) ? wp_list_pluck( $data, 'post_id' ) : array_column( $data, 'post_id' );
+		$list = array_column( $data, 'post_id' );
 		$list = array_unique( $list );
 		
 		$func = function( $terms, $list, $meta_key )
@@ -383,7 +383,7 @@ class STT2EXTAT_Load
 		$success  = call_user_func_array( $func, array( $data, $list, '_stt2extat' ) );
 		
 		if ( isset( $success['update'] ) )
-			echo ( 'Update ' . count( $success['update'] ) . ' postmeta.<br>' );
+			echo ( 'Update ' . count( $success['update'] ) . ' postmeta.<br />' );
 		
 		if ( isset( $success['delete'] ) )
 			echo ( 'Delete ' . count( $success['delete'] ) . ' postmeta.' );
@@ -413,7 +413,9 @@ class STT2EXTAT_Load
 	*/
 	public function ref_php()
 	{
-		$is_single = apply_filters( 'stt2extat_is_single', true );
+		$site_wide = true;
+		
+		$is_single = apply_filters( 'stt2extat_is_single', $site_wide );
 		if ( ! $is_single && ! is_search() )
 			return false;
 		
@@ -484,7 +486,7 @@ class STT2EXTAT_Load
 					return false;
 				
 				$ignore  = apply_filters( 'stt2extat_ignore_relevant', true );
-				$post_id = stt2extat_get_relevant_post_on_search_page( $post_ids, $q, $ignore );
+				$post_id = stt2extat_get_the_id_relevant_post( $post_ids, $q, $ignore );
 				
 				if ( null == $post_id )
 					return false;

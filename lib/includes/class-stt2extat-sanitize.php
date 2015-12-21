@@ -610,10 +610,18 @@ class STT2EXTAT_Sanitize
 	 *
 	 * @since 1.1
 	 *
+	 * since this plugin use array_column to identify both array and object
+	 * patch function_exists( 'array_column' ) to pass bug during activation
+	 *
+	 * @since 1.1.8
+	 *
 	*/
 	public function default_setting()
 	{
 		$data = array_splice( $this->data, 0, 14 );
+		
+		if ( ! function_exists( 'array_column' ) )
+			return array();
 		
 		$data = array_column( $data, 'normal', 'parameter' );
 		

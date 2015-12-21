@@ -66,6 +66,10 @@ Yes, you can. After you add one or more terms via input field, just add your ter
 ![screenshot 4](lib/admin/includes/assets/img/screenshot-4.jpg)
 
 ## Changelog
+* 1.1.8 = December 21, 2015
+ * Fixes update notice.
+ * Patch function exist for `array_column`.
+ 
 * 1.1.7 = December 21, 2015
  * Fixes plugin setup
  

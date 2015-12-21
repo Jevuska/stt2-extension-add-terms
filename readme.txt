@@ -4,7 +4,7 @@ Donate link: http://www.jevuska.com/donate/
 Tags: post, searchterms, keywords, seo, tagging, search, stt2, postmeta, shortcode, widget
 Requires at least: 4.4
 Tested up to: 4.4
-Stable tag: 1.1.7
+Stable tag: 1.1.8
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,6 +62,10 @@ Yes, you can. After you add one or more terms via input field, just add your ter
 4. STT2EXTAT Permalink for search page
 
 == Changelog ==
+* 1.1.8 = December 21, 2015
+ * Fixes update notice.
+ * Patch function exist for `array_column`.
+ 
 * 1.1.7 = December 21, 2015
  * Fixes plugin setup
 

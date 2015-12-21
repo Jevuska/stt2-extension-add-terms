@@ -1945,7 +1945,7 @@ function stt2extat_upgrade_wp()
 		stt2extat_get_plugin_data( 'Name' ),
 		__( 'plugin can not be activated. Your WordPress version is', 'stt2extat' ),
 		$wp_version,
-		__( 'required minimal', 'stt2extat' ),
+		__( 'required minimum', 'stt2extat' ),
 		esc_url( $url_version ),
 		$stt2extat_settings['wp_version'],
 		__( 'Please update yours.', 'stt2extat' ),
@@ -1964,15 +1964,18 @@ function stt2extat_upgrade_php()
 	global $stt2extat_settings;
 	
 	$url_version = 'http://www.php.net/downloads.php';
+	$dev_url     = 'https://wordpress.org/plugins/stt2-extension-add-terms/developers/';
 	
-	printf ( '<div id="message" class="update-nag notice is-dismissible"><b>%1$s</b> %2$s <b>%3$s</b>, %4$s <a href="%5$s" target="_blank">%6$s</a>. %7$s<button type="button" class="notice-dismiss"><span class="screen-reader-text">%8$s.</span></button></div>',
+	printf ( '<div id="message" class="update-nag notice is-dismissible"><b>%1$s</b> %2$s <b>%3$s</b>, %4$s <a href="%5$s" target="_blank">%6$s</a>. %7$s <kbd>1.1.5-undev</kbd>, <a target="_blank" href="%8$s">%9$s</a>.<button type="button" class="notice-dismiss"><span class="screen-reader-text">%10$s.</span></button></div>',
 		stt2extat_get_plugin_data( 'Name' ),
 		__( 'plugin can not be activated. Your PHP server version is', 'stt2extat' ),
 		phpversion(),
-		__( 'required minimal', 'stt2extat' ),
+		__( 'required minimum', 'stt2extat' ),
 		esc_url( $url_version ),
 		$stt2extat_settings['php_version'],
-		__( 'Please update yours.', 'stt2extat' ),
+		__( 'Please update your PHP, or you can still use this plugin under Undevelopment Version', 'stt2extat' ),
+		esc_url( $dev_url ),
+		__( 'download here' ),
 		__( 'Dismiss this notice', 'stt2extat' )
 	);
 }

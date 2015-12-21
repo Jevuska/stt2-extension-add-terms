@@ -1136,6 +1136,10 @@ function stt2extat_sort_by_hits( $a, $b )
  *
  * @since 1.0.3
  *
+ * patch get_the_excerpt
+ *
+ * @since 1.0.9
+ *
  */
 function stt2extat_search_relevant_ajax()
 {
@@ -1166,7 +1170,8 @@ function stt2extat_search_relevant_ajax()
 	
 	$query   = stt2extat_get_relevant_post( $post_id, $q, $ignore );
 	$post    = $query->post;
-	$excerpt = apply_filters( 'get_the_excerpt', $q, $post_id );
+	$excerpt = get_the_excerpt();
+	$excerpt = apply_filters( 'get_the_excerpt', $excerpt, $q, $post_id );
 	$data    = $stt2extat_data->terms;
 	
 	if ( stt2extat_in_stopwords( $q ) ) :

@@ -45,8 +45,8 @@ add_filter( 'search_link', 'stt2extat_filter_search_link', 1, 2 );
 // Wp search stopwords hook
 add_filter( 'wp_search_stopwords', 'stt2extat_search_stopwords', 10, 2 );
 
-// Excerpt hook
-add_filter( 'get_the_excerpt', 'stt2exat_the_excerpt', 5, 3 );
+// Search excerpt hook
+add_filter( 'get_the_excerpt', 'stt2exat_the_excerpt', 5, 4 );
 
 // Edit terms on Stats Table hook
 add_action( 'stt2extat_edited_action', 'stt2extat_edited_action_callback', 10, 1 );

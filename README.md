@@ -66,6 +66,9 @@ Yes, you can. After you add one or more terms via input field, just add your ter
 ![screenshot 4](lib/admin/includes/assets/img/screenshot-4.jpg)
 
 ## Changelog
+* 1.1.9 = December 22, 2015
+ * Fixes search excerpt.
+ 
 * 1.1.8 = December 21, 2015
  * Fixes update notice.
  * Patch function exist for `array_column`.
@@ -149,6 +152,9 @@ Yes, you can. After you add one or more terms via input field, just add your ter
  * First official release!
 
 ## Upgrade Notice
+###### v1.1.9
+Fixes search excerpt related bug. Upgrade immediately.
+
 ###### v1.1.7
 Fixes setup bug. Upgrade immediately.
 

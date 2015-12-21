@@ -5,10 +5,10 @@ Plugin URI: http://www.jevuska.com/2015/06/28/injeksi-manual-keyword-add-onsexte
 Description: Manage your terms better, add terms into single post manually, get terms via referrer, and save them as post meta. Search the terms that relevant of post content as well as WordPress search default algorithm.
 Author: Jevuska
 Author URI: http://www.jevuska.com
-Version: 1.1.8
+Version: 1.1.9
 Text Domain: stt2extat
 License: GPL version 2 - http://www.gnu.org/licenses/gpl-2.0.html
- ** update: December 21, 2015
+ ** update: December 22, 2015
  * :: required latest version of WordPress, min.version 4.4
  * :: required latest version PHP Server, min.version 7.0
  * :: required browser JavaScript enabled
@@ -74,7 +74,7 @@ if ( ! class_exists( 'Initial_STT2EXTAT' ) ) :
 		public function setup_constants()
 		{
 			if ( ! defined( 'STT2EXTAT_VER' ) )
-				define( 'STT2EXTAT_VER', '1.1.8' );
+				define( 'STT2EXTAT_VER', '1.1.9' );
 			
 			if ( ! defined( 'STT2EXTAT_DB_VER' ) )
 				define( 'STT2EXTAT_DB_VER', '1.1' );

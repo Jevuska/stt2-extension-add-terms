@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: STT2 Extension Add Terms v1.0.2\n"
 "Report-Msgid-Bugs-To: Jevuska <contact@jevuska.com>\n"
-"POT-Creation-Date: 2015-12-21 03:33+0800\n"
+"POT-Creation-Date: 2015-12-21 15:12+0800\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Jevuska <contact@jevuska.com>\n"
@@ -662,7 +662,7 @@ msgstr[0] "%s hit"
 msgid "Terms of post:"
 msgstr "Istilah Pos:"
 
-#: lib/includes/functions.php:1022 lib/includes/functions.php:2101
+#: lib/includes/functions.php:1022 lib/includes/functions.php:2104
 msgid "Terms of post: Empty!"
 msgstr "Istilah Postingan: Kosong!"
 
@@ -674,8 +674,8 @@ msgstr "Tingkatkan Angka"
 msgid "Decrease Number"
 msgstr "Turunkan Angka"
 
-#: lib/includes/functions.php:1146 lib/includes/functions.php:2054
-#: lib/includes/functions.php:2108
+#: lib/includes/functions.php:1146 lib/includes/functions.php:2057
+#: lib/includes/functions.php:2111
 msgid "You do not have permission to do that."
 msgstr "Anda tidak diizinkan untuk melakukan ini."
 
@@ -697,69 +697,81 @@ msgstr[0] "%s topik"
 msgid "plugin can not be activated. Your WordPress version is"
 msgstr "plugin tidak dapat diaktifkan. Versi WordPress Anda adalah"
 
-#: lib/includes/functions.php:1948 lib/includes/functions.php:1972
-msgid "required minimal"
+#: lib/includes/functions.php:1948 lib/includes/functions.php:1973
+msgid "required minimum"
 msgstr "diperlukan minimal"
 
-#: lib/includes/functions.php:1951 lib/includes/functions.php:1975
+#: lib/includes/functions.php:1951
 msgid "Please update yours."
 msgstr "Silahkan Perbaharui"
 
-#: lib/includes/functions.php:1952 lib/includes/functions.php:1976
-#: lib/includes/functions.php:2005 lib/includes/functions.php:2023
-#: lib/includes/functions.php:2077
+#: lib/includes/functions.php:1952 lib/includes/functions.php:1979
+#: lib/includes/functions.php:2008 lib/includes/functions.php:2026
+#: lib/includes/functions.php:2080
 msgid "Dismiss this notice"
 msgstr "Acuhkan pemberitahuan ini"
 
-#: lib/includes/functions.php:1970
+#: lib/includes/functions.php:1971
 msgid "plugin can not be activated. Your PHP server version is"
 msgstr "plugin tidak dapat diaktifkan. Versi PHP server Anda adalah"
 
-#: lib/includes/functions.php:2002
+#: lib/includes/functions.php:1976
+msgid ""
+"Please update your PHP, or you can still use this plugin under Undevelopment "
+"Version"
+msgstr ""
+"Perbarui PHP Anda, atau Anda masih dapat menggunakan plugin ini pada "
+"Undevelopment Version"
+
+#: lib/includes/functions.php:1978
+msgid "download here"
+msgstr "undeh di sini"
+
+#: lib/includes/functions.php:2005
 msgid "is ready! Manage"
 msgstr "siap! Kelola"
 
-#: lib/includes/functions.php:2004
+#: lib/includes/functions.php:2007
 msgid "here"
 msgstr "di sini"
 
-#: lib/includes/functions.php:2020
+#: lib/includes/functions.php:2023
 msgid "Enable your browser javascript to load"
 msgstr "Aktifkan javascript browser Anda"
 
-#: lib/includes/functions.php:2046
+#: lib/includes/functions.php:2049
 msgid "Term added."
 msgstr "Istilah telah ditambahkan."
 
-#: lib/includes/functions.php:2047
+#: lib/includes/functions.php:2050
 msgid "Term deleted."
 msgstr "Istilah telah dihapus."
 
-#: lib/includes/functions.php:2048
+#: lib/includes/functions.php:2051
 msgid "Term updated."
 msgstr "Istilah telah diperbaharui."
 
-#: lib/includes/functions.php:2049
+#: lib/includes/functions.php:2052
 msgid "Term not added."
 msgstr "Istilah tidak bertambah."
 
-#: lib/includes/functions.php:2050
+#: lib/includes/functions.php:2053
 msgid "Term not updated."
 msgstr "Istilah tidak diperbaharui."
 
-#: lib/includes/functions.php:2051
+#: lib/includes/functions.php:2054
 msgid "Term empty."
 msgstr "Istilah kosong."
 
-#: lib/includes/functions.php:2052
+#: lib/includes/functions.php:2055
 msgid "Term was exists."
 msgstr "Istilah sudah ada."
 
-#: lib/includes/functions.php:2053
+#: lib/includes/functions.php:2056
 msgid "Terms deleted."
 msgstr "Istilah dihapus."
 
-#: lib/includes/functions.php:2055
+#: lib/includes/functions.php:2058
 msgid ""
 "You attempted to edit an item that doesn&#8217;t exist. Perhaps it was "
 "deleted?."
@@ -767,83 +779,83 @@ msgstr ""
 "Anda berusaha untuk meng-edit item yang tidak ada. Apakah kemungkinan telah "
 "dihapus?"
 
-#: lib/includes/functions.php:2056
+#: lib/includes/functions.php:2059
 msgid "Term was deleted."
 msgstr "Istilah telah dihapus."
 
-#: lib/includes/functions.php:2057
+#: lib/includes/functions.php:2060
 msgid "Term too short ( min 4 characters )."
 msgstr "Istilah terlalu singkat ( min 4 characters )."
 
-#: lib/includes/functions.php:2058
+#: lib/includes/functions.php:2061
 msgid "Term too long ( max 70 characters )."
 msgstr "Istilah terlalu panjang ( max 70 characters )."
 
-#: lib/includes/functions.php:2059 lib/includes/functions.php:2109
+#: lib/includes/functions.php:2062 lib/includes/functions.php:2112
 msgid "An unidentified error has occurred."
 msgstr "Ada error yang tidak dapat dikenali."
 
-#: lib/includes/functions.php:2060
+#: lib/includes/functions.php:2063
 msgid "Terms migrated."
 msgstr "Migrasi Istilah"
 
-#: lib/includes/functions.php:2100
+#: lib/includes/functions.php:2103
 msgid "Remove Irrelevant Terms"
 msgstr "Hapus Istilah Yang Tidak Relevan"
 
-#: lib/includes/functions.php:2102
+#: lib/includes/functions.php:2105
 msgid "Not Updated."
 msgstr "Tidak Diperbaharui."
 
-#: lib/includes/functions.php:2103
+#: lib/includes/functions.php:2106
 msgid "Contain Stopwords!"
 msgstr "Mengandung Stopwords!"
 
-#: lib/includes/functions.php:2104
+#: lib/includes/functions.php:2107
 msgid "Preview:"
 msgstr "Cuplikan:"
 
-#: lib/includes/functions.php:2105
+#: lib/includes/functions.php:2108
 msgid "Irrelevant!"
 msgstr "Tidak Relevan!"
 
-#: lib/includes/functions.php:2106
+#: lib/includes/functions.php:2109
 msgid "No Post Selected!"
 msgstr "Tidak Ada Postingan Yang Dipilih"
 
-#: lib/includes/functions.php:2107
+#: lib/includes/functions.php:2110
 msgid "No terms input!"
 msgstr "Tidak istilah yang diinput!"
 
-#: lib/includes/functions.php:2110
+#: lib/includes/functions.php:2113
 msgid "No Post found"
 msgstr "Tidak ada Post ditemukan"
 
-#: lib/includes/functions.php:2111
+#: lib/includes/functions.php:2114
 msgid "Read More"
 msgstr "Baca Selanjutnya"
 
-#: lib/includes/functions.php:2112
+#: lib/includes/functions.php:2115
 msgid "Remove"
 msgstr "Hapus"
 
-#: lib/includes/functions.php:2113
+#: lib/includes/functions.php:2116
 msgid "Add"
 msgstr "Tambahkan"
 
-#: lib/includes/functions.php:2114
+#: lib/includes/functions.php:2117
 msgid "Too Short. Min 4 character (A-Z,a-z,0-9)"
 msgstr "Terlalu singkat. Minimal 4 karakter (A-Z,a-z,0-9)"
 
-#: lib/includes/functions.php:2115
+#: lib/includes/functions.php:2118
 msgid "Too Long. Max {$maxchar} character (A-Z,a-z,0-9)"
 msgstr "Terlalu panjang. Maksimal {$maxchar} karakter (A-Z,a-z,0-9)"
 
-#: lib/includes/functions.php:2116
+#: lib/includes/functions.php:2119
 msgid "Success add to field"
 msgstr "Berhasil ditambahkan"
 
-#: lib/includes/functions.php:2117
+#: lib/includes/functions.php:2120
 msgid ""
 "Your browser does not support for this plugin! Compatible for latest version "
 "Firefox, Safari, or Chrome."
@@ -851,23 +863,23 @@ msgstr ""
 "Browser tidak mendukung untuk plugin ini! Plugin ini cocok untuk browser "
 "Firefox, Safari, Chrom versi terbaru."
 
-#: lib/includes/functions.php:2118
+#: lib/includes/functions.php:2121
 msgid "Collapse Tab"
 msgstr "Tab Kolaps"
 
-#: lib/includes/functions.php:2120
+#: lib/includes/functions.php:2123
 msgid "Success Updated!"
 msgstr "Berhasil Diperbarui!"
 
-#: lib/includes/functions.php:2121
+#: lib/includes/functions.php:2124
 msgid "Loading..."
 msgstr "Sedang Proses..."
 
-#: lib/includes/functions.php:2123
+#: lib/includes/functions.php:2126
 msgid "Fail to add into database."
 msgstr "Gagal untuk menambahkan ke database"
 
-#: lib/includes/functions.php:2124
+#: lib/includes/functions.php:2127
 msgid "Please try another terms."
 msgstr "Coba lagi dengan istilah lainnya"
 
@@ -974,6 +986,9 @@ msgstr "Link ke pos"
 #: lib/includes/widgets.php:272
 msgid "Link to search page"
 msgstr "Link ke halaman pencarian"
+
+#~ msgid "required minimal"
+#~ msgstr "diperlukan minimal"
 
 #~ msgid "Jevuska"
 #~ msgstr "Jevuska"

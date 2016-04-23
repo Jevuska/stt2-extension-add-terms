@@ -711,7 +711,7 @@ function _stt2extat_data_format( $data, $html, $count, $number, $display, $conve
 		uasort( $list, '_usort_terms_by_count' );
 	
 	if ( array_filter( $list ) && 0 < $number ) :
-		$list = array_column( $list, 'text_link' );
+		$list = array_column( array_slice( $list, 0, $number ), 'text_link' );
 		$list = array_map( 'trim', $list );
 		$list = implode( "</$li>$sep<$li>", $list );
 	endif;

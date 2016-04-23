@@ -3,8 +3,8 @@ Contributors: Jevuska
 Donate link: http://www.jevuska.com/donate/
 Tags: post, searchterms, keywords, seo, tagging, search, stt2, postmeta, shortcode, widget, term
 Requires at least: 4.4
-Tested up to: 4.4
-Stable tag: 1.1.9
+Tested up to: 4.5
+Stable tag: 1.2.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,6 +62,12 @@ Yes, you can. After you add one or more terms via input field, just add your ter
 4. STT2EXTAT Permalink for search page
 
 == Changelog ==
+* 1.2.1 = April 23, 2016
+ * Fixes bug for user caps and search excerpt
+ 
+* 1.2.0 = April 09, 2016
+ * Fixes terms list count.
+ 
 * 1.1.9 = December 22, 2015
  * Fixes search excerpt.
  
@@ -145,6 +151,12 @@ Yes, you can. After you add one or more terms via input field, just add your ter
  * First official release!
 
 == Upgrade Notice ==
+= v1.2.0 =
+Fixes search excerpt related bug. Upgrade immediately.
+
+= v1.2.0 =
+Fixes terms count related bug. Upgrade immediately.
+
 = v1.1.9 =
 Fixes search excerpt related bug. Upgrade immediately.
 

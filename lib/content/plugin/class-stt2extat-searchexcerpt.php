@@ -349,7 +349,10 @@ function stt2exat_the_excerpt( $text, $searchterms = null, $post_id = null, $hig
 	$filter = array( $searchterms, $post_id, $highlight );
 	
 	if ( ! is_admin() )
+	{
+		$filter = array( get_search_query(), get_the_ID(), $highlight );
 		$filter = apply_filters( 'stt2exat_excerpt_option', $filter );
+	}
 	
 	if ( is_admin() && ( 'get_the_excerpt' != current_action() || ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) )
 		return false;

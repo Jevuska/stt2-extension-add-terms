@@ -2,7 +2,7 @@
 Contributors: Jevuska
 Donate link: http://www.jevuska.com/donate/
 Requires at least: 4.4
-Tested up to: 4.4
+Tested up to: 4.5
 License: GPLv2
 ---
 
@@ -66,6 +66,12 @@ Yes, you can. After you add one or more terms via input field, just add your ter
 ![screenshot 4](lib/admin/includes/assets/img/screenshot-4.jpg)
 
 ## Changelog
+* 1.2.1 = April 23, 2016
+ * Fixes bug for user caps and search excerpt
+ 
+* 1.2.0 = April 09, 2016
+ * Fixes terms list count.
+ 
 * 1.1.9 = December 22, 2015
  * Fixes search excerpt.
  
@@ -152,6 +158,12 @@ Yes, you can. After you add one or more terms via input field, just add your ter
  * First official release!
 
 ## Upgrade Notice
+###### v1.2.1
+Fixes search excerpt related bug. Upgrade immediately.
+
+###### v1.2.0
+Fixes terms count related bug. Upgrade immediately.
+
 ###### v1.1.9
 Fixes search excerpt related bug. Upgrade immediately.
 
